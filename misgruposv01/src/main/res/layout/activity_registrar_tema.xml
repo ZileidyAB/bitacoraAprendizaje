@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:visibility="visible"
+    tools:context=".activities.RegistrarTemaActivity">
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="152dp"
+        android:layout_height="97dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/temas" />
+
+    <!--VER img graduarse  android:drawableLeft="@drawable/graduarse"-->
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_below="@+id/imageView1"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="18dp"
+        android:text="@string/registrarTema"
+        android:textAlignment="center"
+        android:textColor="@color/teal_700"
+        android:textSize="20sp" />
+
+    <!--FALTAN ICONOS android:drawableLeft="@drawable/"-->
+
+    <EditText
+        android:id="@+id/campoTexto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:drawableLeft="@drawable/logo_codigo"
+        android:layout_marginTop="26dp"
+        android:hint="@string/mensaje_codigoTema" />
+
+    <EditText
+        android:id="@+id/campoTexto1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/campoTexto"
+        android:drawableLeft="@drawable/logo_tema"
+        android:layout_marginTop="26dp"
+        android:hint="@string/mensaje_Tema" />
+
+    <EditText
+        android:id="@+id/editTextDate1"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/campoTexto1"
+        android:drawableLeft="@drawable/logo_calendario"
+        android:ems="10"
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/campoTexto2"
+        android:layout_width="382dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextDate1"
+        android:layout_marginTop="-4dp" />
+
+    <EditText
+        android:id="@+id/campoTexto3"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/campoTexto2"
+        android:layout_marginTop="-9dp"
+        android:hint="@string/mensaje_notaTema"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="146dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/campoTexto2"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="62dp"
+        android:background="@color/celeste"
+        android:text="@string/boton_aceptarTema" />
+
+</RelativeLayout>

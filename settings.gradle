@@ -1,0 +1,3 @@
+include ':misgruposv01'
+include ':app'
+rootProject.name = "MisGrupos2020"

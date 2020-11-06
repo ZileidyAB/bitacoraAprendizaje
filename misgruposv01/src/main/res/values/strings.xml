@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">Mis Grupos v01</string>
+
+    <!-- Menu Principal  -->
+    <string name="texto_tituloPrincipal"><b>BITACORA DE APRENDIZAJE</b></string>
+    <string name="texto_tituloSecundario"><b>Haz un seguimiento de tus clases</b></string>
+    <string name="boton_acerca_de">Acerca de</string>
+    <string name="boton_crearCuenta">CREAR CUENTA</string>
+    <string name="boton_iniciarSesion">INICIAR SESIÓN</string>
+
+    <!-- Layout Acerca de -->
+    <string name="titulo_acerca_de">Mis Grupos</string>
+    <string name="etiqueta_version_acerca_de">Versión</string>
+    <string name="texto_version_acerca_de">1.0</string>
+    <string name="title_activity_main2">MainActivity</string>
+
+    <!-- Layout Iniciar sesion -->
+    <string name="boton_datosUsuario"> DATOS DEL USUARIO </string>
+    <string name="mensaje_ci">N° de CI</string>
+    <string name="mensaje_nombre"> Nombre y apellido</string>
+    <string name="mensaje_email">E-mail</string>
+    <string name="mensaje_contrasenha">Contraseña</string>
+
+
+    <!-- Layout Crear cuenta -->
+    <string name="mensaje_ciCuenta">N° de CI</string>
+    <string name="mensaje_nombreCuenta"> Nombre y apellido</string>
+    <string name="mensaje_emailCuenta">E-mail</string>
+    <string name="mensaje_contrasenhaCuenta">Contraseña</string>
+    <string name="boton_registrar"> Registrarse </string>
+
+    <!-- Layout Ver Perfil -->
+    <string name="mensaje_ciPerfil">N° de CI</string>
+    <string name="mensaje_nombrePerfil"> Nombre y apellido</string>
+    <string name="mensaje_emailPerfil">E-mail</string>
+    <string name="mensaje_contrasenhaPerfil">Contraseña</string>
+
+    <!-- Reestablecer contraseña -->
+    <string name="titulo_restablecer">Restablecer Contraseña</string>
+    <string name="correo">Correo electrónico</string>
+    <string name="reescribirContra">Reescribir Contraseña</string>
+
+    <!-- Layout Menu materias principal -->
+    <string name="listarMaterias">Listar Materias</string>
+    <string name="temasPendientes">Temas Pendientes</string>
+    <string name="verPerfil">Ver Perfil</string>
+
+    <!-- Layout Registrar materia -->
+    <string name="registrarMateria"> Registrar nueva materia </string>
+    <string name="mensaje_codigo">Código</string>
+    <string name="mensaje_materia"> Nombre de materia</string>
+    <string name="mensaje_nota"> Agregar una nota</string>
+    <string name="boton_aceptar"> Aceptar </string>
+
+    <!-- Layout Registrar materia -->
+    <string name="registrarTema"> Registrar nuevo Tema </string>
+    <string name="mensaje_codigoTema">Código</string>
+    <string name="mensaje_Tema"> Nombre de tema</string>
+    <string name="mensaje_FechaTema"> Fecha</string>
+    <string name="mensaje_notaTema"> Agregar una nota</string>
+    <string name="boton_aceptarTema"> Aceptar </string>
+
+    <!-- Layout Menu tema -->
+    <string name="titulo_tema"> Título del tema</string>
+    <string name="boton_Items"> Items </string>
+    <string name="boton_Ejercicio">Ejercicios</string>
+    <string name="boton_Investigacion">Investigación</string>
+
+    <!-- Layout Submenu Item -->
+    <string name="boton_ListaItem"> Ver lista </string>
+    <string name="boton_RegistrarItem">Registrar Item</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>
