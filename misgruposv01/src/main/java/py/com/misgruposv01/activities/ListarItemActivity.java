@@ -3,6 +3,8 @@ package py.com.misgruposv01.activities;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ListView;
 import java.util.ArrayList;
 import py.com.misgruposv01.R;
@@ -35,4 +37,35 @@ public class ListarItemActivity extends Activity {
     //VERRR
     private void setListAdapter(ItemAdapter itemAdapter) {
     }
+
+    public void onCheckboxClicked(View view) {
+        // Is the view now checked?
+        boolean aprendido = ((CheckBox) view).isChecked();
+
+        // Check which checkbox was clicked
+        switch(view.getId()) {
+            case R.id.checkboxAprendido:
+                if (aprendido) {
+                    // action
+                } else
+                    // action
+                    break;
+        }
+    }
+//    CheckBox checkbox=(CheckBox)findViewById(R.id.checkbox);
+//checkbox.setOnClickListener(new View.OnClickListener()
+//    {
+//        @Override
+//        public void onClick(View v)
+//        {
+//            if (checkbox.isChecked())
+//            {
+//                //Perform action when you touch on checkbox and it change to selected state
+//            }
+//            else
+//            {
+//                //Perform action when you touch on checkbox and it change to unselected state
+//            }
+//        }
+//    });
 }
