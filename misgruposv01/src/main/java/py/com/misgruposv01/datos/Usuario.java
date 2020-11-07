@@ -3,10 +3,12 @@ package py.com.misgruposv01.datos;
 import java.util.ArrayList;
 
 public class Usuario {
+    private int idUsuario;
     private String nombreApellido;
     private String mail;
     private String contrasenha;
-    private static ArrayList<Usuario> usuarios;
+    public ArrayList<Materia> listaMaterias;
+    public static ArrayList<Usuario> usuarios;
 
     static {
         usuarios = new ArrayList<>();
@@ -22,23 +24,34 @@ public class Usuario {
 
     public static boolean comprobarCredenciales(String CI, String password) {
 
-        for( Usuario usuario : usuarios) {
-            if ( CI.equals(usuario.getCI()) && password.equals(usuario.getContrasenha())){
+        for (Usuario usuario : usuarios) {
+            if (CI.equals(usuario.getCI()) && password.equals(usuario.getContrasenha())) {
                 return true;
             }
         }
         return false;
     }
 
-    public static boolean comprobarCorreo (String correo) {
-        for( Usuario usuario : usuarios) {
-            if ( correo.equals(usuario.getMail())){
+    public static boolean comprobarCorreo(String correo) {
+        for (Usuario usuario : usuarios) {
+            if (correo.equals(usuario.getMail())) {
                 return true;
             }
         }
         return false;
     }
 
+    public static void agregarUsuario(Usuario usuario) {
+        usuarios.add(usuario);
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
 
     private String CI;
 
@@ -80,5 +93,13 @@ public class Usuario {
 
     public static void setUsuarios(ArrayList<Usuario> usuarios) {
         Usuario.usuarios = usuarios;
+    }
+
+    public ArrayList<Materia> getListaMaterias() {
+        return listaMaterias;
+    }
+
+    public void setListaMaterias(ArrayList<Materia> listaMaterias) {
+        this.listaMaterias = listaMaterias;
     }
 }

@@ -65,15 +65,19 @@ public class CrearCuentaActivity extends Activity {
 //                    })
 //                    .show();
         } else {
-            ArrayList<Usuario> listaUsuarios = Usuario.getUsuarios();
+//            ArrayList<Usuario> listaUsuarios = Usuario.getUsuarios();
 
-            Usuario usuario1 = new Usuario(CI, nombreApellido, email, contrasenha);
-            listaUsuarios.add(usuario1);
+            Usuario usuario = new Usuario(CI, nombreApellido, email, contrasenha);
+            Usuario.agregarUsuario(usuario);
+//            Usuario usuario1 = new Usuario(CI, nombreApellido, email, contrasenha);
+//            listaUsuarios.add(usuario1);
 
             Toast.makeText(this, "Usuario creado", Toast.LENGTH_SHORT).show();
             //finish();
             Intent i = new Intent( this, MenuMateriaPrincipalActivity.class ) ;
+            i.putExtra("CI_usuario", Integer.parseInt(""+CI));
             startActivity( i );
+
         }
     }
 }
