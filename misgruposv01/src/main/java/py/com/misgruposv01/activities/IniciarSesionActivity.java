@@ -21,6 +21,8 @@ public class IniciarSesionActivity extends Activity {
     private String tag = "AppConoceme";
     private EditText CI;
     private EditText contrasenha;
+    private int CI_usuario = -1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +79,7 @@ public class IniciarSesionActivity extends Activity {
                 Toast.makeText(this, "Credenciales correctas", Toast.LENGTH_SHORT).show();
 //                setUsuarioLogueado();
                 Intent intentMenuPricipal = new Intent(this, MenuMateriaPrincipalActivity.class);
+                intentMenuPricipal.putExtra("CI_usuario", Integer.parseInt(""+CI));
                 startActivity(intentMenuPricipal);
             } else {
                 Log.i(TAG, "Las credenciales son incorrectas");

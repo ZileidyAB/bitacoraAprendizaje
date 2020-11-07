@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TabHost;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
@@ -17,10 +19,12 @@ import java.util.ArrayList;
 import py.com.misgruposv01.R;
 import py.com.misgruposv01.adapter.MateriaAdapter;
 import py.com.misgruposv01.datos.Materia;
+import py.com.misgruposv01.datos.Usuario;
 
 
 public class ListarMateriaActivity extends ListActivity {
     private String tag = "AppConoceme";
+    private int CI_usuario = -1;
     TabHost tabHost;
 
     @Override
@@ -28,6 +32,46 @@ public class ListarMateriaActivity extends ListActivity {
         Log.d(tag, "Inicia metodo en ListarMateriaActivity.onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_materia);
+
+        //********************************RECIBIR CI USUARIO*****************************************
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            CI_usuario = extras.getInt("CI_usuario", -1);
+            Log.i(tag, "idUsuario recibido del usuario en LISTAR MATERIA: " + CI_usuario);
+        }
+//        verificacionUsuario();
+
+//
+//    public void verificacionUsuario() {
+//        if ( CI_usuario < 0 || CI_usuario > (Usuario.usuarios.size()-1)) {
+//            Log.i(tag, "El usuario no existe ");
+//            Toast.makeText( this, "El usuario no existe", Toast.LENGTH_SHORT);
+//            finish();
+//            return;
+//        }else{
+//            Log.i(tag, "El usuario SI existe. Continua la operacion");
+//            //TODO
+//        }
+//        //todo
+//        Usuario unUsuario;
+//        ArrayList<Materia> materias;
+//        for (int i = 0; i < Usuario.usuarios.size(); i++){
+//        for (int i = 0; i<unUsuario.listaMaterias.size(); i++){
+//
+//
+//        }
+////
+////        unUsuario = Usuario.usuarios.get (CI_usuario);
+////        unUsuario = Usuario.
+//
+//        unGrupo = Grupo.grupos.get( idGrupo );
+//
+//        nombre = (TextView) findViewById(R.id.id_nombre_grupo_valor);
+//        nombre.setText( unGrupo.getNombre() );
+//
+//        objetivo = (TextView) findViewById(R.id.id_objetivo_grupo_valor);
+//        objetivo.setText(unGrupo.getDescripcion());
+
 
         //********************************TABHOST*****************************************
         //Propiedades del control
@@ -60,6 +104,7 @@ public class ListarMateriaActivity extends ListActivity {
         });
 
         //********************************LISTVIEW*****************************************
+
         ArrayList<Materia> materias = Materia.getMaterias();
         Log.d(tag, "Cantidad de materias: "+materias.size());
 

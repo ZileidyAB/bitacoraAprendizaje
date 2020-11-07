@@ -18,7 +18,7 @@ import py.com.misgruposv01.datos.Usuario;
 public class MenuMateriaPrincipalActivity extends Activity {
     private String tag = "AppConoceme";
     private int CI_usuario = -1;
-    private Usuario unUsuario;
+//    private Usuario unUsuario;
 
 
     @Override
@@ -31,34 +31,21 @@ public class MenuMateriaPrincipalActivity extends Activity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             CI_usuario = extras.getInt("CI_usuario", -1);
-            Log.i(tag, "CI recibido del usuario: " + CI_usuario);
+            Log.i(tag, "idUsuario recibido del usuario: " + CI_usuario);
         }
-        verificacionUsuario();
-
+//        verificacionUsuario();
     }
 
-    public void verificacionUsuario() {
-        if ( CI_usuario < 0 || CI_usuario > (Usuario.usuarios.size()-1)) {
-            Log.i(tag, "El usuario no existe ");
-            Toast.makeText( this, "El usuario no existe", Toast.LENGTH_SHORT);
-            finish();
-            return;
-        }
-
-        ArrayList<Materia> materias;
-        for (int i = 0; i<unUsuario.listaMaterias.size(); i++){
-
-        }
-        unUsuario = Usuario.usuarios.get (CI_usuario);
-        unUsuario = Usuario.
-                
-        nombre = (TextView) findViewById(R.id.id_nombre_grupo_valor);
-        nombre.setText( unGrupo.getNombre() );
-
-        objetivo = (TextView) findViewById(R.id.id_objetivo_grupo_valor);
-        objetivo.setText(unGrupo.getDescripcion());
-
-    }
+//    public void verificacionUsuario() {
+//        if ( CI_usuario < 0 || CI_usuario > (Usuario.usuarios.size()-1)) {
+//            Log.i(tag, "El usuario no existe ");
+//            Toast.makeText( this, "El usuario no existe", Toast.LENGTH_SHORT);
+//            finish();
+//            return;
+//        }else{
+//            Log.i(tag, "El usuario SI existe. Continua la operacion");
+//        }
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -67,9 +54,8 @@ public class MenuMateriaPrincipalActivity extends Activity {
     }
 
     public void lanzarVistaListarMateria(View view) {
-        //VER
         Intent i = new Intent(this, ListarMateriaActivity.class);
-        //i.putExtra("id", (long)0);
+        i.putExtra("CI_usuario", Integer.parseInt(""+CI_usuario));
         startActivity(i);
     }
 
