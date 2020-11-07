@@ -20,7 +20,7 @@
         <activity android:name=".activities.CrearCuentaActivity" />
         <activity android:name=".activities.IniciarSesionActivity" />
         <activity android:name=".activities.RestablecerContrasenhaActivity" />
-        <activity android:name=".activities.MenuMateriaPrincipalActivity" />
+         <activity android:name=".activities.MenuMateriaPrincipalActivity" />
         <activity android:name=".activities.ListarMateriaActivity" />
         <activity android:name=".activities.VerPerfilActivity" />
         <activity android:name=".activities.TemasPendientesActivity" />

@@ -26,7 +26,7 @@ public class ItemAdapter extends BaseAdapter {
     @Override
     public View getView(int posicion, View vista, ViewGroup padre) {
         LayoutInflater inflater = actividad.getLayoutInflater();
-        View view = inflater.inflate(R.layout.elementos_listar_temas, null, true);
+        View view = inflater.inflate(R.layout.elementos_listar_item, null, true);
 
         TextView conceptoElemento = (TextView) view.findViewById(R.id.concepto_items);
         conceptoElemento.setText(lista.get(posicion).getConcepto());

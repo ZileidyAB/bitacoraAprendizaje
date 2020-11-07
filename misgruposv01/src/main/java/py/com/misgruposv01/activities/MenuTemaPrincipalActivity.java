@@ -56,4 +56,10 @@ public class MenuTemaPrincipalActivity extends Activity {
 //        //i.putExtra("id", (long)0);
 //        startActivity(i);
 //    }
+public void lanzarVistaItem(View view) {
+    Log.i(tag, "ENTRA A MENU TEMA PRINCIPAL");
+    Intent i = new Intent(this, ListarItemActivity.class);
+    //i.putExtra("id", (long)0);
+    startActivity(i);
+}
 }
