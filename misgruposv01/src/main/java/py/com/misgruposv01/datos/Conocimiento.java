@@ -11,13 +11,13 @@ public class Conocimiento {
     private boolean aprendido;
 
     private static ArrayList<Conocimiento> conocimientos;
-
-    static {
-        conocimientos = new ArrayList<>();
-        conocimientos.add(new Conocimiento("num1", "POO", "Significa Programacion Orientada a Objetos", "Ninguna", true));
-        conocimientos.add(new Conocimiento("num2", "Lenguas", "Son un sistema de signos lingüísticos", "Ninguna", false));
-        conocimientos.add(new Conocimiento("num3", "Radicales", "Es el proceso de hallar raíces de orden n de un número a", "Ninguna", false));
-    }
+//
+//    static {
+//        conocimientos = new ArrayList<>();
+//        conocimientos.add(new Conocimiento("num1", "POO", "Significa Programacion Orientada a Objetos", "Ninguna", true));
+//        conocimientos.add(new Conocimiento("num2", "Lenguas", "Son un sistema de signos lingüísticos", "Ninguna", false));
+//        conocimientos.add(new Conocimiento("num3", "Radicales", "Es el proceso de hallar raíces de orden n de un número a", "Ninguna", false));
+//    }
 
     public Conocimiento(String codigo, String concepto, String descripcion, String dudas, boolean aprendido) {
         this.codigo = codigo;

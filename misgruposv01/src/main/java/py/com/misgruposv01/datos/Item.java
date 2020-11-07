@@ -12,12 +12,12 @@ public class Item {
 
     private static ArrayList<Item> items;
 
-    static {
-        items = new ArrayList<>();
-        items.add(new Item("num1", "POO", "Significa Programacion Orientada a Objetos", "Ninguna", true));
-        items.add(new Item("num2", "Lenguas", "Son un sistema de signos lingüísticos", "Ninguna", false));
-        items.add(new Item("num3", "Radicales", "Es el proceso de hallar raíces de orden n de un número a", "Ninguna", false));
-    }
+//    static {
+//        items = new ArrayList<>();
+//        items.add(new Item("num1", "POO", "Significa Programacion Orientada a Objetos", "Ninguna", true));
+//        items.add(new Item("num2", "Lenguas", "Son un sistema de signos lingüísticos", "Ninguna", false));
+//        items.add(new Item("num3", "Radicales", "Es el proceso de hallar raíces de orden n de un número a", "Ninguna", false));
+//    }
 
     public Item (String codigo, String concepto, String descripcion, String duda, boolean entendido){
         this.codigo=codigo;

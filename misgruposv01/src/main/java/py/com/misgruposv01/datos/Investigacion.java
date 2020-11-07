@@ -13,12 +13,12 @@ public class Investigacion {
 
     private static ArrayList<Investigacion> investigaciones;
 
-    static {
-        investigaciones = new ArrayList<>();
-        investigaciones.add(new Investigacion("inv1", "Investigación I", "01:50", "Ninguna", 60, "Ninguna Duda"));
-        investigaciones.add(new Investigacion("inv2", "Investigación II", "02:30", "Especificar nombre", 40, "Concepto"));
-        investigaciones.add(new Investigacion("inv3", "Investigación III", "04:00", "Faltan indicadores", 70, "Muchas dudas"));
-    }
+//    static {
+//        investigaciones = new ArrayList<>();
+//        investigaciones.add(new Investigacion("inv1", "Investigación I", "01:50", "Ninguna", 60, "Ninguna Duda"));
+//        investigaciones.add(new Investigacion("inv2", "Investigación II", "02:30", "Especificar nombre", 40, "Concepto"));
+//        investigaciones.add(new Investigacion("inv3", "Investigación III", "04:00", "Faltan indicadores", 70, "Muchas dudas"));
+//    }
 
     public Investigacion(String codigo, String tiempoDedicado, String temaInvestigado, String comentarios, double nivelComprension, String dudas) {
         this.codigo = codigo;

@@ -12,6 +12,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import py.com.misgruposv01.R;
+import py.com.misgruposv01.datos.GestionBitacora;
 import py.com.misgruposv01.datos.Usuario;
 
 import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
@@ -72,7 +73,8 @@ public class IniciarSesionActivity extends Activity {
 //                    })
 //                    .show();
         } else {
-            boolean estaComprobado = Usuario.comprobarCredenciales(CI, contrasenha);
+//            boolean estaComprobado = Usuario.comprobarCredenciales(CI, contrasenha); ANTERIOR
+            boolean estaComprobado = GestionBitacora.comprobarCredenciales(CI, contrasenha);
 
             if (estaComprobado) {
                 Log.i(TAG, "Credenciales correctas");

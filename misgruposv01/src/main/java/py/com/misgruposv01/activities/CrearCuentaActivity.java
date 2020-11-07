@@ -14,6 +14,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import py.com.misgruposv01.R;
+import py.com.misgruposv01.datos.GestionBitacora;
 import py.com.misgruposv01.datos.Usuario;
 
 public class CrearCuentaActivity extends Activity {
@@ -65,7 +66,9 @@ public class CrearCuentaActivity extends Activity {
 //                    })
 //                    .show();
         } else {
-            ArrayList<Usuario> listaUsuarios = Usuario.getUsuarios();
+
+//            ArrayList<Usuario> listaUsuarios1 = Usuario.getUsuarios(); ANTERIOR
+            ArrayList<Usuario> listaUsuarios = GestionBitacora.getUsuarios();
 
             Usuario usuario1 = new Usuario(CI, nombreApellido, email, contrasenha);
             listaUsuarios.add(usuario1);

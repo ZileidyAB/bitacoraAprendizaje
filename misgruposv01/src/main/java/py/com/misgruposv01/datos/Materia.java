@@ -9,15 +9,21 @@ public class Materia {
     private ArrayList<Tema> temas;
     private static ArrayList<Materia> materias;
 
-    static {
-        materias = new ArrayList<>();
-        materias.add(new Materia("mkt1", "Marketing"));
-        materias.add(new Materia("proyTIC", "Proyecto TIC"));
-    }
+//    static {
+//        materias = new ArrayList<>();
+//        materias.add(new Materia("mkt1", "Marketing"));
+//        materias.add(new Materia("proyTIC", "Proyecto TIC"));
+//    }
 
     public Materia(String codigo, String nombre) {
         this.codigo = codigo;
         this.nombre = nombre;
+    }
+
+    public Materia(String codigo, String nombre, ArrayList temas) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.temas = temas;
     }
 
     public int getId() {

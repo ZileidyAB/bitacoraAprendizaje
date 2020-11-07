@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 import py.com.misgruposv01.R;
 import py.com.misgruposv01.adapter.MateriaAdapter;
+import py.com.misgruposv01.datos.GestionBitacora;
 import py.com.misgruposv01.datos.Materia;
 import py.com.misgruposv01.datos.Usuario;
 
@@ -25,6 +26,7 @@ import py.com.misgruposv01.datos.Usuario;
 public class ListarMateriaActivity extends ListActivity {
     private String tag = "AppConoceme";
     private int CI_usuario = -1;
+    private Usuario unUsuario;
     TabHost tabHost;
 
     @Override
@@ -104,20 +106,41 @@ public class ListarMateriaActivity extends ListActivity {
         });
 
         //********************************LISTVIEW*****************************************
+        ArrayList<Materia> materias = new ArrayList<>();
+        for (int i = 0; i < GestionBitacora.usuarios.size(); i++){ //recorrer lista de usuarios
+            unUsuario = GestionBitacora.getUsuarios().get(i); //obtener usuarios
+            Log.i(tag, "USUARIOS: " + GestionBitacora.usuarios);
 
-        ArrayList<Materia> materias = Materia.getMaterias();
-        Log.d(tag, "Cantidad de materias: "+materias.size());
+            String CI_usuario_string= String.valueOf(CI_usuario); //Convertir int CI a String
+            Log.i(tag, "CI CONVERTIDO: " + CI_usuario_string);
+            Log.i(tag, "CI getID: " + unUsuario.getCI());
 
-        setListAdapter (new MateriaAdapter(this, materias));
+            if (CI_usuario_string.equals(unUsuario.getCI())) { //comparar CI que llegó con lo que vamos obteniendo en el array
 
+//                materias = Materia.getMaterias();
+                materias = unUsuario.getMaterias();
+                Log.i(tag, "Materias size: " + unUsuario.materias.size());
+                Log.d(tag, "Cantidad de materias: " + materias.size());
+
+                Log.i(tag, "MATERIAS: " + unUsuario.getMaterias());
+
+//                setListAdapter(new MateriaAdapter(this, materias));
+            }else{
+                Log.i(tag, "NO ENTRA");
+            }
+        }
+        setListAdapter(new MateriaAdapter(this, materias));
     }
-    public void lanzarVistaRegistrarMateria(View view){
+
+
+    public void lanzarVistaRegistrarMateria(View view) {
         //VER
         Intent i = new Intent(this, RegistrarMateriaActivity.class);
         //i.putExtra("id", (long)0);
         startActivity(i);
     }
-    public void lanzarVistaListarTemas (View view){
+
+    public void lanzarVistaListarTemas(View view) {
         //VER
         Intent i = new Intent(this, ListarTemasActivity.class);
         //i.putExtra("id", (long)0);

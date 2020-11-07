@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import py.com.misgruposv01.R;
+import py.com.misgruposv01.datos.GestionBitacora;
 import py.com.misgruposv01.datos.Usuario;
 
 import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
@@ -34,7 +35,9 @@ public class RestablecerContrasenhaActivity extends Activity {
             Log.i(tag, "Debe rellenar TODOS los campos");
             Toast.makeText(this, "Debe rellenar TODOS los campos", Toast.LENGTH_SHORT).show();
         }else{
-            boolean estaComprobado = Usuario.comprobarCorreo(correo);
+//            boolean estaComprobado = Usuario.comprobarCorreo(correo); ANTERIOR
+            boolean estaComprobado = GestionBitacora.comprobarCorreo(correo);
+
             if (estaComprobado) {
                 Log.i(TAG, "Se ha enviado un link de recuperacion a su correo electrónico");
                 Toast.makeText(this, "Se ha enviado un link de recuperacion a su correo electrónico", Toast.LENGTH_LONG).show();

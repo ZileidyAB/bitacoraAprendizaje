@@ -13,17 +13,26 @@ public class Tema {
 
     private static ArrayList<Tema> temas;
 
-    static {
-        temas = new ArrayList<>();
-        temas.add(new Tema("poo", "Programacion Orientada a Objetos - POO", "15/08/2020"));
-        temas.add(new Tema("mates", "Matematicas", "09/07/2018"));
-        temas.add(new Tema("comun", "Comunicacion", "11/06/2019"));
-    }
+//    static {
+//        temas = new ArrayList<>();
+//        temas.add(new Tema("poo", "Programacion Orientada a Objetos - POO", "15/08/2020"));
+//        temas.add(new Tema("mates", "Matematicas", "09/07/2018"));
+//        temas.add(new Tema("comun", "Comunicacion", "11/06/2019"));
+//    }
 
     public Tema(String codigo, String nombre, String fecha) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.fecha = fecha;
+    }
+
+    public Tema (String codigo, String nombre, String fecha, ArrayList investigaciones, ArrayList conocimientos, ArrayList ejercicios ) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.fecha = fecha;
+        this.investigaciones = investigaciones;
+        this.conocimientos = conocimientos;
+        this.ejercicios = ejercicios;
     }
 
     //NO SE

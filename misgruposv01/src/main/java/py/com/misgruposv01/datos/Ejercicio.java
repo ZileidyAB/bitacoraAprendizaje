@@ -12,12 +12,12 @@ public class Ejercicio {
 
     private static ArrayList<Ejercicio> ejercicios;
 
-    static {
-        ejercicios = new ArrayList<>();
-        ejercicios.add(new Ejercicio("ej1", "02:00", "Muchos ejercicios para una tarde", "¿Cómo sumar?", 65));
-        ejercicios.add(new Ejercicio("ej2", "01:40", "Pocos ejercicios para fijar conocimientos", "Ninguna", 50));
-        ejercicios.add(new Ejercicio("ej3", "00:30", "Excelentes ejercicios", "Ninguna", 100));
-    }
+//    static {
+//        ejercicios = new ArrayList<>();
+//        ejercicios.add(new Ejercicio("ej1", "02:00", "Muchos ejercicios para una tarde", "¿Cómo sumar?", 65));
+//        ejercicios.add(new Ejercicio("ej2", "01:40", "Pocos ejercicios para fijar conocimientos", "Ninguna", 50));
+//        ejercicios.add(new Ejercicio("ej3", "00:30", "Excelentes ejercicios", "Ninguna", 100));
+//    }
 
     public Ejercicio(String codigo, String tiempoDedicado, String experiencia, String dudas, double porcLogrado) {
         this.codigo = codigo;
