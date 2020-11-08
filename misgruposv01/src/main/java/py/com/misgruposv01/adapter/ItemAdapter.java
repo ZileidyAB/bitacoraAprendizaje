@@ -38,7 +38,7 @@ public class ItemAdapter extends BaseAdapter {
         duda.setText("" + lista.get(posicion).getDuda());
 
         CheckBox aprendido = (CheckBox) view.findViewById(R.id.checkboxAprendido);
-        aprendido.setText("" + lista.get(posicion).isEntendido());
+        aprendido.setText("" + lista.get(posicion).isAprendido());
         return view;
     }
 

@@ -8,7 +8,7 @@ public class Tema {
     private String nombre;
     private String fecha;
     private ArrayList<Investigacion> investigaciones;
-    private ArrayList<Conocimiento> conocimientos;
+    private ArrayList<Item> items;
     private ArrayList<Ejercicio> ejercicios;
 
     private static ArrayList<Tema> temas;
@@ -26,21 +26,21 @@ public class Tema {
         this.fecha = fecha;
     }
 
-    public Tema (String codigo, String nombre, String fecha, ArrayList investigaciones, ArrayList conocimientos, ArrayList ejercicios ) {
+    public Tema (String codigo, String nombre, String fecha, ArrayList investigaciones, ArrayList items, ArrayList ejercicios ) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.fecha = fecha;
         this.investigaciones = investigaciones;
-        this.conocimientos = conocimientos;
+        this.items = items;
         this.ejercicios = ejercicios;
     }
 
     //NO SE
-    public Conocimiento temasPendientes() {
-        for (int i = 0; i < conocimientos.size(); i++) {
-            Conocimiento unConocimiento = conocimientos.get(i);
-            if (unConocimiento.isAprendido() == false) {
-                return unConocimiento;
+    public Item temasPendientes() {
+        for (int i = 0; i < items.size(); i++) {
+            Item unItem= items.get(i);
+            if (unItem.isAprendido() == false) {
+                return unItem;
 //                System.out.println("Concepto: " + unConocimiento.getConceptoConocimiento()); //CREO QUE ACA SOLO ESTO
             }
         }
@@ -87,12 +87,12 @@ public class Tema {
         this.investigaciones = investigaciones;
     }
 
-    public ArrayList<Conocimiento> getConocimientos() {
-        return conocimientos;
+    public ArrayList<Item> getItems() {
+        return items;
     }
 
-    public void setConocimientos(ArrayList<Conocimiento> conocimientos) {
-        this.conocimientos = conocimientos;
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
     }
 
     public ArrayList<Ejercicio> getEjercicios() {

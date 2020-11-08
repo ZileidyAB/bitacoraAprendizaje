@@ -8,6 +8,7 @@ public class Usuario {
     private String nombreApellido;
     private String mail;
     private String contrasenha;
+    private String contrasenhaConfirm;
     public ArrayList<Materia> materias;
 
 //    public static ArrayList<Usuario> usuarios;
@@ -29,11 +30,12 @@ public class Usuario {
 //        usuarios.add(new Usuario("1111111", "Carolina Barrios", "carola.com", "123", listaMateria3));
 //    }
 
-    public Usuario(String CI, String nombreApellido, String mail, String contrasenha) {
+    public Usuario(String CI, String nombreApellido, String mail, String contrasenha, String contrasenhaConfirm) {
         this.CI = CI;
         this.nombreApellido = nombreApellido;
         this.mail = mail;
         this.contrasenha = contrasenha;
+        this.contrasenhaConfirm=contrasenhaConfirm;
     }
 
     public Usuario(String CI, String nombreApellido, String mail, String contrasenha, ArrayList materias) {
@@ -67,6 +69,14 @@ public class Usuario {
 //        usuarios.add(usuario);
 //    }
 
+
+    public String getContrasenhaConfirm() {
+        return contrasenhaConfirm;
+    }
+
+    public void setContrasenhaConfirm(String contrasenhaConfirm) {
+        this.contrasenhaConfirm = contrasenhaConfirm;
+    }
 
     public int getIdUsuario() {
         return idUsuario;

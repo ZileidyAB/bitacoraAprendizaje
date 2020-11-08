@@ -29,10 +29,9 @@ public class ListarTemasActivity extends ListActivity {
     private ArrayList<String> fechas;
     private TextView nombreTema;
     private String codigo_materia;
-//    private String CI_usuario;
+    //    private String CI_usuario;
     private int CI_usuario;
     private Materia unaMateria;
-
 
 
     @Override
@@ -68,15 +67,18 @@ public class ListarTemasActivity extends ListActivity {
         for (int i = 0; i < unUsuario.materias.size(); i++) { //recorrer array de materia
             unaMateria = unUsuario.getMaterias().get(i);   //obtener materias
             Log.i(tag, "MATERIAS: " + unUsuario.materias); //CONTROL
-            if (codigo_materia.equals(unaMateria.getCodigo())) { //comparar CODIGO que llegó con lo que vamos obteniendo en el array
-                temas = unaMateria.getTemas(); //obtener los temas de la materia
-                Log.i(tag, "Temas size: " + unaMateria.getTemas().size()); //CONTROL
-                Log.d(tag, "Cantidad de temas: " + temas.size()); //CONTROL
-                Log.i(tag, "TEMAS: " + unaMateria.getTemas()); //CONTROL
-            }else{
-                Log.i(tag, "NO ENTRA. NO HAY CODIGO DE MATERIA IGUAL");
+            if (codigo_materia!=null) { //Agrega la validacion de que el obj codigo_materia no sea nulo para ejecutar los if
+                if (codigo_materia.equals(unaMateria.getCodigo())) { //comparar CODIGO que llegó con lo que vamos obteniendo en el array
+                    temas = unaMateria.getTemas(); //obtener los temas de la materia
+                    Log.i(tag, "Temas size: " + unaMateria.getTemas().size()); //CONTROL
+                    Log.d(tag, "Cantidad de temas: " + temas.size()); //CONTROL
+                    Log.i(tag, "TEMAS: " + unaMateria.getTemas()); //CONTROL
+                } else {
+                    Log.i(tag, "NO ENTRA. NO HAY CODIGO DE MATERIA IGUAL");
+                }
             }
         }
+
       setListAdapter(new TemaAdapter(this, temas)); //llamar adpatador de Temas
 
     }

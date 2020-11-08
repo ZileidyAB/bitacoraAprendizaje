@@ -8,7 +8,7 @@ public class Item {
     private String concepto;
     private String descripcion;
     private String duda;
-    private boolean entendido;
+    private boolean aprendido;
 
     private static ArrayList<Item> items;
 
@@ -19,12 +19,12 @@ public class Item {
 //        items.add(new Item("num3", "Radicales", "Es el proceso de hallar raíces de orden n de un número a", "Ninguna", false));
 //    }
 
-    public Item (String codigo, String concepto, String descripcion, String duda, boolean entendido){
+    public Item (String codigo, String concepto, String descripcion, String duda, boolean aprendido){
         this.codigo=codigo;
         this.concepto =concepto;
         this.descripcion =descripcion;
         this.duda =duda;
-        this.entendido = entendido;
+        this.aprendido = aprendido;
     }
 
     public int getId() {
@@ -67,12 +67,12 @@ public class Item {
         this.duda = duda;
     }
 
-    public boolean isEntendido() {
-        return entendido;
+    public boolean isAprendido() {
+        return aprendido;
     }
 
-    public void setEntendido(boolean entendido) {
-        this.entendido = entendido;
+    public void setAprendido(boolean aprendido) {
+        this.aprendido = aprendido;
     }
 
     public static ArrayList<Item> getItems() {

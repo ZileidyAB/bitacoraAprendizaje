@@ -20,6 +20,7 @@
     <string name="mensaje_nombre"> Nombre y apellido</string>
     <string name="mensaje_email">E-mail</string>
     <string name="mensaje_contrasenha">Contraseña</string>
+    <string name="mensaje_contrasenhaConfirm">Confirmar contraseña</string>
 
 
     <!-- Layout Crear cuenta -->
