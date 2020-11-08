@@ -2,16 +2,21 @@ package py.com.misgruposv01.activities;
 
 import android.app.Activity;
 import android.app.ListActivity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
 import java.util.ArrayList;
@@ -27,6 +32,8 @@ public class ListarMateriaActivity extends ListActivity {
     private String tag = "AppConoceme";
     private int CI_usuario = -1;
     private Usuario unUsuario;
+    private TextView codigo_materia;
+
     TabHost tabHost;
 
     @Override
@@ -35,45 +42,22 @@ public class ListarMateriaActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_materia);
 
+        // Instancia del servicio LayoutInflater
+        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        // other.xml layout cargado (inflado) como View.
+        View view = inflater.inflate(R.layout.elementos_listar_materia, null);
+        // Obtiene una referencia al TextView del otro layout, other.xml
+//        this.codigo_materia = (TextView) findViewById(R.id.codigo_materia);
+
+        this.codigo_materia = (TextView) view.findViewById(R.id.codigo_materia);
+        Log.i(tag, "CODIGO DE MATERIA: " + codigo_materia);
+
         //********************************RECIBIR CI USUARIO*****************************************
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             CI_usuario = extras.getInt("CI_usuario", -1);
             Log.i(tag, "idUsuario recibido del usuario en LISTAR MATERIA: " + CI_usuario);
         }
-//        verificacionUsuario();
-
-//
-//    public void verificacionUsuario() {
-//        if ( CI_usuario < 0 || CI_usuario > (Usuario.usuarios.size()-1)) {
-//            Log.i(tag, "El usuario no existe ");
-//            Toast.makeText( this, "El usuario no existe", Toast.LENGTH_SHORT);
-//            finish();
-//            return;
-//        }else{
-//            Log.i(tag, "El usuario SI existe. Continua la operacion");
-//            //TODO
-//        }
-//        //todo
-//        Usuario unUsuario;
-//        ArrayList<Materia> materias;
-//        for (int i = 0; i < Usuario.usuarios.size(); i++){
-//        for (int i = 0; i<unUsuario.listaMaterias.size(); i++){
-//
-//
-//        }
-////
-////        unUsuario = Usuario.usuarios.get (CI_usuario);
-////        unUsuario = Usuario.
-//
-//        unGrupo = Grupo.grupos.get( idGrupo );
-//
-//        nombre = (TextView) findViewById(R.id.id_nombre_grupo_valor);
-//        nombre.setText( unGrupo.getNombre() );
-//
-//        objetivo = (TextView) findViewById(R.id.id_objetivo_grupo_valor);
-//        objetivo.setText(unGrupo.getDescripcion());
-
 
         //********************************TABHOST*****************************************
         //Propiedades del control
@@ -102,16 +86,17 @@ public class ListarMateriaActivity extends ListActivity {
             @Override
             public void onTabChanged(String tabId) {
                 Log.i("AndroidTabsDemo", "Pulsada pestaña: " + tabId);
+
             }
         });
 
         //********************************LISTVIEW*****************************************
         ArrayList<Materia> materias = new ArrayList<>();
-        for (int i = 0; i < GestionBitacora.usuarios.size(); i++){ //recorrer lista de usuarios
+        for (int i = 0; i < GestionBitacora.usuarios.size(); i++) { //recorrer lista de usuarios
             unUsuario = GestionBitacora.getUsuarios().get(i); //obtener usuarios
             Log.i(tag, "USUARIOS: " + GestionBitacora.usuarios);
 
-            String CI_usuario_string= String.valueOf(CI_usuario); //Convertir int CI a String
+            String CI_usuario_string = String.valueOf(CI_usuario); //Convertir int CI a String
             Log.i(tag, "CI CONVERTIDO: " + CI_usuario_string);
             Log.i(tag, "CI getID: " + unUsuario.getCI());
 
@@ -124,13 +109,33 @@ public class ListarMateriaActivity extends ListActivity {
 
                 Log.i(tag, "MATERIAS: " + unUsuario.getMaterias());
 
-//                setListAdapter(new MateriaAdapter(this, materias));
-            }else{
+            } else {
                 Log.i(tag, "NO ENTRA");
             }
         }
         setListAdapter(new MateriaAdapter(this, materias));
     }
+//    public static class PlaceholderFragment extends Fragment {
+//
+//        private String tag = "AppConoceme";
+//
+//        public PlaceholderFragment() {
+//        }
+//
+//        @Override
+//        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//                                 Bundle savedInstanceState) {
+//            View rootView = inflater.inflate(R.layout.elementos_listar_materia, container,
+//                    false);
+//            TextView t = (TextView) rootView.findViewById(R.id.codigo_materia);
+////        t.setText("hi world.");
+////
+////        this.codigo_materia = (TextView) findViewById(R.id.codigo_materia);
+//            Log.i(tag, "CODIGOO MATERIA: " + t);
+//
+//            return rootView;
+//        }
+//    }
 
 
     public void lanzarVistaRegistrarMateria(View view) {
@@ -142,8 +147,35 @@ public class ListarMateriaActivity extends ListActivity {
 
     public void lanzarVistaListarTemas(View view) {
         //VER
+        String codigoMateria = this.codigo_materia.getText().toString();
+        if (codigoMateria.equals("")){
+            Log.i(tag, "FALLAAAAAAAAAAAAAAAA");
+        }else{
+            Log.i(tag, "El codigo de la materia que se toma es: " + codigoMateria);
+        }
+
         Intent i = new Intent(this, ListarTemasActivity.class);
-        //i.putExtra("id", (long)0);
+        i.putExtra("codigoMateria", ""+codigoMateria);
+//        i.putExtra("codigoMateria", "PRUEBA");
+
+
+//        String codigoMateria = this.codigo_materia.getText().toString();
+//        Log.i(tag, "CODIGO MATERIA: " + codigoMateria);
+//        i.putExtra("codigoMateria", ""+codigoMateria);
+
+//               String codigo = materias.get(i).getCodigo();
+//               Log.i(tag, "CODIGO: " + codigo);
+
+//                String codigoMateria = unUsuario.getMaterias().get(i).getCodigo(); ERROR: IndexOutOfBoundsException
+//                Log.i(tag, "CODIGO: " + codigoMateria);
+
+//                this.codigo_materia = (TextView) findViewById(R.id.codigo_materia);
+//                Log.i(tag, "CODIGO: " + codigo_materia);
+
+//                this.codigo_materia = (TextView) findViewById(R.id.codigo_materia);
+//                filtrarCodigoMateria();
+//                setListAdapter(new MateriaAdapter(this, materias));
+
         startActivity(i);
     }
 

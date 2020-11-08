@@ -24,6 +24,8 @@ public class ListarTemasActivity extends ListActivity {
     private ArrayList<String> names;
     private ArrayList<String> fechas;
     private TextView nombreTema;
+    private String codigo_materia = "HOLA";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,15 @@ public class ListarTemasActivity extends ListActivity {
 //        setContentView(R.layout.activity_listar_temas);
         setContentView(R.layout.activity_listar_temas);
 
+        //********************************RECIBIR CODIGO MATERIA*****************************************
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            codigo_materia = extras.getString("codigo_materia");
+            Log.i(tag, "codigo_materia EN LISTAR TEMAS: " + codigo_materia);
+        }
+
         //********************************LISTVIEW*****************************************
+
         ArrayList<Tema> temas = Tema.getTemas();
         Log.d(tag, "Cantidad de temas: " + temas.size());
 
