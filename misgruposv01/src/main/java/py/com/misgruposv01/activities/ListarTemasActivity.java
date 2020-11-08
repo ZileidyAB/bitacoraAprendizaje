@@ -29,7 +29,8 @@ public class ListarTemasActivity extends ListActivity {
     private ArrayList<String> fechas;
     private TextView nombreTema;
     private String codigo_materia;
-    private String CI_usuario;
+//    private String CI_usuario;
+    private int CI_usuario;
     private Materia unaMateria;
 
 
@@ -41,21 +42,29 @@ public class ListarTemasActivity extends ListActivity {
         setContentView(R.layout.activity_listar_temas);
 
         //********************************RECIBIR CODIGO MATERIA*****************************************
-        Bundle extras = getIntent().getExtras();
+        Bundle extras = this.getIntent().getExtras();
         if (extras != null) {
-            codigo_materia = extras.getString("codigo_materia");
-            Log.i(tag, "codigo_materia EN LISTAR TEMAS: " + codigo_materia);
+            codigo_materia = extras.getString("codigoMateria");
+            Log.i(tag, "codigoMateria EN LISTAR TEMAS: " + codigo_materia);
         }
         //********************************RECIBIR CI USUARIO*****************************************
+//        Bundle extrasCI = getIntent().getExtras();
+//        if (extrasCI != null) {
+//            CI_usuario = extras.getString("ci_usuario");
+//            Log.i(tag, "CI USUARIO EN LISTAR TEMAS: " + CI_usuario);
+//        }
         Bundle extrasCI = getIntent().getExtras();
         if (extrasCI != null) {
-            CI_usuario = extras.getString("ci_usuario");
-            Log.i(tag, "CI USUARIO EN LISTAR TEMAS: " + CI_usuario);
+            CI_usuario = extras.getInt("CI_usuario", -1);
+            Log.i(tag, "idUsuario recibido del usuario en LISTAR MATERIA: " + CI_usuario);
         }
 
         //********************************LISTVIEW*****************************************
         ArrayList<Tema> temas = new ArrayList<>();
-        Usuario unUsuario = GestionBitacora.buscarUsuario(CI_usuario); // Traer el usuario ya por su CI
+
+        String CI_usuario_string = String.valueOf(CI_usuario); //Convertir int CI a String
+        Usuario unUsuario = GestionBitacora.buscarUsuario(CI_usuario_string); // Traer el usuario ya por su CI
+
         for (int i = 0; i < unUsuario.materias.size(); i++) { //recorrer array de materia
             unaMateria = unUsuario.getMaterias().get(i);   //obtener materias
             Log.i(tag, "MATERIAS: " + unUsuario.materias); //CONTROL

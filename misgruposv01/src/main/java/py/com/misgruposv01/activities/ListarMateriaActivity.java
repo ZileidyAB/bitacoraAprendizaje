@@ -132,7 +132,7 @@ public class ListarMateriaActivity extends ListActivity {
         //VER
 //        String codigoMateria = this.codigo.getText().toString(); //ESTE ESTA TRAYENDO VACIO Y YA HICE ARRIBA:(
         if (codigoString == null ) {
-            Log.i(tag, "SUPER NULL"); //Arroja este mensaje cuando esta recibiendo el codigo NULL
+            Log.i(tag, "SUPER NULL materia"); //Arroja este mensaje cuando esta recibiendo el codigo NULL
         } else if (codigoString.equals("")) {
             Log.i(tag, "FALLAAAAAAAAAAAAAAAA"); //Arroja este mensaje cuando esta recibiendo el codigo vacio
 
@@ -141,8 +141,10 @@ public class ListarMateriaActivity extends ListActivity {
         }
 
         Intent i = new Intent(this, ListarTemasActivity.class);
-        i.putExtra("codigoMateria", "" + codigoString); //Manda el codigo a ListarTemasActivity
-        i.putExtra("CIUsuario", CI_usuario); //Manda el codigo a ListarTemasActivity
+//        i.putExtra("codigoMateria", Integer.parseInt(""+codigoString));
+        i.putExtra("codigoMateria", codigoString); //Manda el codigo a ListarTemasActivity
+        i.putExtra("CI_usuario", Integer.parseInt(""+CI_usuario)); //Manda el codigo a ListarTemasActivity
+
 
         //i.putExtra("codigoMateria", "PRUEBA"); //INTENTE ENVIAR UN HOLA COMO CODIGO Y EL OTRO NO TOMA
 
