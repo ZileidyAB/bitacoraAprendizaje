@@ -146,4 +146,19 @@ public class GestionBitacora {
     public static void setUsuarios(ArrayList<Usuario> usuarios) {
         GestionBitacora.usuarios = usuarios;
     }
+
+    public Usuario buscarUsuario(String CI) {
+        Usuario unUsuario;
+        for (int i = 0; i < usuarios.size(); i++) {
+            unUsuario = usuarios.get(i);
+            if (CI != null){
+                if (CI.equals(unUsuario.getCI())) {
+                    return unUsuario;
+                }
+            }else{
+                Log.i(tag, "SUPER NULL"); //Arroja este mensaje cuando esta recibiendo el codigo NULL
+            }
+        }
+        return null;
+    }
 }

@@ -67,6 +67,7 @@ public class Usuario {
 //        usuarios.add(usuario);
 //    }
 
+
     public int getIdUsuario() {
         return idUsuario;
     }

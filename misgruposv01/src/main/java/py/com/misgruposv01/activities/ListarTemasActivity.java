@@ -14,9 +14,13 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import py.com.misgruposv01.adapter.MateriaAdapter;
 import py.com.misgruposv01.adapter.TemaAdapter;
 import py.com.misgruposv01.R;
+import py.com.misgruposv01.datos.GestionBitacora;
+import py.com.misgruposv01.datos.Materia;
 import py.com.misgruposv01.datos.Tema;
+import py.com.misgruposv01.datos.Usuario;
 
 public class ListarTemasActivity extends ListActivity {
     private String tag = "AppConoceme";
@@ -24,14 +28,16 @@ public class ListarTemasActivity extends ListActivity {
     private ArrayList<String> names;
     private ArrayList<String> fechas;
     private TextView nombreTema;
-    private String codigo_materia = "HOLA";
+    private String codigo_materia;
+    private String CI_usuario;
+    private Materia unaMateria;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d(tag, "Inicia metodo en ListarTemasActivity.onCreate");
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_listar_temas);
         setContentView(R.layout.activity_listar_temas);
 
         //********************************RECIBIR CODIGO MATERIA*****************************************
@@ -40,13 +46,30 @@ public class ListarTemasActivity extends ListActivity {
             codigo_materia = extras.getString("codigo_materia");
             Log.i(tag, "codigo_materia EN LISTAR TEMAS: " + codigo_materia);
         }
+        //********************************RECIBIR CI USUARIO*****************************************
+        Bundle extrasCI = getIntent().getExtras();
+        if (extrasCI != null) {
+            CI_usuario = extras.getString("ci_usuario");
+            Log.i(tag, "CI USUARIO EN LISTAR TEMAS: " + CI_usuario);
+        }
 
         //********************************LISTVIEW*****************************************
+        ArrayList<Tema> temas = new ArrayList<>();
+        Usuario unUsuario = GestionBitacora.buscarUsuario(CI_usuario); // Traer el usuario ya por su CI
+        for (int i = 0; i < unUsuario.materias.size(); i++) { //recorrer array de materia
+            unaMateria = unUsuario.getMaterias().get(i);   //obtener materias
+            Log.i(tag, "MATERIAS: " + unUsuario.materias); //CONTROL
+            if (codigo_materia.equals(unaMateria.getCodigo())) { //comparar CODIGO que llegó con lo que vamos obteniendo en el array
+                temas = unaMateria.getTemas(); //obtener los temas de la materia
+                Log.i(tag, "Temas size: " + unaMateria.getTemas().size()); //CONTROL
+                Log.d(tag, "Cantidad de temas: " + temas.size()); //CONTROL
+                Log.i(tag, "TEMAS: " + unaMateria.getTemas()); //CONTROL
+            }else{
+                Log.i(tag, "NO ENTRA. NO HAY CODIGO DE MATERIA IGUAL");
+            }
+        }
+      setListAdapter(new TemaAdapter(this, temas)); //llamar adpatador de Temas
 
-        ArrayList<Tema> temas = Tema.getTemas();
-        Log.d(tag, "Cantidad de temas: " + temas.size());
-
-        setListAdapter(new TemaAdapter(this, temas));
     }
 
 //        //Evento Click
