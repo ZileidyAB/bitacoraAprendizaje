@@ -180,4 +180,11 @@ public class GestionBitacora {
         // TODO se podria lanzar una excepcion al no encontrar el usuairo
         return null;
     }
+    public static void agregarUsuario(Usuario usuario) {
+        usuarios.add( usuario );
+    }
+
+//    public static void agregarMateria(Materia unaMateria) {
+//        materias.add( unaMateria );
+//    }
 }

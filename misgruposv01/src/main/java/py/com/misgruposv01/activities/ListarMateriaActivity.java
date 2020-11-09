@@ -109,6 +109,8 @@ public class ListarMateriaActivity extends ListActivity {
     public void lanzarVistaRegistrarMateria(View view) {
         //VER
         Intent i = new Intent(this, RegistrarMateriaActivity.class);
+//        i.putExtra("CI_usuario", Integer.parseInt("" + CI_usuario)); //Manda el codigo a ListarTemasActivity
+
         //i.putExtra("id", (long)0);
         startActivity(i);
     }

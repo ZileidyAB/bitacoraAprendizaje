@@ -12,69 +12,71 @@
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="152dp"
-        android:layout_height="97dp"
+        android:layout_width="175dp"
+        android:layout_height="133dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="100dp"
         android:src="@drawable/graduarse" />
 
     <!--VER img graduarse  android:drawableLeft="@drawable/graduarse"-->
+
+    <!--FALTAN ICONOS android:drawableLeft="@drawable/"-->
+
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/titulo_registrar_materia"
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:layout_below="@+id/imageView1"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="56dp"
         android:text="@string/registrarMateria"
         android:textAlignment="center"
         android:textColor="@color/teal_700"
         android:textSize="20sp" />
 
-        <!--FALTAN ICONOS android:drawableLeft="@drawable/"-->
-
     <EditText
-        android:id="@+id/campoTexto"
+        android:id="@+id/codigo_nueva_materia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/titulo_registrar_materia"
         android:drawableLeft="@drawable/logo_codigo"
         android:layout_marginTop="26dp"
         android:hint="@string/mensaje_codigo" />
 
     <EditText
-        android:id="@+id/campoTexto1"
+        android:id="@+id/nombre_nueva_materia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/campoTexto"
+        android:layout_below="@+id/codigo_nueva_materia"
         android:drawableLeft="@drawable/logo_materia"
         android:layout_marginTop="26dp"
         android:hint="@string/mensaje_materia" />
 
-    <EditText
-        android:id="@+id/campoTexto2"
-        android:layout_width="382dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/campoTexto"
-        android:layout_marginTop="80dp" />
+<!--    <EditText-->
+<!--        android:id="@+id/linea"-->
+<!--        android:layout_width="382dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/nombre_nueva_materia"-->
+<!--        android:layout_marginTop="80dp" />-->
 
-    <EditText
-        android:id="@+id/campoTexto3"
-        android:layout_width="379dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/campoTexto"
-        android:layout_marginTop="120dp"
-        android:hint="@string/mensaje_nota"
-        android:visibility="visible" />
+<!--    <EditText-->
+<!--        android:id="@+id/notas_nueva_materia"-->
+<!--        android:layout_width="379dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/linea"-->
+<!--        android:layout_marginTop="56dp"-->
+<!--        android:hint="@string/mensaje_nota"-->
+<!--        android:visibility="visible" />-->
 
     <Button
         android:id="@+id/button1"
         android:layout_width="146dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/campoTexto3"
+        android:layout_below="@+id/nombre_nueva_materia"
         android:layout_centerInParent="true"
         android:layout_marginTop="32dp"
         android:background="@color/celeste"
+        android:onClick="crearMateria"
         android:text="@string/boton_aceptar" />
 
 </RelativeLayout>

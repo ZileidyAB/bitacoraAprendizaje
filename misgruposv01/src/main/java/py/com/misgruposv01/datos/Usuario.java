@@ -38,6 +38,13 @@ public class Usuario {
         this.contrasenhaConfirm=contrasenhaConfirm;
     }
 
+    public Usuario(String CI, String nombreApellido, String mail, String contrasenha) {
+        this.CI = CI;
+        this.nombreApellido = nombreApellido;
+        this.mail = mail;
+        this.contrasenha = contrasenha;
+    }
+
     public Usuario(String CI, String nombreApellido, String mail, String contrasenha, ArrayList materias) {
         this.CI = CI;
         this.nombreApellido = nombreApellido;
@@ -133,4 +140,5 @@ public class Usuario {
     public void setMaterias(ArrayList<Materia> materias) {
         this.materias = materias;
     }
+
 }

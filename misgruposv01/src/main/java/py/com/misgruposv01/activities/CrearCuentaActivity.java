@@ -75,12 +75,14 @@ public class CrearCuentaActivity extends Activity {
             Toast.makeText(this, "Las contraseñas no conciden", Toast.LENGTH_SHORT).show();
 
         } else {
+            Usuario usuario = new Usuario(CI, nombreApellido, email, contrasenha);
+            GestionBitacora.agregarUsuario(usuario);
 
 //            ArrayList<Usuario> listaUsuarios1 = Usuario.getUsuarios(); ANTERIOR
-            ArrayList<Usuario> listaUsuarios = GestionBitacora.getUsuarios();
-
-            Usuario usuario1 = new Usuario(CI, nombreApellido, email, contrasenha, contrasenhaConfirm);
-            listaUsuarios.add(usuario1);
+//            ArrayList<Usuario> listaUsuarios = GestionBitacora.getUsuarios();
+//
+//            Usuario usuario1 = new Usuario(CI, nombreApellido, email, contrasenha, contrasenhaConfirm);
+//            listaUsuarios.add(usuario1);
 
             Toast.makeText(this, "Usuario creado", Toast.LENGTH_SHORT).show();
             //finish();
