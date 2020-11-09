@@ -81,5 +81,16 @@
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="640dp"
+            android:layout_below="@+id/list1"
+            android:clickable="true"
+            android:onClick="lanzarVistaRegistrarMateria"
+            android:src="@drawable/anadir" />
     </TabHost>
+
 </LinearLayout>
