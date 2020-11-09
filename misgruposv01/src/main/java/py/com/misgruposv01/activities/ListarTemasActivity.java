@@ -32,6 +32,7 @@ public class ListarTemasActivity extends ListActivity {
     //    private String CI_usuario;
     private int CI_usuario;
     private Materia unaMateria;
+    private int idMateria = -1;
 
 
     @Override
@@ -41,10 +42,15 @@ public class ListarTemasActivity extends ListActivity {
         setContentView(R.layout.activity_listar_temas);
 
         //********************************RECIBIR CODIGO MATERIA*****************************************
+//        Bundle extras = this.getIntent().getExtras();
+//        if (extras != null) {
+//            codigo_materia = extras.getString("codigoMateria");
+//            Log.i(tag, "codigoMateria EN LISTAR TEMAS: " + codigo_materia);
+//        }
         Bundle extras = this.getIntent().getExtras();
         if (extras != null) {
-            codigo_materia = extras.getString("codigoMateria");
-            Log.i(tag, "codigoMateria EN LISTAR TEMAS: " + codigo_materia);
+            idMateria = extras.getInt("idMateria");
+            Log.i(tag, "codigoMateria EN LISTAR TEMAS: " + idMateria);
         }
         //********************************RECIBIR CI USUARIO*****************************************
 //        Bundle extrasCI = getIntent().getExtras();
@@ -68,7 +74,22 @@ public class ListarTemasActivity extends ListActivity {
             unaMateria = unUsuario.getMaterias().get(i);   //obtener materias
             Log.i(tag, "MATERIAS: " + unUsuario.materias); //CONTROL
             Log.i(tag, "MATERIAS: " + unaMateria.getCodigo()); //CONTROL
-            if (codigo_materia!=null) { //Agrega la validacion de que el obj codigo_materia no sea nulo para ejecutar los if
+
+            //CODIGO ANTERIOR
+//            if (codigo_materia != null) { //Agrega la validacion de que el obj codigo_materia no sea nulo para ejecutar los if
+//                if (codigo_materia.equals(unaMateria.getCodigo())) { //comparar CODIGO que llegó con lo que vamos obteniendo en el array
+//                    temas = unaMateria.getTemas(); //obtener los temas de la materia
+//                    Log.i(tag, "Temas size: " + unaMateria.getTemas().size()); //CONTROL
+//                    Log.d(tag, "Cantidad de temas: " + temas.size()); //CONTROL
+//                    Log.i(tag, "TEMAS: " + unaMateria.getTemas()); //CONTROL
+//                } else {
+//                    Log.i(tag, "NO ENTRA. NO HAY CODIGO DE MATERIA IGUAL");
+//                }
+//            }
+
+            //INTENTO
+            if ( idMateria < 0 || idMateria > (Materia.getMaterias().size()-1) ) {
+                //      if (idMateria != null) { //Agrega la validacion de que el obj codigo_materia no sea nulo para ejecutar los if
                 if (codigo_materia.equals(unaMateria.getCodigo())) { //comparar CODIGO que llegó con lo que vamos obteniendo en el array
                     temas = unaMateria.getTemas(); //obtener los temas de la materia
                     Log.i(tag, "Temas size: " + unaMateria.getTemas().size()); //CONTROL
@@ -77,10 +98,13 @@ public class ListarTemasActivity extends ListActivity {
                 } else {
                     Log.i(tag, "NO ENTRA. NO HAY CODIGO DE MATERIA IGUAL");
                 }
+//            }
             }
+
+
         }
 
-      setListAdapter(new TemaAdapter(this, temas)); //llamar adpatador de Temas
+        setListAdapter(new TemaAdapter(this, temas)); //llamar adpatador de Temas
 
     }
 

@@ -1,23 +1,15 @@
 package py.com.misgruposv01.activities;
 
-import android.app.Activity;
 import android.app.ListActivity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 
 import java.util.ArrayList;
 
@@ -26,7 +18,6 @@ import py.com.misgruposv01.adapter.MateriaAdapter;
 import py.com.misgruposv01.datos.GestionBitacora;
 import py.com.misgruposv01.datos.Materia;
 import py.com.misgruposv01.datos.Usuario;
-
 
 public class ListarMateriaActivity extends ListActivity {
     private String tag = "AppConoceme";
@@ -43,20 +34,20 @@ public class ListarMateriaActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_materia);
 
-        // Instancia del servicio LayoutInflater
-//        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        LayoutInflater inflater = getLayoutInflater();
-
-        // elementos_listar_materia.xml layout cargado (inflado) como View.
-        View view = inflater.inflate(R.layout.elementos_listar_materia, null, true);
-
-        // Obtiene una referencia al TextView del otro layout, elementos_listar_materia.xml
-        TextView codigo = (TextView) view.findViewById(R.id.codigo_materia);
-        String codigoString = codigo.getText().toString();
-
-        //Mensajes de verificacion en el LOG
-        Log.i(tag, "CODIGO RARO DE MATERIA: " + codigo);
-        Log.i(tag, "CODIGO NORMAL DE MATERIA: " + codigoString);
+//        // Instancia del servicio LayoutInflater
+////        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//        LayoutInflater inflater = getLayoutInflater();
+//
+//        // elementos_listar_materia.xml layout cargado (inflado) como View.
+//        View view = inflater.inflate(R.layout.elementos_listar_materia, null, true);
+//
+//        // Obtiene una referencia al TextView del otro layout, elementos_listar_materia.xml
+//        TextView codigo = (TextView) view.findViewById(R.id.codigo_materia);
+//        String codigoString = codigo.getText().toString();
+//
+//        //Mensajes de verificacion en el LOG
+//        Log.i(tag, "CODIGO RARO DE MATERIA: " + codigo);
+//        Log.i(tag, "CODIGO NORMAL DE MATERIA: " + codigoString);
 
         //********************************RECIBIR CI USUARIO*****************************************
         Bundle extras = getIntent().getExtras();
@@ -107,7 +98,9 @@ public class ListarMateriaActivity extends ListActivity {
             Log.i(tag, "CI getID: " + unUsuario.getCI());
 
             if (CI_usuario_string.equals(unUsuario.getCI())) { //comparar CI que llegó con lo que vamos obteniendo en el array
-
+//                if (unUsuario.materias.size() >0){
+//                    Log.i(tag, "NO HAY MATERIAS PARA ESTE ALUMNO"); //CONTROL
+//                }
 //                materias = Materia.getMaterias();
                 materias = unUsuario.getMaterias(); //Obtener las materias del usuario
                 Log.i(tag, "Materias size: " + unUsuario.materias.size()); //CONTROL
@@ -121,6 +114,18 @@ public class ListarMateriaActivity extends ListActivity {
         setListAdapter(new MateriaAdapter(this, materias)); //llamar al adaptador de Materia
     }
 
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        Toast.makeText(this, "Click en fila " + position + ". Id: " + id, Toast.LENGTH_SHORT).show();
+        Log.i(tag, "CLICCCCCCCCCCCKKKKKKKKKKK IDDDDDD "); //CONTROL
+
+        Intent i = new Intent(this, ListarTemasActivity.class);
+        i.putExtra("idMateria", Integer.parseInt("" + id));
+        i.putExtra("CI_usuario", Integer.parseInt("" + CI_usuario)); //Manda el codigo a ListarTemasActivity
+        startActivity(i);
+    }
+
+
     public void lanzarVistaRegistrarMateria(View view) {
         //VER
         Intent i = new Intent(this, RegistrarMateriaActivity.class);
@@ -129,44 +134,19 @@ public class ListarMateriaActivity extends ListActivity {
     }
 
     public void lanzarVistaListarTemas(View view) {
-        //VER
-//        String codigoMateria = this.codigo.getText().toString(); //ESTE ESTA TRAYENDO VACIO Y YA HICE ARRIBA:(
-        if (codigoString == null ) {
-            Log.i(tag, "SUPER NULL materia"); //Arroja este mensaje cuando esta recibiendo el codigo NULL
-        } else if (codigoString.equals("")) {
-            Log.i(tag, "FALLAAAAAAAAAAAAAAAA"); //Arroja este mensaje cuando esta recibiendo el codigo vacio
-
-        } else {
-            Log.i(tag, "El codigo de la materia que se toma es: " + codigoString); //Muestra el codigo //CONTROL
-        }
+//        //VER
+//        if (codigoString == null ) {
+//            Log.i(tag, "SUPER NULL materia"); //Arroja este mensaje cuando esta recibiendo el codigo NULL
+//        } else if (codigoString.equals("")) {
+//            Log.i(tag, "FALLAAAAAAAAAAAAAAAA"); //Arroja este mensaje cuando esta recibiendo el codigo vacio
+//
+//        } else {
+//            Log.i(tag, "El codigo de la materia que se toma es: " + codigoString); //Muestra el codigo //CONTROL
+//        }
 
         Intent i = new Intent(this, ListarTemasActivity.class);
-//        i.putExtra("codigoMateria", Integer.parseInt(""+codigoString));
-        i.putExtra("codigoMateria", codigoString); //Manda el codigo a ListarTemasActivity
-        i.putExtra("CI_usuario", Integer.parseInt(""+CI_usuario)); //Manda el codigo a ListarTemasActivity
-
-
-        //i.putExtra("codigoMateria", "PRUEBA"); //INTENTE ENVIAR UN HOLA COMO CODIGO Y EL OTRO NO TOMA
-
-
-        //INTENTOS DE OBTENER CODIGO DE LA MATERIA DE DIFERENTES FORMAS
-//        String codigoMateria = this.codigo_materia.getText().toString();
-//        Log.i(tag, "CODIGO MATERIA: " + codigoMateria);
-//        i.putExtra("codigoMateria", ""+codigoMateria);
-
-//               String codigo = materias.get(i).getCodigo();
-//               Log.i(tag, "CODIGO: " + codigo);
-
-//                String codigoMateria = unUsuario.getMaterias().get(i).getCodigo(); ERROR: IndexOutOfBoundsException
-//                Log.i(tag, "CODIGO: " + codigoMateria);
-
-//                this.codigo_materia = (TextView) findViewById(R.id.codigo_materia);
-//                Log.i(tag, "CODIGO: " + codigo_materia);
-
-//                this.codigo_materia = (TextView) findViewById(R.id.codigo_materia);
-//                filtrarCodigoMateria();
-//                setListAdapter(new MateriaAdapter(this, materias));
-
+//        i.putExtra("codigoMateria", codigoString); //Manda el codigo a ListarTemasActivity
+        i.putExtra("CI_usuario", Integer.parseInt("" + CI_usuario)); //Manda el codigo a ListarTemasActivity
         startActivity(i);
     }
 
