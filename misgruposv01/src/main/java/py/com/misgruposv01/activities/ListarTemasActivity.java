@@ -67,6 +67,7 @@ public class ListarTemasActivity extends ListActivity {
         for (int i = 0; i < unUsuario.materias.size(); i++) { //recorrer array de materia
             unaMateria = unUsuario.getMaterias().get(i);   //obtener materias
             Log.i(tag, "MATERIAS: " + unUsuario.materias); //CONTROL
+            Log.i(tag, "MATERIAS: " + unaMateria.getCodigo()); //CONTROL
             if (codigo_materia!=null) { //Agrega la validacion de que el obj codigo_materia no sea nulo para ejecutar los if
                 if (codigo_materia.equals(unaMateria.getCodigo())) { //comparar CODIGO que llegó con lo que vamos obteniendo en el array
                     temas = unaMateria.getTemas(); //obtener los temas de la materia
