@@ -34,21 +34,6 @@ public class ListarMateriaActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_materia);
 
-//        // Instancia del servicio LayoutInflater
-////        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//        LayoutInflater inflater = getLayoutInflater();
-//
-//        // elementos_listar_materia.xml layout cargado (inflado) como View.
-//        View view = inflater.inflate(R.layout.elementos_listar_materia, null, true);
-//
-//        // Obtiene una referencia al TextView del otro layout, elementos_listar_materia.xml
-//        TextView codigo = (TextView) view.findViewById(R.id.codigo_materia);
-//        String codigoString = codigo.getText().toString();
-//
-//        //Mensajes de verificacion en el LOG
-//        Log.i(tag, "CODIGO RARO DE MATERIA: " + codigo);
-//        Log.i(tag, "CODIGO NORMAL DE MATERIA: " + codigoString);
-
         //********************************RECIBIR CI USUARIO*****************************************
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -98,9 +83,6 @@ public class ListarMateriaActivity extends ListActivity {
             Log.i(tag, "CI getID: " + unUsuario.getCI());
 
             if (CI_usuario_string.equals(unUsuario.getCI())) { //comparar CI que llegó con lo que vamos obteniendo en el array
-//                if (unUsuario.materias.size() >0){
-//                    Log.i(tag, "NO HAY MATERIAS PARA ESTE ALUMNO"); //CONTROL
-//                }
 //                materias = Materia.getMaterias();
                 materias = unUsuario.getMaterias(); //Obtener las materias del usuario
                 Log.i(tag, "Materias size: " + unUsuario.materias.size()); //CONTROL
@@ -117,36 +99,17 @@ public class ListarMateriaActivity extends ListActivity {
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         Toast.makeText(this, "Click en fila " + position + ". Id: " + id, Toast.LENGTH_SHORT).show();
-        Log.i(tag, "CLICCCCCCCCCCCKKKKKKKKKKK IDDDDDD "); //CONTROL
 
         Intent i = new Intent(this, ListarTemasActivity.class);
-        i.putExtra("idMateria", Integer.parseInt("" + id));
+        i.putExtra("posicionMateria", Integer.parseInt("" + position));
         i.putExtra("CI_usuario", Integer.parseInt("" + CI_usuario)); //Manda el codigo a ListarTemasActivity
         startActivity(i);
     }
-
 
     public void lanzarVistaRegistrarMateria(View view) {
         //VER
         Intent i = new Intent(this, RegistrarMateriaActivity.class);
         //i.putExtra("id", (long)0);
-        startActivity(i);
-    }
-
-    public void lanzarVistaListarTemas(View view) {
-//        //VER
-//        if (codigoString == null ) {
-//            Log.i(tag, "SUPER NULL materia"); //Arroja este mensaje cuando esta recibiendo el codigo NULL
-//        } else if (codigoString.equals("")) {
-//            Log.i(tag, "FALLAAAAAAAAAAAAAAAA"); //Arroja este mensaje cuando esta recibiendo el codigo vacio
-//
-//        } else {
-//            Log.i(tag, "El codigo de la materia que se toma es: " + codigoString); //Muestra el codigo //CONTROL
-//        }
-
-        Intent i = new Intent(this, ListarTemasActivity.class);
-//        i.putExtra("codigoMateria", codigoString); //Manda el codigo a ListarTemasActivity
-        i.putExtra("CI_usuario", Integer.parseInt("" + CI_usuario)); //Manda el codigo a ListarTemasActivity
         startActivity(i);
     }
 

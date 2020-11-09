@@ -29,7 +29,6 @@ public class ListarTemasActivity extends ListActivity {
     private ArrayList<String> fechas;
     private TextView nombreTema;
     private String codigo_materia;
-    //    private String CI_usuario;
     private int CI_usuario;
     private Materia unaMateria;
     private int idMateria = -1;
@@ -42,22 +41,13 @@ public class ListarTemasActivity extends ListActivity {
         setContentView(R.layout.activity_listar_temas);
 
         //********************************RECIBIR CODIGO MATERIA*****************************************
-//        Bundle extras = this.getIntent().getExtras();
-//        if (extras != null) {
-//            codigo_materia = extras.getString("codigoMateria");
-//            Log.i(tag, "codigoMateria EN LISTAR TEMAS: " + codigo_materia);
-//        }
         Bundle extras = this.getIntent().getExtras();
         if (extras != null) {
-            idMateria = extras.getInt("idMateria");
+            idMateria = extras.getInt("posicionMateria");
             Log.i(tag, "codigoMateria EN LISTAR TEMAS: " + idMateria);
         }
+
         //********************************RECIBIR CI USUARIO*****************************************
-//        Bundle extrasCI = getIntent().getExtras();
-//        if (extrasCI != null) {
-//            CI_usuario = extras.getString("ci_usuario");
-//            Log.i(tag, "CI USUARIO EN LISTAR TEMAS: " + CI_usuario);
-//        }
         Bundle extrasCI = getIntent().getExtras();
         if (extrasCI != null) {
             CI_usuario = extras.getInt("CI_usuario", -1);
@@ -69,43 +59,26 @@ public class ListarTemasActivity extends ListActivity {
 
         String CI_usuario_string = String.valueOf(CI_usuario); //Convertir int CI a String
         Usuario unUsuario = GestionBitacora.buscarUsuario(CI_usuario_string); // Traer el usuario ya por su CI
-
-        for (int i = 0; i < unUsuario.materias.size(); i++) { //recorrer array de materia
-            unaMateria = unUsuario.getMaterias().get(i);   //obtener materias
-            Log.i(tag, "MATERIAS: " + unUsuario.materias); //CONTROL
-            Log.i(tag, "MATERIAS: " + unaMateria.getCodigo()); //CONTROL
-
-            //CODIGO ANTERIOR
-//            if (codigo_materia != null) { //Agrega la validacion de que el obj codigo_materia no sea nulo para ejecutar los if
-//                if (codigo_materia.equals(unaMateria.getCodigo())) { //comparar CODIGO que llegó con lo que vamos obteniendo en el array
-//                    temas = unaMateria.getTemas(); //obtener los temas de la materia
-//                    Log.i(tag, "Temas size: " + unaMateria.getTemas().size()); //CONTROL
-//                    Log.d(tag, "Cantidad de temas: " + temas.size()); //CONTROL
-//                    Log.i(tag, "TEMAS: " + unaMateria.getTemas()); //CONTROL
-//                } else {
-//                    Log.i(tag, "NO ENTRA. NO HAY CODIGO DE MATERIA IGUAL");
-//                }
-//            }
-
-            //INTENTO
-            if ( idMateria < 0 || idMateria > (Materia.getMaterias().size()-1) ) {
-                //      if (idMateria != null) { //Agrega la validacion de que el obj codigo_materia no sea nulo para ejecutar los if
-                if (codigo_materia.equals(unaMateria.getCodigo())) { //comparar CODIGO que llegó con lo que vamos obteniendo en el array
-                    temas = unaMateria.getTemas(); //obtener los temas de la materia
-                    Log.i(tag, "Temas size: " + unaMateria.getTemas().size()); //CONTROL
-                    Log.d(tag, "Cantidad de temas: " + temas.size()); //CONTROL
-                    Log.i(tag, "TEMAS: " + unaMateria.getTemas()); //CONTROL
-                } else {
-                    Log.i(tag, "NO ENTRA. NO HAY CODIGO DE MATERIA IGUAL");
-                }
-//            }
-            }
-
-
-        }
-
+        Log.i(tag, "Usuario logueado: " + unUsuario.getNombreApellido()); //CONTROL
+        unaMateria = unUsuario.getMaterias().get(idMateria);   //obtener materias
+        Log.i(tag, "Materia seleccionada por id: " + unaMateria.getNombre()); //CONTROL
+        temas = unaMateria.getTemas(); //obtener los temas de la materia
+        Log.i(tag, "Temas size: " + unaMateria.getTemas().size()); //CONTROL
+        Log.d(tag, "Cantidad de temas: " + temas.size()); //CONTROL
+        Log.i(tag, "TEMAS: " + unaMateria.getTemas()); //CONTROL
         setListAdapter(new TemaAdapter(this, temas)); //llamar adpatador de Temas
+    }
 
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        Toast.makeText(this, "Click en fila " + position + ". Id: " + id, Toast.LENGTH_SHORT).show();
+
+        Log.i(tag, "ENTRA A MENU TEMA PRINCIPAL");
+        Intent i = new Intent(this, MenuTemaPrincipalActivity.class);
+        //Arreglar
+        i.putExtra("idMateria", Integer.parseInt("" + position));
+        i.putExtra("CI_usuario", Integer.parseInt("" + CI_usuario)); //Manda el codigo a ListarTemasActivity
+        startActivity(i);
     }
 
 //        //Evento Click
@@ -131,25 +104,5 @@ public class ListarTemasActivity extends ListActivity {
         //i.putExtra("id", (long)0);
         startActivity(i);
     }
-
-    public void lanzarVistaMenuTemasPrincipal(View view) {
-        Log.i(tag, "ENTRA A MENU TEMA PRINCIPAL");
-        Intent i = new Intent(this, MenuTemaPrincipalActivity.class);
-        //i.putExtra("id", (long)0);
-        startActivity(i);
-
-//        this.nombreTema = (TextView) findViewById(R.id.nombre_tema);
-//        String nombreTema = this.nombreTema.getText().toString();
-//        Log.i(tag, "Nombre:" + nombreTema); //Ver si trae el nombre
-//
-//        if (nombreTema.equals("")) {
-//            Log.i(tag, "No existe el nombre del tema");
-//        } else {
-//            TextView nombreElemento = (TextView) view.findViewById(R.id.titulo_tema);
-//            Log.i(tag, "Nombre:" + nombreElemento);
-//
-//            nombreElemento.setText(nombreTema);
-//        }
-
-    }
+    
 }

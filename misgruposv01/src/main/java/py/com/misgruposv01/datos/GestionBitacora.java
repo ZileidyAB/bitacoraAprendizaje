@@ -93,8 +93,8 @@ public class GestionBitacora {
         tema5 = new Tema("tm5", "Tema 5", "25/12/2020", investigaciones1, items2, ejercicios2);
 
         temas1.add(tema1);
-//        temas1.add(tema2);
-//        temas1.add(tema3);
+        temas1.add(tema2);
+        temas1.add(tema3);
         temas2.add(tema4);
         temas3.add(tema5);
 
