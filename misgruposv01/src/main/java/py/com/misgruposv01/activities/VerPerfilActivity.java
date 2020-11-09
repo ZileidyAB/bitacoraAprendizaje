@@ -1,9 +1,11 @@
 package py.com.misgruposv01.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
 import android.widget.TabHost;
 
 import py.com.misgruposv01.R;
@@ -41,6 +43,12 @@ public class VerPerfilActivity extends Activity {
         TbH.addTab(tab3);
     }
 
+    public void lanzarVistaMenuMateriaPrincipal(View view) {
+        Log.i(tag, "ENTRA A MENU TEMA PRINCIPAL");
+        Intent i = new Intent(this, MenuMateriaPrincipalActivity.class);
+        //i.putExtra("id", (long)0);
+        startActivity(i);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 

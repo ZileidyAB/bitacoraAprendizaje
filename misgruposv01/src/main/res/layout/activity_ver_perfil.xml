@@ -18,89 +18,77 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical">
 
-    <TabWidget
-        android:id="@android:id/tabs"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"></TabWidget>
-
-    <FrameLayout
+        <FrameLayout
         android:id="@android:id/tabcontent"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="296dp"
-        android:layout_height="249dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="21dp"
-        android:src="@drawable/libros" />
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="296dp"
+                android:layout_height="249dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="21dp"
+                android:src="@drawable/libros" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_below="@+id/imageView1"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="18dp"
-        android:text="@string/boton_datosUsuario"
-        android:textAlignment="center"
-        android:textColor="@color/teal_700"
-        android:textSize="20sp" />
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_below="@+id/imageView1"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="18dp"
+                android:text="@string/boton_crearCuenta"
+                android:textAlignment="center"
+                android:textColor="@color/teal_700"
+                android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/campoTexto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="26dp"
-        android:drawableLeft="@drawable/logo_ci"
-        android:hint="@string/mensaje_ci" />
+            <EditText
+                android:id="@+id/CI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView1"
+                android:layout_marginTop="-6dp"
+                android:drawableLeft="@drawable/logo_usuario"
+                android:hint="CI" />
 
-    <EditText
-        android:id="@+id/campoTexto1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/campoTexto"
-        android:layout_marginTop="10dp"
-        android:drawableLeft="@drawable/logo_usuario"
-        android:hint="@string/mensaje_nombre" />
+            <EditText
+                android:id="@+id/nombreApellido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/CI"
+                android:layout_marginTop="1dp"
+                android:drawableLeft="@drawable/logo_usuario"
+                android:hint="@string/mensaje_nombreCuenta" />
 
-    <EditText
-        android:id="@+id/campoTexto2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/campoTexto1"
-        android:layout_marginTop="10dp"
-        android:drawableLeft="@drawable/logo_email"
-        android:hint="@string/mensaje_email" />
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nombreApellido"
+                android:layout_marginTop="1dp"
+                android:drawableLeft="@drawable/logo_email"
+                android:hint="@string/mensaje_emailCuenta" />
 
-    <EditText
-        android:id="@+id/campoTexto3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/campoTexto2"
-        android:layout_marginTop="10dp"
-        android:drawableLeft="@drawable/logo_contrasenha"
-        android:hint="@string/mensaje_contrasenha" />
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="146dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/contrasenhaConfirm"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="32dp"
+                android:background="@color/celeste"
+                android:onClick="lanzarVistaMenuMateriaPrincipal"
+                android:text="@string/boton_aceptar" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="146dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/campoTexto3"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="32dp"
-        android:background="@color/celeste"
-        android:text="@string/boton_aceptar" />
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"></TabWidget>
 
-    </FrameLayout>
-    </LinearLayout>
+        </FrameLayout>
+
     </TabHost>
 
 </RelativeLayout>

@@ -19,7 +19,9 @@ public class Tema {
 //        temas.add(new Tema("mates", "Matematicas", "09/07/2018"));
 //        temas.add(new Tema("comun", "Comunicacion", "11/06/2019"));
 //    }
-
+public static void agregarTema( Tema unTema ) {
+    temas.add( unTema );
+}
     public Tema(String codigo, String nombre, String fecha) {
         this.codigo = codigo;
         this.nombre = nombre;

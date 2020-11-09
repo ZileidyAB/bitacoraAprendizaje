@@ -20,7 +20,7 @@
 
     <!--VER img graduarse  android:drawableLeft="@drawable/graduarse"-->
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/titulo_tema"
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:layout_below="@+id/imageView1"
@@ -34,45 +34,45 @@
     <!--FALTAN ICONOS android:drawableLeft="@drawable/"-->
 
     <EditText
-        android:id="@+id/campoTexto"
+        android:id="@+id/codigo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/titulo_tema"
         android:drawableLeft="@drawable/logo_codigo"
         android:layout_marginTop="26dp"
         android:hint="@string/mensaje_codigoTema" />
 
     <EditText
-        android:id="@+id/campoTexto1"
+        android:id="@+id/nombre_tema"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/campoTexto"
+        android:layout_below="@+id/codigo"
         android:drawableLeft="@drawable/logo_tema"
         android:layout_marginTop="26dp"
         android:hint="@string/mensaje_Tema" />
 
     <EditText
-        android:id="@+id/editTextDate1"
+        android:id="@+id/fecha"
         style="@style/Widget.AppCompat.AutoCompleteTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/campoTexto1"
+        android:layout_below="@+id/nombre_tema"
         android:drawableLeft="@drawable/logo_calendario"
         android:ems="10"
         android:inputType="date" />
 
     <EditText
-        android:id="@+id/campoTexto2"
+        android:id="@+id/vacio"
         android:layout_width="382dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextDate1"
+        android:layout_below="@+id/fecha"
         android:layout_marginTop="-4dp" />
 
     <EditText
-        android:id="@+id/campoTexto3"
+        android:id="@+id/nota"
         android:layout_width="379dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/campoTexto2"
+        android:layout_below="@+id/vacio"
         android:layout_marginTop="-9dp"
         android:hint="@string/mensaje_notaTema"
         android:visibility="visible" />
@@ -81,7 +81,7 @@
         android:id="@+id/button1"
         android:layout_width="146dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/campoTexto2"
+        android:layout_below="@+id/nota"
         android:layout_centerInParent="true"
         android:layout_marginTop="62dp"
         android:background="@color/celeste"

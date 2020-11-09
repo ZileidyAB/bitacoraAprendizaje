@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class GestionBitacora {
 
     public static ArrayList<Usuario> usuarios = new ArrayList<>();
+    private static Usuario usuarioLogueado;
 
     public static Usuario usuario1;
     public static Usuario usuario2;
@@ -159,6 +160,24 @@ public class GestionBitacora {
                 Log.i(tag, "SUPER NULL usuario"); //Arroja este mensaje cuando esta recibiendo el codigo NULL
             }
         }
+        return null;
+    }
+
+    public static void setUsuarioLogueado() {
+        usuarioLogueado = usuario1;
+    }
+
+    public static Usuario getUsuarioLogueado() {
+        return usuarioLogueado;
+    }
+
+    public static Usuario getUsuario(String email ) {
+        for( Usuario usuario : usuarios) {
+            if ( email.equals(usuario.getMail()) ){
+                return usuario;
+            }
+        }
+        // TODO se podria lanzar una excepcion al no encontrar el usuairo
         return null;
     }
 }
