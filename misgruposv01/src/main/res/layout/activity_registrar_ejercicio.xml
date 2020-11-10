@@ -109,7 +109,7 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="32dp"
         android:background="@color/celeste"
-        android:onClick="crearMateria"
+        android:onClick="registrarEjercicio"
         android:text="@string/boton_aceptar" />
 
 </RelativeLayout>

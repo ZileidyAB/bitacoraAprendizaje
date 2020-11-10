@@ -27,6 +27,13 @@ public class Ejercicio {
         this.porcLogrado = porcLogrado;
     }
 
+    public Ejercicio(String codigo, String tiempoDedicado, String experiencia, String dudas) {
+        this.codigo = codigo;
+        this.tiempoDedicado = tiempoDedicado;
+        this.experiencia = experiencia;
+        this.dudas = dudas;
+    }
+
     public int getId() {
         return id;
     }

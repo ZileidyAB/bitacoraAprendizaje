@@ -66,7 +66,7 @@ public class ListarEjercicioActivity extends ListActivity {
         Log.i(tag, "Materia seleccionada por id: " + unaMateria.getNombre()); //CONTROL
 
         unTema = unaMateria.getTemas().get(idTema);   //obtener materias
-        Log.i(tag, "Materia seleccionada por id: " + unTema.getNombre()); //CONTROL
+        Log.i(tag, "Tema seleccionado por id: " + unTema.getNombre()); //CONTROL
 
         //ejerciciossssssssssssssssssssss
         ejercicios = unTema.getEjercicios(); //obtener los temas de la materia
