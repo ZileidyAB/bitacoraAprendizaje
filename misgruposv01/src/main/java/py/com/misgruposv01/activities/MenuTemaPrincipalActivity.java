@@ -94,9 +94,22 @@ public class MenuTemaPrincipalActivity extends Activity {
         Log.i(tag, "Posicion Seleccionada Tema: " + idTema); //CONTROL
 
         startActivity(i);
-
     }
 
+    public void lanzarVistaSubmenuInvestigacion(View view) {
+        Intent i = new Intent(this, SubmenuInvestigacionActivity.class);
+
+        i.putExtra("posicionSeleccionadaMateria", Integer.parseInt("" + idMateria));
+        i.putExtra("CI_usuario", Integer.parseInt("" + CI_usuario)); //Manda el codigo a ListarTemasActivity
+        i.putExtra("posicionSeleccionadaTema", Integer.parseInt("" + idTema));
+
+        Log.d(tag, "*************************MANDAR DATOS EN MENU TEMA PRINCIPAL ACTIVITY*************************"); //CONTROL
+        Log.i(tag, "Posicion Seleccionada Materia" + idMateria); //CONTROL
+        Log.d(tag, "CI_usuario" + CI_usuario); //CONTROL
+        Log.i(tag, "Posicion Seleccionada Tema: " + idTema); //CONTROL
+
+        startActivity(i);
+    }
 
     //    public void lanzarVistaConocimiento(View view){
 //        Intent i = new Intent(this, ConocimientoActivity.class);
@@ -109,12 +122,14 @@ public class MenuTemaPrincipalActivity extends Activity {
 //        //i.putExtra("id", (long)0);
 //        startActivity(i);
 //    }
+
 //    public void lanzarVistaInvestigacion(View view){
 //        //VER
 //        Intent i = new Intent(this, InvestigacionSesionActivity.class);
 //        //i.putExtra("id", (long)0);
 //        startActivity(i);
 //    }
+
     public void lanzarVistaItem(View view) {
         Log.i(tag, "ENTRA A MENU TEMA PRINCIPAL");
         Intent i = new Intent(this, ListarItemActivity.class);

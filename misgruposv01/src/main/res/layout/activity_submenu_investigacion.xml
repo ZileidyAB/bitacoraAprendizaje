@@ -8,15 +8,15 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:visibility="visible"
-    tools:context=".activities.MenuTemaPrincipalActivity">
+    tools:context=".activities.SubmenuInvestigacionActivity">
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="310dp"
-        android:layout_height="272dp"
+        android:layout_width="212dp"
+        android:layout_height="248dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="21dp"
-        android:src="@drawable/leyendo" />
+        android:src="@drawable/advertencia" />
 
     <!--    <EditText-->
     <!--        android:id="@+id/text1"-->
@@ -28,19 +28,16 @@
     <!--        android:ems="10"-->
     <!--        android:inputType="textPersonName" />-->
 
-
-    <!--Hace falta estirar el nombreTema?-->
-
     <View
         android:id="@+id/divider1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/imageView1"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="32dp"
         android:background="@android:color/darker_gray" />
 
     <TextView
-        android:id="@+id/titulo_tema"
+        android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/divider1"
@@ -51,17 +48,16 @@
         android:textColor="@color/teal_700"
         android:textSize="20sp" />
 
-
     <Button
         android:id="@+id/button1"
         android:layout_width="147dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/titulo_tema"
+        android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:background="@color/celeste"
-        android:onClick="lanzarVistaSubmenuItem"
-        android:text="@string/boton_Items" />
+        android:onClick="lanzarVistaListarInvestigacion"
+        android:text="@string/boton_listaEjercicio" />
 
     <Button
         android:id="@+id/button2"
@@ -71,19 +67,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:background="@color/celeste"
-        android:onClick="lanzarVistaSubmenuEjercicio"
-        android:text="@string/boton_Ejercicio" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="146dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button2"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="32dp"
-        android:background="@color/celeste"
-        android:onClick="lanzarVistaSubmenuInvestigacion"
-        android:text="@string/boton_Investigacion" />
-
+        android:onClick="lanzarVistaRegistrarInvestigacion"
+        android:text="@string/boton_registrarEjercicio" />
 
 </RelativeLayout>

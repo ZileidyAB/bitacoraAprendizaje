@@ -35,6 +35,9 @@
         <activity android:name=".activities.SubmenuItemActivity"/>
         <activity android:name=".activities.TemasPendientesActivity" />
         <activity android:name=".activities.VerPerfilActivity" />
+        <activity android:name=".activities.SubmenuInvestigacionActivity"/>
+        <activity android:name=".activities.ListarInvestigacionActivity"/>
+        <activity android:name=".activities.RegistrarInvestigacionActivity"/>
 
         <activity android:name=".MainActivity" />
 
