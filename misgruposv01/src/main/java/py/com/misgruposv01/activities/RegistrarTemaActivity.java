@@ -22,7 +22,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import py.com.misgruposv01.R;
 import py.com.misgruposv01.datos.GestionBitacora;
+import py.com.misgruposv01.datos.Materia;
 import py.com.misgruposv01.datos.Tema;
+import py.com.misgruposv01.datos.Usuario;
 
 
 @RequiresApi(api = Build.VERSION_CODES.O)
@@ -33,8 +35,10 @@ public class RegistrarTemaActivity extends AppCompatActivity {
     private EditText campoNombre;
     private EditText campoFecha;
     private EditText campoNota;
-
+    private int CI_usuario = -1;
     private int idTema = -1;
+    private int idMateria = -1;
+    private Materia unaMateria;
     private boolean modoEdicion = false;
 //se declara las variables para fecha
     private int mYearIni, mMonthIni, mDayIni, sYearIni, sMonthIni, sDayIni;
@@ -49,26 +53,34 @@ public class RegistrarTemaActivity extends AppCompatActivity {
         campoCodigo = (EditText) findViewById(R.id.codigo);
         campoNombre = (EditText) findViewById(R.id.nombre_tema);
         campoFecha = (EditText) findViewById(R.id.fecha);
-        campoNota = (EditText) findViewById(R.id.nota);
+
         sMonthIni = C.get(Calendar.MONTH);
         sDayIni = C.get(Calendar.DAY_OF_MONTH);
         sYearIni = C.get(Calendar.YEAR);
         t1 = (EditText) findViewById(R.id.fecha);
 
-        //********************************Editar*****************************************
-        // Verificamos si nos llamaron para editar algun grupo
+//        //********************************Editar*****************************************
+//        // Verificamos si nos llamaron para editar algun grupo
+//        Bundle extras = getIntent().getExtras();
+//        if (extras != null) {
+//            idTema = extras.getInt("idTema", -1);
+//            if (idTema != -1) {
+//                modoEdicion = true;
+//                campoNombre.setText(GestionBitacora.temas1.get(idTema).getNombre());
+//                campoCodigo.setText(GestionBitacora.temas1.get(idTema).getCodigo());
+//                campoFecha.setText(GestionBitacora.temas1.get(idTema).getFecha());
+//                // campoNota.setText( GestionBitacora.temas1.get( idTema).getNota() );
+//                //boton.setText( "Editar Grupo" );
+//            }
+//        }
+
+        //********************************RECIBIR CI USUARIO*****************************************
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            idTema = extras.getInt("idTema", -1);
-            if (idTema != -1) {
-                modoEdicion = true;
-                campoNombre.setText(GestionBitacora.temas1.get(idTema).getNombre());
-                campoCodigo.setText(GestionBitacora.temas1.get(idTema).getCodigo());
-                campoFecha.setText(GestionBitacora.temas1.get(idTema).getFecha());
-                // campoNota.setText( GestionBitacora.temas1.get( idTema).getNota() );
-                //boton.setText( "Editar Grupo" );
-            }
+            CI_usuario = extras.getInt("CI_usuario", -1);
+            Log.i(tag, "idUsuario recibido del usuario en LISTAR MATERIA: " + CI_usuario);
         }
+
 //********************************Esto creo no va acá*****************************************
         t1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,38 +123,41 @@ public class RegistrarTemaActivity extends AppCompatActivity {
         // Verificamos si nos llamaron para editar algun grupo
 
 
-        ///public void crearGrupo(View view) { // para boton
-        public void crearGrupo() { // para boton
+        public void crearTema(View boton) { // para boton
+        //public void crearTema() { // para boton
             String codigo = campoCodigo.getText().toString();
             String nombre = campoNombre.getText().toString();
             String fecha = campoFecha.getText().toString();
+            Log.i(tag, "Codigo de nuevo tema: " + codigo);
+            Log.i(tag, "Nombre de nuevo tema: " + nombre);
+            Log.i(tag, "Fecha: " + fecha);
 
-
-            if ( codigo.equals("") || nombre.equals("") || fecha.equals("") ) {
+            if (codigo.equals("") || nombre.equals("") || fecha.equals("")) {
                 desplegarMensajeCamposRequeridos();
-            } else {
-                if ( modoEdicion ) {
-                    Tema tema = GestionBitacora.temas1.get(idTema);
-                    tema.setNombre( nombre );
-                    tema.setCodigo( codigo );
-                    tema.setFecha( fecha );
-
-                    Intent intent = new Intent();
-                    intent.putExtra("resultado", 1);
-                    setResult(RESULT_OK, intent);
-                    finish();
+//            } else {
+//                if (modoEdicion) {
+//                    Tema tema = GestionBitacora.temas1.get(idTema);
+//                    tema.setNombre(nombre);
+//                    tema.setCodigo(codigo);
+//                    tema.setFecha(fecha);
+//
+//                    Intent intent = new Intent();
+//                    intent.putExtra("resultado", 1);
+//                    setResult(RESULT_OK, intent);
+//                    finish();
                 } else {
-                    Tema tema = new Tema ( nombre, codigo ,fecha);
-                    Tema.agregarTema( tema );
+                    String CI_usuario_string = String.valueOf(CI_usuario); //Convertir int CI a String
+                    Usuario unUsuario = GestionBitacora.buscarUsuario(CI_usuario_string); // Traer el usuario ya por su CI
+                    Log.i(tag, "Usuario logueado: " + unUsuario.getNombreApellido());
+
+                    Materia unaMateria = unUsuario.getMaterias().get(idMateria);
+                    Tema untema = new Tema(nombre, codigo, fecha);
+                    GestionBitacora.agregarTema(unaMateria, untema);
                     desplegarMensajeResgistroExitoso();
 
-                    Intent intent = new Intent();
-                    intent.putExtra("resultado", 10);
-                    setResult(RESULT_OK, intent);
-                    finish();
                 }
             }
-        }
+
 
         public void desplegarMensajeCamposRequeridos() {
             Toast toast = Toast.makeText( this, "Todos los campos son requeridos", Toast.LENGTH_SHORT);
@@ -186,26 +201,5 @@ public class RegistrarTemaActivity extends AppCompatActivity {
 //********************************Calendario*****************************************
 
 
-
-
-    //Metodo bindView para asociar una tarea a un layout
-//    public void bindView (View view, Context context, Cursor cursor){
-//    TextView codigoTema = (TextView) view.findViewById(R.id.codigo_tema);
-//        nombreElemento.setText(lista.get(posicion).getCodigo());
-//
-//    TextView nombreElemento = (TextView) view.findViewById(R.id.nombre_tema);
-//        //nombreElemento.setText(lista.get(posicion).getNombre());
-//nombreElemento.setText((cursor.getString(cursor.getColumnIntex ("nombre_tema"));
-////    TextView fechaTema = (TextView) view.findViewById(R.id.fecha);
-////        fechaTema.setText(""+lista.get(posicion).getFecha());
-//        String dateString = cursor.getString (cursor.getColumnIndex ("fecha_tema");
-//
-//        LocalDate date=LocalDate.parse(dateString.substring (0, 10));
-//
-//
-//DateTimeFormatter formato = DateTimeFormat.forPattern ("dd/MM/yyyy");
-//TextView dateView = (textView) view.findViewById(R.id.fecha);
-//fechaTema.setText (date.toString(fecha));
-//    }
 
 

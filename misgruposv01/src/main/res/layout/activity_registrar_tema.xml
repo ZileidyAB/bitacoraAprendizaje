@@ -18,7 +18,7 @@
         android:layout_marginTop="30dp"
         android:src="@drawable/temas" />
 
-    <!--VER img graduarse  android:drawableLeft="@drawable/graduarse"-->
+
     <TextView
         android:id="@+id/titulo_tema"
         android:layout_width="match_parent"
@@ -61,30 +61,31 @@
         android:ems="10"
         android:inputType="date" />
 
-    <EditText
-        android:id="@+id/vacio"
-        android:layout_width="382dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/fecha"
-        android:layout_marginTop="-4dp" />
+<!--    <EditText-->
+<!--        android:id="@+id/vacio"-->
+<!--        android:layout_width="382dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/fecha"-->
+<!--        android:layout_marginTop="-4dp" />-->
 
-    <EditText
-        android:id="@+id/nota"
-        android:layout_width="379dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/vacio"
-        android:layout_marginTop="-9dp"
-        android:hint="@string/mensaje_notaTema"
-        android:visibility="visible" />
+<!--    <EditText-->
+<!--        android:id="@+id/nota"-->
+<!--        android:layout_width="379dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/vacio"-->
+<!--        android:layout_marginTop="-9dp"-->
+<!--        android:hint="@string/mensaje_notaTema"-->
+<!--        android:visibility="visible" />-->
 
     <Button
         android:id="@+id/button1"
         android:layout_width="146dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/nota"
+        android:layout_below="@+id/fecha"
         android:layout_centerInParent="true"
         android:layout_marginTop="62dp"
         android:background="@color/celeste"
+        android:onClick="crearTema"
         android:text="@string/boton_aceptarTema" />
 
 </RelativeLayout>
