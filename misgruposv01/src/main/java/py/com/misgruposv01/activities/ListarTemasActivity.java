@@ -29,8 +29,8 @@ public class ListarTemasActivity extends ListActivity {
     private ArrayList<String> fechas;
     private TextView nombreTema;
     private String codigo_materia;
-    private int CI_usuario;
     private Materia unaMateria;
+    private int CI_usuario = -1;
     private int idMateria = -1;
 
 
@@ -115,7 +115,8 @@ public class ListarTemasActivity extends ListActivity {
     public void lanzarVistaRegistrarTema(View view) {
         //VER
         Intent i = new Intent(this, RegistrarTemaActivity.class);
-        //i.putExtra("id", (long)0);
+        i.putExtra("CI_usuario", Integer.parseInt("" + CI_usuario)); //Manda el codigo a ListarTemasActivity
+        i.putExtra("posicionSeleccionadaMateria", Integer.parseInt("" + idMateria));
         startActivity(i);
     }
 

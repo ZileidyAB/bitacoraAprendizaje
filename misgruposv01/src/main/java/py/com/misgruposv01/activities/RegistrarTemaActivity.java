@@ -20,6 +20,7 @@ import android.widget.Toast;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
+
 import py.com.misgruposv01.R;
 import py.com.misgruposv01.datos.GestionBitacora;
 import py.com.misgruposv01.datos.Materia;
@@ -40,7 +41,7 @@ public class RegistrarTemaActivity extends AppCompatActivity {
     private int idMateria = -1;
     private Materia unaMateria;
     private boolean modoEdicion = false;
-//se declara las variables para fecha
+    //se declara las variables para fecha
     private int mYearIni, mMonthIni, mDayIni, sYearIni, sMonthIni, sDayIni;
     static final int DATE_ID = 0;
     Calendar C = Calendar.getInstance();
@@ -59,6 +60,13 @@ public class RegistrarTemaActivity extends AppCompatActivity {
         sYearIni = C.get(Calendar.YEAR);
         t1 = (EditText) findViewById(R.id.fecha);
 
+        //********************************RECIBIR ID MATERIA*****************************************
+        Bundle extras = this.getIntent().getExtras();
+        if (extras != null) {
+            idMateria = extras.getInt("posicionSeleccionadaMateria");
+            Log.i(tag, "Id Materia: " + idMateria);
+        }
+
 //        //********************************Editar*****************************************
 //        // Verificamos si nos llamaron para editar algun grupo
 //        Bundle extras = getIntent().getExtras();
@@ -75,9 +83,9 @@ public class RegistrarTemaActivity extends AppCompatActivity {
 //        }
 
         //********************************RECIBIR CI USUARIO*****************************************
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            CI_usuario = extras.getInt("CI_usuario", -1);
+        Bundle extras1 = getIntent().getExtras();
+        if (extras1 != null) {
+            CI_usuario = extras1.getInt("CI_usuario", -1);
             Log.i(tag, "idUsuario recibido del usuario en LISTAR MATERIA: " + CI_usuario);
         }
 
@@ -94,7 +102,7 @@ public class RegistrarTemaActivity extends AppCompatActivity {
 
     //Se reciben los parametros
     private void colocar_fecha() {
-        t1.setText((mMonthIni + 1) + "-" + mDayIni + "-" + mYearIni+" ");
+        t1.setText((mMonthIni + 1) + "-" + mDayIni + "-" + mYearIni + " ");
     }
 
     //se guardan los datos
@@ -119,21 +127,21 @@ public class RegistrarTemaActivity extends AppCompatActivity {
         return null;
     }
 
-        //********************************Editar*****************************************
-        // Verificamos si nos llamaron para editar algun grupo
+    //********************************Editar*****************************************
+    // Verificamos si nos llamaron para editar algun grupo
 
 
-        public void crearTema(View boton) { // para boton
+    public void crearTema(View boton) { // para boton
         //public void crearTema() { // para boton
-            String codigo = campoCodigo.getText().toString();
-            String nombre = campoNombre.getText().toString();
-            String fecha = campoFecha.getText().toString();
-            Log.i(tag, "Codigo de nuevo tema: " + codigo);
-            Log.i(tag, "Nombre de nuevo tema: " + nombre);
-            Log.i(tag, "Fecha: " + fecha);
+        String codigo = campoCodigo.getText().toString();
+        String nombre = campoNombre.getText().toString();
+        String fecha = campoFecha.getText().toString();
+        Log.i(tag, "Codigo de nuevo tema: " + codigo);
+        Log.i(tag, "Nombre de nuevo tema: " + nombre);
+        Log.i(tag, "Fecha: " + fecha);
 
-            if (codigo.equals("") || nombre.equals("") || fecha.equals("")) {
-                desplegarMensajeCamposRequeridos();
+        if (codigo.equals("") || nombre.equals("") || fecha.equals("")) {
+            desplegarMensajeCamposRequeridos();
 //            } else {
 //                if (modoEdicion) {
 //                    Tema tema = GestionBitacora.temas1.get(idTema);
@@ -145,29 +153,28 @@ public class RegistrarTemaActivity extends AppCompatActivity {
 //                    intent.putExtra("resultado", 1);
 //                    setResult(RESULT_OK, intent);
 //                    finish();
-                } else {
-                    String CI_usuario_string = String.valueOf(CI_usuario); //Convertir int CI a String
-                    Usuario unUsuario = GestionBitacora.buscarUsuario(CI_usuario_string); // Traer el usuario ya por su CI
-                    Log.i(tag, "Usuario logueado: " + unUsuario.getNombreApellido());
+        } else {
+            String CI_usuario_string = String.valueOf(CI_usuario); //Convertir int CI a String
+            Usuario unUsuario = GestionBitacora.buscarUsuario(CI_usuario_string); // Traer el usuario ya por su CI
+            Log.i(tag, "Usuario logueado: " + unUsuario.getNombreApellido());
 
-                    Materia unaMateria = unUsuario.getMaterias().get(idMateria);
-                    Tema untema = new Tema(nombre, codigo, fecha);
-                    GestionBitacora.agregarTema(unaMateria, untema);
-                    desplegarMensajeResgistroExitoso();
-
-                }
-            }
-
-
-        public void desplegarMensajeCamposRequeridos() {
-            Toast toast = Toast.makeText( this, "Todos los campos son requeridos", Toast.LENGTH_SHORT);
-            toast.show();
+            Materia unaMateria = unUsuario.getMaterias().get(idMateria);
+            Tema untema = new Tema(nombre, codigo, fecha);
+            GestionBitacora.agregarTema(unaMateria, untema);
+            desplegarMensajeResgistroExitoso();
+            finish();
         }
+    }
 
-        public void desplegarMensajeResgistroExitoso() {
-            Toast toast = Toast.makeText( this, "Registro exitoso", Toast.LENGTH_SHORT);
-            toast.show();
-        }
+    public void desplegarMensajeCamposRequeridos() {
+        Toast toast = Toast.makeText(this, "Todos los campos son requeridos", Toast.LENGTH_SHORT);
+        toast.show();
+    }
+
+    public void desplegarMensajeResgistroExitoso() {
+        Toast toast = Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT);
+        toast.show();
+    }
 
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
