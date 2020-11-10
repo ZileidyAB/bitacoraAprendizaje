@@ -27,17 +27,29 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
+        android:orientation="vertical">
     <!--NO APARECE-->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/list1"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="350dp"
-        android:clickable="true"
-        android:onClick="lanzarVistaRegistrarTema"
-        android:src="@drawable/anadir" />
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/floatingActionButton"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/list1"-->
+<!--        android:layout_marginLeft="300dp"-->
+<!--        android:layout_marginTop="350dp"-->
+<!--        android:clickable="true"-->
+<!--        android:onClick="lanzarVistaRegistrarTema"-->
+<!--        android:src="@drawable/anadir" />-->
 
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/list1"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="70dp"
+            android:clickable="true"
+            android:onClick="lanzarVistaRegistrarTema"
+            android:src="@drawable/anadir" />
+</LinearLayout>
 </LinearLayout>

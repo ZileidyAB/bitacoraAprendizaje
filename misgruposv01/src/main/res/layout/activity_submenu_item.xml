@@ -62,7 +62,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:background="@color/celeste"
-        android:onClick="lanzarVistaCrearCuenta"
+        android:onClick="lanzarVistaRegistrarItem"
         android:text="@string/boton_RegistrarItem" />
 
 

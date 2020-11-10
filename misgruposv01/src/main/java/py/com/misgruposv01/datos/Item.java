@@ -75,6 +75,10 @@ public class Item {
         this.aprendido = aprendido;
     }
 
+    public static void setItems(ArrayList<Item> items) {
+        Item.items = items;
+    }
+
     public static ArrayList<Item> getItems() {
         return items;
     }
