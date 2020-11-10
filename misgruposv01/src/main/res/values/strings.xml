@@ -73,7 +73,7 @@
 
     <!-- Layout Submenu Ejercicio -->
     <string name="boton_listaEjercicio"> Ver lista </string>
-    <string name="boton_registrarEjercicio">Registrar Item</string>
+    <string name="boton_registrarEjercicio">Registrar Ejercicio </string>
 
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

@@ -32,6 +32,7 @@
         <activity android:name=".activities.RegistrarTemaActivity"/>
         <activity android:name=".activities.SubmenuItemActivity"/>
         <activity android:name=".activities.SubmenuEjercicioActivity"/>
+        <activity android:name=".activities.ListarEjercicioActivity"/>
     </application>
 
 </manifest>

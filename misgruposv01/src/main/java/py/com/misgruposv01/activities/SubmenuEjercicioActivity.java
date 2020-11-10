@@ -43,11 +43,18 @@ public class SubmenuEjercicioActivity extends Activity {
 
     }
 
-//    public void lanzarVistaSubmenuEjercicio(View view) {
-//        Intent i = new Intent(this, ListarEjercicioActivity.class);
-//        //i.putExtra("id", (long)0);
-//        startActivity(i);
-//    }
+    public void lanzarVistaListarEjercicio(View view) {
+        Intent i = new Intent(this, ListarEjercicioActivity.class);
+        i.putExtra("posicionSeleccionadaMateria", Integer.parseInt("" + idMateria));
+        i.putExtra("CI_usuario", Integer.parseInt("" + CI_usuario)); //Manda el codigo a ListarTemasActivity
+        i.putExtra("posicionSeleccionadaTema", Integer.parseInt("" + idTema));
+
+        Log.d(tag, "*************************MANDAR DATOS A LISTAR EJERCICIO*************************"); //CONTROL
+        Log.i(tag, "Posicion Seleccionada Materia" + idMateria); //CONTROL
+        Log.d(tag, "CI_usuario" + CI_usuario); //CONTROL
+        Log.i(tag, "Posicion Seleccionada Tema: " + idTema); //CONTROL
+        startActivity(i);
+    }
 //
 //    public void lanzarVistaRegistrarEjercicio(View view) {
 //        Intent i = new Intent(this, RegistrarEjercicioActivity.class);
