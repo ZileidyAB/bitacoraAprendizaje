@@ -26,6 +26,12 @@ public class Item {
         this.duda =duda;
         this.aprendido = aprendido;
     }
+    public Item (String codigo, String concepto, String descripcion, String duda){
+        this.codigo=codigo;
+        this.concepto =concepto;
+        this.descripcion =descripcion;
+        this.duda =duda;
+    }
 
     public int getId() {
         return id;

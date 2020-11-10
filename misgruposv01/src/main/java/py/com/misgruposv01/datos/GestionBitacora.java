@@ -197,8 +197,14 @@ public class GestionBitacora {
         Log.i(tag, "Tema nuevo: "+unTema.getNombre()); //Control
     }
 
+    public static void agregarItem(Tema unTema, Item unItem) {
+        unTema.getItems().add(unItem);
+        Log.i(tag, "Ejercicio nuevo: "+unItem.getCodigo()); //Control
+    }
+
     public static void agregarEjercicio(Tema unTema, Ejercicio unEjercicio) {
         unTema.getEjercicios().add(unEjercicio);
         Log.i(tag, "Ejercicio nuevo: "+unEjercicio.getCodigo()); //Control
     }
+
 }

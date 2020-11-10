@@ -70,6 +70,14 @@
     <string name="boton_ListaItem"> Ver lista </string>
     <string name="boton_RegistrarItem">Registrar Item</string>
 
+    <!-- Layout Registrar Item -->
+    <string name="titulo_registrar_item"> Registrar nuevo Item </string>
+    <string name="mensaje_codigo_item">Código</string>
+    <string name="concepto_registrar_item"> Concepto </string>
+    <string name="descripcion_registrar_item"> Descripción </string>
+    <string name="aprendido_registrar_item"> Aprendido </string>
+    <string name="duda_registrar_item"> Dudas </string>
+
     <!-- Layout Submenu Ejercicio -->
     <string name="boton_listaEjercicio"> Ver lista </string>
     <string name="boton_registrarEjercicio">Registrar Ejercicio </string>

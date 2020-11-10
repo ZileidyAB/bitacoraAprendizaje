@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,71 +12,113 @@
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="175dp"
-        android:layout_height="133dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:src="@drawable/graduarse" />
-
-    <!--VER img graduarse  android:drawableLeft="@drawable/graduarse"-->
-
-    <!--FALTAN ICONOS android:drawableLeft="@drawable/"-->
+        android:layout_width="119dp"
+        android:layout_height="101dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/documento" />
 
     <TextView
-        android:id="@+id/titulo_registrar_materia"
+        android:id="@+id/titulo_registrar_item"
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:layout_below="@+id/imageView1"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="56dp"
-        android:text="@string/registrarMateria"
+        android:layout_marginTop="25dp"
+        android:text="@string/titulo_registrar_item"
         android:textAlignment="center"
         android:textColor="@color/teal_700"
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/codigo_nueva_materia"
+        android:id="@+id/codigo_registrar_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/titulo_registrar_materia"
+        android:layout_below="@+id/titulo_registrar_item"
+        android:layout_marginTop="17dp"
         android:drawableLeft="@drawable/logo_codigo"
-        android:layout_marginTop="26dp"
-        android:hint="@string/mensaje_codigo" />
+        android:hint="@string/mensaje_codigo_item" />
 
     <EditText
-        android:id="@+id/nombre_nueva_materia"
+        android:id="@+id/concepto_registrar_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/codigo_nueva_materia"
+        android:layout_below="@+id/codigo_registrar_item"
+        android:layout_marginTop="13dp"
         android:drawableLeft="@drawable/logo_materia"
-        android:layout_marginTop="26dp"
-        android:hint="@string/mensaje_materia" />
+        android:hint="@string/experiencia_registrar_ejercicio" />
 
-    <!--    <EditText-->
-    <!--        android:id="@+id/linea"-->
-    <!--        android:layout_width="382dp"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_below="@+id/nombre_nueva_materia"-->
-    <!--        android:layout_marginTop="80dp" />-->
+    <EditText
+        android:id="@+id/descripcion_registrar_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/concepto_registrar_item"
+        android:layout_marginTop="13dp"
+        android:drawableLeft="@drawable/logo_materia"
+        android:hint="@string/descripcion_registrar_item" />
 
-    <!--    <EditText-->
-    <!--        android:id="@+id/notas_nueva_materia"-->
-    <!--        android:layout_width="379dp"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_below="@+id/linea"-->
-    <!--        android:layout_marginTop="56dp"-->
-    <!--        android:hint="@string/mensaje_nota"-->
-    <!--        android:visibility="visible" />-->
+<!--    <TextView-->
+<!--        android:id="@+id/intento"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="46dp"-->
+<!--        android:layout_below="@+id/dudas_registrar_ejercicio"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:layout_marginTop="11dp"-->
+<!--        android:text="@string/porcentajeLogrado_registrar_ejercicio"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="@color/teal_700"-->
+<!--        android:textSize="18dp" />-->
 
+<!--    <SeekBar-->
+<!--        android:id="@+id/seekBar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="20dp"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:layout_below="@+id/intento"-->
+<!--        android:max="50"-->
+<!--        android:progress="0"-->
+<!--        android:secondaryProgress="0" />-->
+
+    <EditText
+        android:id="@+id/duda_registrar_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/descripcion_registrar_item"
+        android:layout_marginTop="13dp"
+        android:drawableLeft="@drawable/logo_materia"
+        android:hint="@string/duda_registrar_item" />
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tiempoDedicado_registrar_ejercicio"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="46dp"-->
+    <!--        android:layout_below="@+id/seekBar"-->
+    <!--        android:layout_gravity="center_horizontal"-->
+    <!--        android:layout_marginTop="11dp"-->
+    <!--        android:text="@string/tiempoDedicado_registrar_ejercicio"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textColor="@color/teal_700"-->
+    <!--        android:textSize="15dp" />-->
+
+    <CheckBox
+        android:id="@+id/Aprendido_registrar_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/duda_registrar_item"
+        android:layout_marginLeft="130dp"
+        android:text="@string/aprendido_registrar_item" />
     <Button
         android:id="@+id/button1"
         android:layout_width="146dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/nombre_nueva_materia"
+        android:layout_below="@+id/Aprendido_registrar_item"
         android:layout_centerInParent="true"
         android:layout_marginTop="32dp"
         android:background="@color/celeste"
-        android:onClick="crearMateria"
+        android:onClick="registrarItem"
         android:text="@string/boton_aceptar" />
+
+
 
 </RelativeLayout>
