@@ -40,7 +40,7 @@ public class ListarTemasActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_temas);
 
-        //********************************RECIBIR CODIGO MATERIA*****************************************
+        //********************************RECIBIR ID MATERIA*****************************************
         Bundle extras = this.getIntent().getExtras();
         if (extras != null) {
             idMateria = extras.getInt("posicionMateria");
@@ -73,11 +73,16 @@ public class ListarTemasActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         Toast.makeText(this, "Click en fila " + position + ". Id: " + id, Toast.LENGTH_SHORT).show();
 
-        Log.i(tag, "ENTRA A MENU TEMA PRINCIPAL");
         Intent i = new Intent(this, MenuTemaPrincipalActivity.class);
-        //Arreglar
-        i.putExtra("idMateria", Integer.parseInt("" + position));
+
+        i.putExtra("posicionSeleccionadaMateria", Integer.parseInt("" + idMateria));
         i.putExtra("CI_usuario", Integer.parseInt("" + CI_usuario)); //Manda el codigo a ListarTemasActivity
+        i.putExtra ("posicionTema", Integer.parseInt(""+position));
+
+        Log.i(tag, "Posicion Seleccionada Materia" + idMateria); //CONTROL
+        Log.d(tag, "CI_usuario" + CI_usuario); //CONTROL
+        Log.i(tag, "Posicion Tema: " + position); //CONTROL
+
         startActivity(i);
     }
 

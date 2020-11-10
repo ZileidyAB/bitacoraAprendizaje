@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:visibility="visible"
-    tools:context=".activities.SubmenuItemActivity">
+    tools:context=".activities.SubmenuEjercicioActivity">
 
     <ImageView
         android:id="@+id/imageView1"
@@ -48,7 +48,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:background="@color/celeste"
-        android:onClick="lanzarVistaListarItem"
+        android:onClick="lanzarVistaSubmenuEjercicio"
         android:text="@string/boton_listaEjercicio" />
 
     <Button
@@ -59,7 +59,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:background="@color/celeste"
-        android:onClick="lanzarVistaCrearCuenta"
+        android:onClick="lanzarVistaRegistrarEjercicio"
         android:text="@string/boton_registrarEjercicio" />
 
 </RelativeLayout>
