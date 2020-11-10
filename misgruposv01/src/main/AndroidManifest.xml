@@ -6,16 +6,17 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="BITACORA DE APRENDIZAJE"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/bitacora_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MisGrupos2020">
-        <activity android:name=".activities.MenuPrincipalActivity">
+        <activity android:name=".activities.SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.MenuPrincipalActivity"/>
         <activity android:name=".activities.AcercaDeActivity" />
         <activity android:name=".activities.CrearCuentaActivity" />
         <activity android:name=".activities.IniciarSesionActivity" />
@@ -24,7 +25,6 @@
         <activity android:name=".activities.ListarMateriaActivity" />
         <activity android:name=".activities.ListarTemasActivity" />
         <activity android:name=".activities.MenuMateriaPrincipalActivity" />
-
         <activity android:name=".activities.MenuTemaPrincipalActivity"/>
         <activity android:name=".activities.RegistrarEjercicioActivity"/>
         <activity android:name=".activities.RegistrarItemActivity"/>
