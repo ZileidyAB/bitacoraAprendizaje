@@ -71,6 +71,10 @@
     <string name="boton_ListaItem"> Ver lista </string>
     <string name="boton_RegistrarItem">Registrar Item</string>
 
+    <!-- Layout Submenu Ejercicio -->
+    <string name="boton_listaEjercicio"> Ver lista </string>
+    <string name="boton_registrarEjercicio">Registrar Item</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
