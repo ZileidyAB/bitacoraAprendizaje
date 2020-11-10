@@ -51,7 +51,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:background="@color/celeste"
-        android:onClick="lanzarVistaItem"
+        android:onClick="lanzarVistaSubmenuItem"
         android:text="@string/boton_Items" />
 
     <Button
