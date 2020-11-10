@@ -19,20 +19,25 @@
         <activity android:name=".activities.AcercaDeActivity" />
         <activity android:name=".activities.CrearCuentaActivity" />
         <activity android:name=".activities.IniciarSesionActivity" />
-        <activity android:name=".activities.RestablecerContrasenhaActivity" />
-        <activity android:name=".activities.MenuMateriaPrincipalActivity" />
-        <activity android:name=".activities.ListarMateriaActivity" />
-        <activity android:name=".activities.VerPerfilActivity" />
-        <activity android:name=".activities.TemasPendientesActivity" />
-        <activity android:name=".activities.RegistrarMateriaActivity" />
-        <activity android:name=".activities.ListarTemasActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".activities.MenuTemaPrincipalActivity"/>
-        <activity android:name=".activities.ListarItemActivity"/>
-        <activity android:name=".activities.RegistrarTemaActivity"/>
-        <activity android:name=".activities.SubmenuItemActivity"/>
-        <activity android:name=".activities.SubmenuEjercicioActivity"/>
         <activity android:name=".activities.ListarEjercicioActivity"/>
+        <activity android:name=".activities.ListarItemActivity"/>
+        <activity android:name=".activities.ListarMateriaActivity" />
+        <activity android:name=".activities.ListarTemasActivity" />
+        <activity android:name=".activities.MenuMateriaPrincipalActivity" />
+
+        <activity android:name=".activities.MenuTemaPrincipalActivity"/>
+        <activity android:name=".activities.RegistrarEjercicioActivity"/>
+        <activity android:name=".activities.RegistrarItemActivity"/>
+        <activity android:name=".activities.RegistrarMateriaActivity" />
+        <activity android:name=".activities.RegistrarTemaActivity"/>
+        <activity android:name=".activities.RestablecerContrasenhaActivity" />
+        <activity android:name=".activities.SubmenuEjercicioActivity"/>
+        <activity android:name=".activities.SubmenuItemActivity"/>
+        <activity android:name=".activities.TemasPendientesActivity" />
+        <activity android:name=".activities.VerPerfilActivity" />
+
+        <activity android:name=".MainActivity" />
+
     </application>
 
 </manifest>

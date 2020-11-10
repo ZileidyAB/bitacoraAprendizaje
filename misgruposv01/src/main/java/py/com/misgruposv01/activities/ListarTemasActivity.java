@@ -74,6 +74,7 @@ public class ListarTemasActivity extends ListActivity {
             Log.d(tag, "Cantidad de temas: " + temas.size()); //CONTROL
             Log.i(tag, "TEMAS: " + unaMateria.getTemas()); //CONTROL
             setListAdapter(new TemaAdapter(this, temas)); //llamar adpatador de Temas
+//            listview.invalidateViews();
         }
     }
 

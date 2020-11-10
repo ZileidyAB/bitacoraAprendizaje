@@ -22,7 +22,6 @@
     <string name="mensaje_contrasenha">Contraseña</string>
     <string name="mensaje_contrasenhaConfirm">Confirmar contraseña</string>
 
-
     <!-- Layout Crear cuenta -->
     <string name="mensaje_ciCuenta">N° de CI</string>
     <string name="mensaje_nombreCuenta"> Nombre y apellido</string>
@@ -80,6 +79,19 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+
+    <!-- Layout Registrar Ejercicio -->
+    <string name="titulo_registrar_ejercicio"> Registrar nuevo Ejercicio </string>
+    <string name="mensaje_codigo_ejercicio">Código</string>
+    <string name="experiencia_registrar_ejercicio"> Experiencia </string>
+    <string name="duda_registrar_ejercicio"> Dudas </string>
+    <string name="porcentajeLogrado_registrar_ejercicio"> % logrado </string>
+    <string name="tiempoDedicado_registrar_ejercicio"> Tiempo dedicado </string>
+
+
+    <!--    <string name="mensaje_FechaTema"> Fecha</string>-->
+<!--    <string name="mensaje_notaTema"> Agregar una nota</string>-->
+<!--    <string name="boton_aceptarTema"> Aceptar </string>-->
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
