@@ -55,10 +55,10 @@ public class SubmenuEjercicioActivity extends Activity {
         Log.i(tag, "Posicion Seleccionada Tema: " + idTema); //CONTROL
         startActivity(i);
     }
-//
-//    public void lanzarVistaRegistrarEjercicio(View view) {
-//        Intent i = new Intent(this, RegistrarEjercicioActivity.class);
-//        //i.putExtra("id", (long)0);
-//        startActivity(i);
-//    }
+
+    public void lanzarVistaRegistrarEjercicio(View view) {
+        Intent i = new Intent(this, RegistrarEjercicioActivity.class);
+        //i.putExtra("id", (long)0);
+        startActivity(i);
+    }
 }
