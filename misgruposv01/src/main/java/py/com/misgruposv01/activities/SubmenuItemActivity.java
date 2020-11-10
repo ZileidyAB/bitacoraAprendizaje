@@ -17,4 +17,16 @@ public class SubmenuItemActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submenu_item);
     }
+
+    public void lanzarVistaListarItem(View view){
+        Intent i = new Intent(this, ListarItemActivity.class);
+        //i.putExtra("id", (long)0);
+        startActivity(i);
+    }
+
+//    public void lanzarVistaRegistarItem(View view){
+//        Intent i = new Intent(this, RegistrarItem.class);
+//        //i.putExtra("id", (long)0);
+//        startActivity(i);
+//        }
 }

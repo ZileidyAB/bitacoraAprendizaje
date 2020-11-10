@@ -38,7 +38,11 @@ public class MenuTemaPrincipalActivity extends Activity {
 //            nombreElemento.setText(nombreTema);
 //        }
     }
-
+    public void lanzarVistaSubmenuItem(View view){
+        Intent i = new Intent(this, SubmenuItemActivity.class);
+        //i.putExtra("id", (long)0);
+        startActivity(i);
+    }
 //    public void lanzarVistaConocimiento(View view){
 //        Intent i = new Intent(this, ConocimientoActivity.class);
 //        //i.putExtra("id", (long)0);
