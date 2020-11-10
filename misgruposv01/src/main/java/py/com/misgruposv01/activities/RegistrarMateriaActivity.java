@@ -25,6 +25,8 @@ public class RegistrarMateriaActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(tag, "Inicia metodo en RegistrarMateriaActivity.onCreate");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_materia);
 
@@ -53,14 +55,12 @@ public class RegistrarMateriaActivity extends Activity {
             Log.i(tag, "Debe rellenar TODOS los campos");
             Toast.makeText(this, "Debe rellenar TODOS los campos", Toast.LENGTH_SHORT).show();
         }else{
-            //OBSERVARRR
-
             String CI_usuario_string = String.valueOf(CI_usuario); //Convertir int CI a String
             Usuario unUsuario = GestionBitacora.buscarUsuario(CI_usuario_string); // Traer el usuario ya por su CI
             Log.i(tag, "Usuario logueado: " + unUsuario.getNombreApellido()); //CONTROL
 
-//            Materia unaMateria = new Materia (codigo, nombre);
-//            unUsuario.agregarMateria(unaMateria);
+            Materia unaMateria = new Materia (codigo, nombre);
+            GestionBitacora.agregarMateria(unUsuario, unaMateria);
 
             Toast.makeText(this, "Materia agregada", Toast.LENGTH_SHORT).show();
             finish();

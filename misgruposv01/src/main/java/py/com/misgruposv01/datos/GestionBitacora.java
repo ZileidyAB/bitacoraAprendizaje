@@ -44,7 +44,6 @@ public class GestionBitacora {
     public static ArrayList<Investigacion> investigaciones1 = new ArrayList<>();
     public static ArrayList<Investigacion> investigaciones2 = new ArrayList<>();
 
-
     public static Ejercicio ejercicio1;
     public static Ejercicio ejercicio2;
     public static Ejercicio ejercicio3;
@@ -185,6 +184,16 @@ public class GestionBitacora {
     }
 
 //    public static void agregarMateria(Materia unaMateria) {
-//        materias.add( unaMateria );
+//        listadoMaterias1.add( unaMateria );
 //    }
+
+    public static void agregarMateria(Usuario unUsuario, Materia materia) {
+        unUsuario.getMaterias().add(materia);
+        Log.i(tag, "Materia nueva: "+materia.getNombre()); //Control
+    }
+
+    public static void agregarTema(Materia unaMateria, Tema unTema) {
+        unaMateria.getTemas().add(unTema);
+        Log.i(tag, "Materia nueva: "+unTema.getNombre()); //Control
+    }
 }

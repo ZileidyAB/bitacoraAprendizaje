@@ -85,15 +85,20 @@ public class ListarMateriaActivity extends ListActivity {
             if (CI_usuario_string.equals(unUsuario.getCI())) { //comparar CI que llegó con lo que vamos obteniendo en el array
 //                materias = Materia.getMaterias();
                 materias = unUsuario.getMaterias(); //Obtener las materias del usuario
-                Log.i(tag, "Materias size: " + unUsuario.materias.size()); //CONTROL
-                Log.d(tag, "Cantidad de materias: " + materias.size()); //CONTROL
-                Log.i(tag, "MATERIAS: " + unUsuario.getMaterias()); //CONTROL
-
+                if (unUsuario.getMaterias() == null) {
+                    Log.i(tag, "NO EXISTEN MATERIAS"); //CONTROL
+                    Toast.makeText(this, "No existen Materias para este usuario", Toast.LENGTH_SHORT).show();
+                } else {
+                    Log.i(tag, "Materias size: " + unUsuario.materias.size()); //CONTROL
+                    Log.d(tag, "Cantidad de materias: " + materias.size()); //CONTROL
+                    Log.i(tag, "MATERIAS: " + unUsuario.getMaterias()); //CONTROL
+                    setListAdapter(new MateriaAdapter(this, materias)); //llamar al adaptador de Materia
+                }
             } else {
                 Log.i(tag, "NO ENTRA. NO HAY CI IGUAL");
             }
         }
-        setListAdapter(new MateriaAdapter(this, materias)); //llamar al adaptador de Materia
+//        setListAdapter(new MateriaAdapter(this, materias)); //llamar al adaptador de Materia
     }
 
     @Override
@@ -109,9 +114,7 @@ public class ListarMateriaActivity extends ListActivity {
     public void lanzarVistaRegistrarMateria(View view) {
         //VER
         Intent i = new Intent(this, RegistrarMateriaActivity.class);
-//        i.putExtra("CI_usuario", Integer.parseInt("" + CI_usuario)); //Manda el codigo a ListarTemasActivity
-
-        //i.putExtra("id", (long)0);
+        i.putExtra("CI_usuario", Integer.parseInt("" + CI_usuario)); //Manda el codigo a ListarTemasActivity
         startActivity(i);
     }
 

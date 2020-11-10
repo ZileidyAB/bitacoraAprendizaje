@@ -63,10 +63,18 @@ public class ListarTemasActivity extends ListActivity {
         unaMateria = unUsuario.getMaterias().get(idMateria);   //obtener materias
         Log.i(tag, "Materia seleccionada por id: " + unaMateria.getNombre()); //CONTROL
         temas = unaMateria.getTemas(); //obtener los temas de la materia
-        Log.i(tag, "Temas size: " + unaMateria.getTemas().size()); //CONTROL
-        Log.d(tag, "Cantidad de temas: " + temas.size()); //CONTROL
-        Log.i(tag, "TEMAS: " + unaMateria.getTemas()); //CONTROL
-        setListAdapter(new TemaAdapter(this, temas)); //llamar adpatador de Temas
+
+        //IF TEMAS ES NULL ?
+        if (unaMateria.getTemas() == null) {
+            Log.i(tag, "NO EXISTEN TEMAS"); //CONTROL
+            Toast.makeText(this, "No existen temas para esta Materia", Toast.LENGTH_SHORT).show();
+        } else {
+            Log.i(tag, "SIII EXISTEN TEMAS"); //CONTROL
+            Log.i(tag, "Temas size: " + unaMateria.getTemas().size()); //CONTROL
+            Log.d(tag, "Cantidad de temas: " + temas.size()); //CONTROL
+            Log.i(tag, "TEMAS: " + unaMateria.getTemas()); //CONTROL
+            setListAdapter(new TemaAdapter(this, temas)); //llamar adpatador de Temas
+        }
     }
 
     @Override
@@ -77,7 +85,7 @@ public class ListarTemasActivity extends ListActivity {
 
         i.putExtra("posicionSeleccionadaMateria", Integer.parseInt("" + idMateria));
         i.putExtra("CI_usuario", Integer.parseInt("" + CI_usuario)); //Manda el codigo a ListarTemasActivity
-        i.putExtra ("posicionTema", Integer.parseInt(""+position));
+        i.putExtra("posicionTema", Integer.parseInt("" + position));
 
         Log.i(tag, "Posicion Seleccionada Materia" + idMateria); //CONTROL
         Log.d(tag, "CI_usuario" + CI_usuario); //CONTROL
@@ -109,5 +117,5 @@ public class ListarTemasActivity extends ListActivity {
         //i.putExtra("id", (long)0);
         startActivity(i);
     }
-    
+
 }
