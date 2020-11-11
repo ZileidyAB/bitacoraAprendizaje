@@ -18,30 +18,25 @@
         android:layout_marginTop="21dp"
         android:src="@drawable/notas" />
 
-    <EditText
-        android:id="@+id/text1"
-        android:layout_width="395dp"
-        android:layout_height="43dp"
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
         android:layout_below="@+id/imageView1"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="0dp"
-        android:ems="10"
-        android:inputType="textPersonName" />
+        android:layout_marginTop="32dp"
+        android:background="@android:color/darker_gray" />
 
-
-    <!--Hace falta estirar el nombreTema?-->
     <TextView
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text1"
+        android:layout_below="@+id/divider1"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="25dp"
         android:text="@string/titulo_tema"
         android:textAlignment="center"
         android:textColor="@color/teal_700"
         android:textSize="20sp" />
-
 
     <Button
         android:id="@+id/button1"

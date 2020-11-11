@@ -151,11 +151,11 @@ public class GestionBitacora {
         Usuario unUsuario;
         for (int i = 0; i < usuarios.size(); i++) {
             unUsuario = usuarios.get(i);
-            if (CI != null){
+            if (CI != null) {
                 if (CI.equals(unUsuario.getCI())) {
                     return unUsuario;
                 }
-            }else{
+            } else {
                 Log.i(tag, "SUPER NULL usuario"); //Arroja este mensaje cuando esta recibiendo el codigo NULL
             }
         }
@@ -170,17 +170,18 @@ public class GestionBitacora {
         return usuarioLogueado;
     }
 
-    public static Usuario getUsuario(String email ) {
-        for( Usuario usuario : usuarios) {
-            if ( email.equals(usuario.getMail()) ){
+    public static Usuario getUsuario(String email) {
+        for (Usuario usuario : usuarios) {
+            if (email.equals(usuario.getMail())) {
                 return usuario;
             }
         }
         // TODO se podria lanzar una excepcion al no encontrar el usuairo
         return null;
     }
+
     public static void agregarUsuario(Usuario usuario) {
-        usuarios.add( usuario );
+        usuarios.add(usuario);
     }
 
 //    public static void agregarMateria(Materia unaMateria) {
@@ -189,22 +190,27 @@ public class GestionBitacora {
 
     public static void agregarMateria(Usuario unUsuario, Materia materia) {
         unUsuario.getMaterias().add(materia);
-        Log.i(tag, "Materia nueva: "+materia.getNombre()); //Control
+        Log.i(tag, "Materia nueva: " + materia.getNombre()); //Control
     }
 
     public static void agregarTema(Materia unaMateria, Tema unTema) {
         unaMateria.getTemas().add(unTema);
-        Log.i(tag, "Tema nuevo: "+unTema.getNombre()); //Control
+        Log.i(tag, "Tema nuevo: " + unTema.getNombre()); //Control
     }
 
     public static void agregarItem(Tema unTema, Item unItem) {
         unTema.getItems().add(unItem);
-        Log.i(tag, "Ejercicio nuevo: "+unItem.getCodigo()); //Control
+        Log.i(tag, "Ejercicio nuevo: " + unItem.getCodigo()); //Control
     }
 
     public static void agregarEjercicio(Tema unTema, Ejercicio unEjercicio) {
         unTema.getEjercicios().add(unEjercicio);
-        Log.i(tag, "Ejercicio nuevo: "+unEjercicio.getCodigo()); //Control
+        Log.i(tag, "Ejercicio nuevo: " + unEjercicio.getCodigo()); //Control
+    }
+
+    public static void agregarInvestigacion(Tema unTema, Investigacion unaInvestigacion) {
+        unTema.getInvestigaciones().add(unaInvestigacion);
+        Log.i(tag, "Tema nuevo: " + unaInvestigacion.getCodigo()); //Control
     }
 
 }

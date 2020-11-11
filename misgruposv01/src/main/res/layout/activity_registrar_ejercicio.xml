@@ -105,18 +105,6 @@
         android:drawableLeft="@drawable/logo_materia"
         android:hint="@string/tiempoDedicado_registrar_ejercicio" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/tiempoDedicado_registrar_ejercicio"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="46dp"-->
-<!--        android:layout_below="@+id/seekBar"-->
-<!--        android:layout_gravity="center_horizontal"-->
-<!--        android:layout_marginTop="11dp"-->
-<!--        android:text="@string/tiempoDedicado_registrar_ejercicio"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textColor="@color/teal_700"-->
-<!--        android:textSize="15dp" />-->
-
     <Button
         android:id="@+id/button1"
         android:layout_width="146dp"

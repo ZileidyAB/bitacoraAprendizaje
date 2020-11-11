@@ -57,7 +57,7 @@
         android:layout_marginTop="32dp"
         android:background="@color/celeste"
         android:onClick="lanzarVistaListarInvestigacion"
-        android:text="@string/boton_listaEjercicio" />
+        android:text="@string/boton_listaInvestigacion" />
 
     <Button
         android:id="@+id/button2"
@@ -68,6 +68,6 @@
         android:layout_marginTop="32dp"
         android:background="@color/celeste"
         android:onClick="lanzarVistaRegistrarInvestigacion"
-        android:text="@string/boton_registrarEjercicio" />
+        android:text="@string/boton_registrarInvestigacion" />
 
 </RelativeLayout>

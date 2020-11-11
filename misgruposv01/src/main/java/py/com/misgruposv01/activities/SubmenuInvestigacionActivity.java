@@ -58,7 +58,15 @@ public class SubmenuInvestigacionActivity extends Activity {
 
     public void lanzarVistaRegistrarInvestigacion(View view) {
         Intent i = new Intent(this, RegistrarInvestigacionActivity.class);
-        //i.putExtra("id", (long)0);
+
+        i.putExtra("posicionSeleccionadaMateria", Integer.parseInt("" + idMateria));
+        i.putExtra("CI_usuario", Integer.parseInt("" + CI_usuario)); //Manda el codigo a ListarTemasActivity
+        i.putExtra("posicionTema", Integer.parseInt("" + idTema));
+
+        Log.i(tag, "Posicion Seleccionada Materia" + idMateria); //CONTROL
+        Log.d(tag, "CI_usuario" + CI_usuario); //CONTROL
+        Log.i(tag, "Posicion Tema: " + idTema); //CONTROL
+
         startActivity(i);
     }
 }
