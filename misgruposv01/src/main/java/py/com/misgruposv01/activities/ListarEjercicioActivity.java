@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -70,12 +71,15 @@ public class ListarEjercicioActivity extends ListActivity {
 
         //ejerciciossssssssssssssssssssss
         ejercicios = unTema.getEjercicios(); //obtener los temas de la materia
-        Log.i(tag, "Ejercicios size: " + unTema.getEjercicios().size()); //CONTROL
-        Log.d(tag, "Cantidad de ejercicios: "+ejercicios.size());
-        Log.i(tag, "EJERCICIOS: " + unTema.getEjercicios()); //CONTROL
 
-        setListAdapter(new EjercicioAdapter(this, ejercicios)); //llamar al adaptador de Materia
-
+        if (unTema.getEjercicios() == null) {
+            Log.i(tag, "NO EXISTEN EJERCICIOS"); //CONTROL
+            Toast.makeText(this, "No existen Ejercicios dentro de este Tema", Toast.LENGTH_SHORT).show();
+        } else {
+            Log.i(tag, "Ejercicios size: " + unTema.getEjercicios().size()); //CONTROL
+            Log.d(tag, "Cantidad de ejercicios: "+ejercicios.size());
+            Log.i(tag, "EJERCICIOS: " + unTema.getEjercicios()); //CONTROL
+            setListAdapter(new EjercicioAdapter(this, ejercicios)); //llamar al adaptador de Materia
+        }
     }
-
 }

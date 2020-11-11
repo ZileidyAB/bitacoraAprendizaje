@@ -64,7 +64,6 @@ public class ListarTemasActivity extends ListActivity {
         Log.i(tag, "Materia seleccionada por id: " + unaMateria.getNombre()); //CONTROL
         temas = unaMateria.getTemas(); //obtener los temas de la materia
 
-        //IF TEMAS ES NULL ?
         if (unaMateria.getTemas() == null) {
             Log.i(tag, "NO EXISTEN TEMAS"); //CONTROL
             Toast.makeText(this, "No existen temas para esta Materia", Toast.LENGTH_SHORT).show();

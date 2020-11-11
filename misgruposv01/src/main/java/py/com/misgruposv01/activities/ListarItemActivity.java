@@ -68,14 +68,18 @@ public class ListarItemActivity extends ListActivity {
         Log.i(tag, "Materia seleccionada por id: " + unaMateria.getNombre()); //CONTROL
         unTema = unaMateria.getTemas().get(idMateria);
         items = unTema.getItems(); //obtener los temas de la materia
-        Log.i(tag, "Items size: " + unTema.getItems().size()); //CONTROL
-        Log.d(tag, "Cantidad de de Items: " + items.size()); //CONTROL
-        Log.i(tag, "ITEMS: " + unTema.getItems()); //CONTROL
 
-
-        setListAdapter(new ItemAdapter(this, items)); //llamar adaptador
+        if (unTema.getItems() == null) {
+            Log.i(tag, "NO EXISTEN ITEMS"); //CONTROL
+            Toast.makeText(this, "No existen Items dentro de este Tema", Toast.LENGTH_SHORT).show();
+        } else {
+            Log.i(tag, "SIII EXISTEN ITEMS"); //CONTROL
+            Log.i(tag, "Items size: " + unTema.getItems().size()); //CONTROL
+            Log.d(tag, "Cantidad de de Items: " + items.size()); //CONTROL
+            Log.i(tag, "ITEMS: " + unTema.getItems()); //CONTROL
+            setListAdapter(new ItemAdapter(this, items)); //llamar adaptador
+        }
     }
-
 
     protected void onListItemClick(ListView l, View v, int position, long id) {
         Toast.makeText(this, "Click en fila " + position + ". Id: " + id, Toast.LENGTH_SHORT).show();

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -72,12 +73,15 @@ public class ListarInvestigacionActivity extends ListActivity {
 
         //ejerciciossssssssssssssssssssss
         investigaciones = unTema.getInvestigaciones(); //obtener los temas de la materia
-        Log.i(tag, "Investigaciones size: " + unTema.getInvestigaciones().size()); //CONTROL
-        Log.d(tag, "Cantidad de investigaciones: "+investigaciones.size());
-        Log.i(tag, "INVESTIGACIONES: " + unTema.getInvestigaciones()); //CONTROL
 
-        setListAdapter(new InvestigacionAdapter(this, investigaciones)); //llamar al adaptador de Materia
-
+        if (unTema.getInvestigaciones() == null) {
+            Log.i(tag, "NO EXISTEN INVESTIGACIONES"); //CONTROL
+            Toast.makeText(this, "No existen Investigaciones dentro de este Tema", Toast.LENGTH_SHORT).show();
+        } else {
+            Log.i(tag, "Investigaciones size: " + unTema.getInvestigaciones().size()); //CONTROL
+            Log.d(tag, "Cantidad de investigaciones: "+investigaciones.size());
+            Log.i(tag, "INVESTIGACIONES: " + unTema.getInvestigaciones()); //CONTROL
+            setListAdapter(new InvestigacionAdapter(this, investigaciones)); //llamar al adaptador de Materia
+        }
     }
-
 }
