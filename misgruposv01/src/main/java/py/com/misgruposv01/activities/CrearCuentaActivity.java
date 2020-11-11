@@ -7,17 +7,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
+import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
-
 import py.com.misgruposv01.R;
 import py.com.misgruposv01.datos.GestionBitacora;
 import py.com.misgruposv01.datos.Usuario;
+import py.com.misgruposv01.utils.LogUtils;
 
-public class CrearCuentaActivity extends Activity {
+public class CrearCuentaActivity extends AppCompatActivity {
     private String tag = "AppConoceme";
 
     EditText editTextCI;
@@ -38,11 +39,6 @@ public class CrearCuentaActivity extends Activity {
         editTextEmail = (EditText) findViewById(R.id.email);
         editTextContrasenha = (EditText) findViewById(R.id.contrasenha);
         editTextContrasenhaConfirm = (EditText) findViewById(R.id.contrasenhaConfirm);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return true;
     }
 
     public void registrarUsuario(View boton) {
@@ -92,6 +88,33 @@ public class CrearCuentaActivity extends Activity {
             intentMenuPricipal.putExtra("CI_usuario", Integer.parseInt(""+CI));
             startActivity(intentMenuPricipal);
         }
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.crear_cuenta_menu, menu);
+        //return true;
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+
+            case R.id.item_limpiar:{
+                Log.d(LogUtils.tag, "Item seleccionado: Limpiar");
+                limpiarCampos();
+            }
+        }
+        return true;
+    }
+
+    public void limpiarCampos(){
+        editTextCI.setText("");
+        editTextNombreApellido.setText("");
+        editTextEmail.setText("");
+        editTextContrasenha.setText("");
+        editTextContrasenhaConfirm.setText("");
     }
 }
 

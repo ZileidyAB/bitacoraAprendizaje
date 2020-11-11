@@ -2,6 +2,7 @@ package py.com.misgruposv01.activities;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -10,7 +11,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
+
+import java.util.Calendar;
 
 import py.com.misgruposv01.R;
 import py.com.misgruposv01.datos.Ejercicio;
@@ -45,7 +49,28 @@ public class RegistrarEjercicioActivity extends Activity {
 //        editporcentajeLogrado = (EditText) findViewById(R.id.seekBar); //VER
         editTiempoDedidado = (EditText) findViewById(R.id.tiempoDedicado_registrar_ejercicio);
 
-        //********************************RECIBIR ID MATERIA*****************************************
+        // perform click event listener on edit text
+        editTiempoDedidado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar mcurrentTime = Calendar.getInstance();
+                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
+                int minute = mcurrentTime.get(Calendar.MINUTE);
+                TimePickerDialog mTimePicker;
+                mTimePicker = new TimePickerDialog(RegistrarEjercicioActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                        editTiempoDedidado.setText(selectedHour + ":" + selectedMinute);
+                    }
+                }, hour, minute, true);//Yes 24 hour time
+                mTimePicker.setTitle("Select Time");
+                mTimePicker.show();
+
+            }
+        });
+
+
+    //********************************RECIBIR ID MATERIA*****************************************
         Bundle extras = this.getIntent().getExtras();
         if (extras != null) {
             idMateria = extras.getInt("posicionSeleccionadaMateria");
