@@ -19,7 +19,7 @@ import py.com.misgruposv01.datos.Tema;
 import py.com.misgruposv01.datos.Usuario;
 
 public class RegistrarItemActivity extends Activity {
-    private String tag = "RegistrarEjerciciosActivity";
+    private String tag = "RegistrarItemsActivity";
     EditText editCodigoItem;
     EditText editConceptoItem;
     EditText editDescripcionItem;
@@ -41,7 +41,7 @@ public class RegistrarItemActivity extends Activity {
         editCodigoItem = (EditText) findViewById(R.id.codigo_registrar_item);
         editConceptoItem = (EditText) findViewById(R.id.concepto_registrar_item);
         editDescripcionItem = (EditText) findViewById(R.id.descripcion_registrar_item);
-     editAprendido = (CheckBox) findViewById(R.id.Aprendido_registrar_item); //VER
+//     editAprendido = (CheckBox) findViewById(R.id.Aprendido_registrar_item); //VER
         editDudaItem = (EditText) findViewById(R.id.duda_registrar_item);
 
         //********************************RECIBIR ID MATERIA*****************************************
@@ -102,7 +102,7 @@ public class RegistrarItemActivity extends Activity {
             Log.i(tag, "Tema seleccionado por id: " + unTema.getNombre()); //CONTROL
 
 //                Ejercicio unEjercicio = new Ejercicio(codigoEjercicio, experienciaEjercicio, dudasEjercicio, tiempoDedicado, AprendidoItem);
-            Item unItem = new Item(CodigoItem, ConceptoItem, DescripcionItem,DudaItem);
+            Item unItem = new Item(CodigoItem, ConceptoItem, DescripcionItem, DudaItem);
             GestionBitacora.agregarItem(unTema, unItem);
             Toast.makeText(this, "Ejercicio creado", Toast.LENGTH_SHORT).show();
             finish();
