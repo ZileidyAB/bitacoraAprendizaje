@@ -64,6 +64,8 @@ public class ListarMateriaActivity extends ListActivity {
         spec.setIndicator("PERFIL");
         pestanha.addTab(spec);
 
+        pestanha.setCurrentTab(0);
+
         pestanha.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String tabId) {

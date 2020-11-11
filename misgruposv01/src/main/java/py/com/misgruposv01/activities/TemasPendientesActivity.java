@@ -19,26 +19,38 @@ public class TemasPendientesActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temas_pendientes);
 
-        TbH = (TabHost) findViewById(R.id.tabHost); //llamar Tabhost
-        TbH.setup(); //activar TabHost
+        //********************************TABHOST*****************************************
+        //Propiedades del control
+        TabHost pestanha = (TabHost) findViewById(R.id.tabHost);
+        pestanha.setup();
 
-        TabHost.TabSpec tab1 = TbH.newTabSpec("tab1");  //aspectos de cada Tab (pestaña)
-        TabHost.TabSpec tab2 = TbH.newTabSpec("tab2");
-        TabHost.TabSpec tab3 = TbH.newTabSpec("tab3");
+        //Pestaña 1
+        TabHost.TabSpec spec = pestanha.newTabSpec("Pestaña 1");
+        spec.setContent(R.id.ejemplo1);
+        spec.setIndicator("MATERIAS");
+        pestanha.addTab(spec);
 
-        //Nombre de las pestañas
-        tab1.setIndicator("MATERIAS");    //qué queremos que aparezca en las pestañas
-        tab1.setContent(R.id.ejemplo1); //definimos el id de cada Tab (pestaña)
+        //Pestaña 2
+        spec = pestanha.newTabSpec("Pestaña 2");
+        spec.setContent(R.id.ejemplo2);
+        spec.setIndicator("PENDIENTES");
+        pestanha.addTab(spec);
 
-        tab2.setIndicator("PENDIENTES");
-        tab2.setContent(R.id.ejemplo2);
+        //Pestaña 3
+        spec = pestanha.newTabSpec("Pestaña 3");
+        spec.setContent(R.id.ejemplo3);
+        spec.setIndicator("PERFIL");
+        pestanha.addTab(spec);
 
-        tab3.setIndicator("PERFIL");
-        tab3.setContent(R.id.ejemplo3);
+        pestanha.setCurrentTab(1);
 
-        TbH.addTab(tab1); //añadimos los tabs ya programados
-        TbH.addTab(tab2);
-        TbH.addTab(tab3);
+        pestanha.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+            @Override
+            public void onTabChanged(String tabId) {
+                Log.i("AndroidTabsDemo", "Pulsada pestaña: " + tabId);
+
+            }
+        });
     }
 
     @Override
