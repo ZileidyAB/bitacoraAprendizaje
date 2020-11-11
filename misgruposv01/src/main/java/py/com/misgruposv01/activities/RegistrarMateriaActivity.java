@@ -54,17 +54,23 @@ public class RegistrarMateriaActivity extends Activity {
         if (codigo.equals("") || nombre.equals("")) {
             Log.i(tag, "Debe rellenar TODOS los campos");
             Toast.makeText(this, "Debe rellenar TODOS los campos", Toast.LENGTH_SHORT).show();
-        }else{
+        } else {
             String CI_usuario_string = String.valueOf(CI_usuario); //Convertir int CI a String
             Usuario unUsuario = GestionBitacora.buscarUsuario(CI_usuario_string); // Traer el usuario ya por su CI
             Log.i(tag, "Usuario logueado: " + unUsuario.getNombreApellido()); //CONTROL
 
-            Materia unaMateria = new Materia (codigo, nombre);
-            GestionBitacora.agregarMateria(unUsuario, unaMateria);
+            Materia unaMateria = new Materia(codigo, nombre);
+            if (unaMateria == null) {
+                Log.i(tag, "unaMATERIA null. No se puede"); //CONTROL
+            } else {
+                GestionBitacora.agregarMateria(unUsuario, unaMateria);
+                Log.i(tag, "Agregado"); //CONTROL
+                Toast.makeText(this, "Materia agregada", Toast.LENGTH_SHORT).show();
+                finish();
+                Log.i(tag, "COMPROBAR" + unUsuario.getMaterias().size()); //NO FUNCIONA
 
-            Toast.makeText(this, "Materia agregada", Toast.LENGTH_SHORT).show();
-            finish();
-
+                ;
+            }
 //            Intent i = new Intent( this, MenuMateriaPrincipalActivity.class ) ;
 //            startActivity( i );
 //            Intent intentMenuPricipal = new Intent(this, MenuMateriaPrincipalActivity.class);

@@ -189,8 +189,19 @@ public class GestionBitacora {
 //    }
 
     public static void agregarMateria(Usuario unUsuario, Materia materia) {
-        unUsuario.getMaterias().add(materia);
-        Log.i(tag, "Materia nueva: " + materia.getNombre()); //Control
+        Log.i(tag, "ENTRA ACA"); //CONTROL
+        Log.i(tag, "Usuario: " + unUsuario.getNombreApellido()); //CONTROL
+        Log.i(tag, "Materia: " + materia.getNombre()); //CONTROL
+        if (unUsuario.getMaterias() == null) {
+            Log.i(tag, "ENTRA EN EL NULL Y REGISTRA"); //CONTROL
+            ArrayList<Materia> materias = new ArrayList<>();
+            materias.add(materia);
+        } else {
+            Log.i(tag, "NOO ENTRA EN EL NULL Y REGISTRA"); //CONTROL
+            Log.i(tag, "MATERIAS: " + unUsuario.getMaterias()); //CONTROL
+            unUsuario.getMaterias().add(materia);
+            Log.i(tag, "Materia nueva: " + materia.getNombre()); //Control
+        }
     }
 
     public static void agregarTema(Materia unaMateria, Tema unTema) {
