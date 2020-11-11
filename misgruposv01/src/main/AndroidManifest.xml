@@ -8,6 +8,7 @@
         android:label="BITACORA DE APRENDIZAJE"
         android:roundIcon="@mipmap/bitacora_round"
         android:supportsRtl="true"
+
         android:theme="@style/Theme.MisGrupos2020">
         <activity android:name=".activities.SplashActivity" >
             <intent-filter>
@@ -16,6 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".activities.MenuPrincipalActivity"/>
         <activity android:name=".activities.AcercaDeActivity" />
         <activity android:name=".activities.CrearCuentaActivity" />
