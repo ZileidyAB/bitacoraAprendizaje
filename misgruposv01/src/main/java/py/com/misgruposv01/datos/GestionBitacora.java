@@ -53,6 +53,10 @@ public class GestionBitacora {
 
     private static final String tag = "AppConoceme";
 
+    public GestionBitacora() {
+
+    }
+
     static {
         //Inicializar ejercicios
         ejercicio1 = new Ejercicio("ej1", "02:00", "Muchos ejercicios para una tarde", "¿Cómo sumar?", 65);
@@ -189,13 +193,16 @@ public class GestionBitacora {
 //    }
 
     public static void agregarMateria(Usuario unUsuario, Materia materia) {
-        Log.i(tag, "ENTRA ACA"); //CONTROL
+        Log.i(tag, "***Agregar materia***"); //CONTROL
         Log.i(tag, "Usuario: " + unUsuario.getNombreApellido()); //CONTROL
         Log.i(tag, "Materia: " + materia.getNombre()); //CONTROL
         if (unUsuario.getMaterias() == null) {
             Log.i(tag, "ENTRA EN EL NULL Y REGISTRA"); //CONTROL
+//            ArrayList<Materia> materias1 = null;
             ArrayList<Materia> materias = new ArrayList<>();
             materias.add(materia);
+            Log.i(tag, "Materia size: " + materias.size()); //CONTROL
+            unUsuario.setMaterias(materias);
         } else {
             Log.i(tag, "NOO ENTRA EN EL NULL Y REGISTRA"); //CONTROL
             Log.i(tag, "MATERIAS: " + unUsuario.getMaterias()); //CONTROL
@@ -205,23 +212,74 @@ public class GestionBitacora {
     }
 
     public static void agregarTema(Materia unaMateria, Tema unTema) {
-        unaMateria.getTemas().add(unTema);
-        Log.i(tag, "Tema nuevo: " + unTema.getNombre()); //Control
+        Log.i(tag, "***Agregar Tema***"); //CONTROL
+        Log.i(tag, "Nombre materia: " + unaMateria.getNombre()); //CONTROL
+        Log.i(tag, "Nombre tema: " + unTema.getNombre()); //CONTROL
+        if (unaMateria.getTemas() == null) {
+            Log.i(tag, "ENTRA EN EL NULL Y REGISTRA"); //CONTROL
+            ArrayList<Tema> temas = new ArrayList<>();
+            temas.add(unTema);
+            unaMateria.setTemas(temas);
+            Log.i(tag, "Temas size: " + temas.size()); //CONTROL
+        } else {
+            Log.i(tag, "NOO ENTRA EN EL NULL Y REGISTRA"); //CONTROL
+            Log.i(tag, "TEMAS: " + unaMateria.getTemas()); //CONTROL
+            unaMateria.getTemas().add(unTema);
+            Log.i(tag, "Tema nuevo: " + unTema.getNombre()); //Control
+        }
     }
 
     public static void agregarItem(Tema unTema, Item unItem) {
-        unTema.getItems().add(unItem);
-        Log.i(tag, "Ejercicio nuevo: " + unItem.getCodigo()); //Control
+        Log.i(tag, "***Agregar Item***"); //CONTROL
+        Log.i(tag, "Nombre tema: " + unTema.getNombre()); //CONTROL
+        Log.i(tag, "Nombre item: " + unItem.getCodigo()); //CONTROL
+        if (unTema.getItems() == null) {
+            Log.i(tag, "ENTRA EN EL NULL Y REGISTRA"); //CONTROL
+            ArrayList<Item> items = new ArrayList<>();
+            items.add(unItem);
+            unTema.setItems(items);
+            Log.i(tag, "Items size: " + items.size()); //CONTROL
+        } else {
+            Log.i(tag, "NOO ENTRA EN EL NULL Y REGISTRA"); //CONTROL
+            Log.i(tag, "ITEMS: " + unTema.getItems()); //CONTROL
+            unTema.getItems().add(unItem);
+            Log.i(tag, "Item nuevo: " + unItem.getCodigo()); //Control
+        }
     }
 
     public static void agregarEjercicio(Tema unTema, Ejercicio unEjercicio) {
-        unTema.getEjercicios().add(unEjercicio);
-        Log.i(tag, "Ejercicio nuevo: " + unEjercicio.getCodigo()); //Control
+        Log.i(tag, "***Agregar Ejercicio***"); //CONTROL
+        Log.i(tag, "Nombre tema: " + unTema.getNombre()); //CONTROL
+        Log.i(tag, "Nombre ejercicio: " + unEjercicio.getCodigo()); //CONTROL
+        if (unTema.getEjercicios() == null) {
+            Log.i(tag, "ENTRA EN EL NULL Y REGISTRA"); //CONTROL
+            ArrayList<Ejercicio> ejercicios = new ArrayList<>();
+            ejercicios.add(unEjercicio);
+            unTema.setEjercicios(ejercicios);
+            Log.i(tag, "Ejercicios size: " + ejercicios.size()); //CONTROL
+        } else {
+            Log.i(tag, "NOO ENTRA EN EL NULL Y REGISTRA"); //CONTROL
+            Log.i(tag, "EJERCICIOS: " + unTema.getEjercicios()); //CONTROL
+            unTema.getEjercicios().add(unEjercicio);
+            Log.i(tag, "Ejercicio nuevo: " + unEjercicio.getCodigo()); //Control
+        }
     }
 
     public static void agregarInvestigacion(Tema unTema, Investigacion unaInvestigacion) {
-        unTema.getInvestigaciones().add(unaInvestigacion);
-        Log.i(tag, "Tema nuevo: " + unaInvestigacion.getCodigo()); //Control
+        Log.i(tag, "***Agregar Investigacion***"); //CONTROL
+        Log.i(tag, "Nombre tema: " + unTema.getNombre()); //CONTROL
+        Log.i(tag, "Nombre investigaicon: " + unaInvestigacion.getCodigo()); //CONTROL
+        if (unTema.getInvestigaciones() == null) {
+            Log.i(tag, "ENTRA EN EL NULL Y REGISTRA"); //CONTROL
+            ArrayList<Investigacion> investigaciones = new ArrayList<>();
+            investigaciones.add(unaInvestigacion);
+            unTema.setInvestigaciones(investigaciones);
+            Log.i(tag, "Investigaciones size: " + investigaciones.size()); //CONTROL
+        } else {
+            Log.i(tag, "NOO ENTRA EN EL NULL Y REGISTRA"); //CONTROL
+            Log.i(tag, "INVESTIGACIONES: " + unTema.getInvestigaciones()); //CONTROL
+            unTema.getInvestigaciones().add(unaInvestigacion);
+            Log.i(tag, "Investigacion nueva: " + unaInvestigacion.getCodigo()); //Control
+        }
     }
-
 }

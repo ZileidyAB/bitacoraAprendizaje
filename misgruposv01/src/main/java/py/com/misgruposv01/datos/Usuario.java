@@ -36,6 +36,7 @@ public class Usuario {
         this.mail = mail;
         this.contrasenha = contrasenha;
         this.contrasenhaConfirm=contrasenhaConfirm;
+        materias = new ArrayList<>();
     }
 
     public Usuario(String CI, String nombreApellido, String mail, String contrasenha) {

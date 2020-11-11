@@ -61,15 +61,14 @@ public class RegistrarMateriaActivity extends Activity {
 
             Materia unaMateria = new Materia(codigo, nombre);
             if (unaMateria == null) {
-                Log.i(tag, "unaMATERIA null. No se puede"); //CONTROL
+                Log.i(tag, "unaMateria es null. No se puede"); //CONTROL
             } else {
                 GestionBitacora.agregarMateria(unUsuario, unaMateria);
                 Log.i(tag, "Agregado"); //CONTROL
                 Toast.makeText(this, "Materia agregada", Toast.LENGTH_SHORT).show();
                 finish();
-                Log.i(tag, "COMPROBAR" + unUsuario.getMaterias().size()); //NO FUNCIONA
-
-                ;
+//                Log.i(tag, "COMPROBAR" + unUsuario.getMaterias().size()); //NO FUNCIONA
+                Log.i(tag, "COMPROBAR" + unUsuario.materias.size()); //NO FUNCIONA
             }
 //            Intent i = new Intent( this, MenuMateriaPrincipalActivity.class ) ;
 //            startActivity( i );
