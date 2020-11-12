@@ -3,8 +3,8 @@ package py.com.misgruposv01.utils;
 public enum RequestCode {
 
 		ITEM_EDITAR_TARJETA(1, "Editar tarjeta del menu de MostrarTarjetaActivity"),
-		ACT_LANZADA_CREAR_USUARIO(2, "Actividad lanzada Crear Grupo"),
-		PETICION_EDITAR_USUARIO(3, "Peticion editar grupo");
+		ACT_LANZADA_CREAR_USUARIO(2, "Actividad lanzada Crear Cuenta"),
+		PETICION_EDITAR_USUARIO(3, "Peticion editar cuenta");
 
 		private int codigo;
 		private String descripcion;
