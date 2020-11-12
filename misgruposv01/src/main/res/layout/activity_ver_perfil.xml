@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:visibility="visible"
-    tools:context=".activities.VerPerfilActivity">
+    android:layout_height="wrap_content" >
+
 
     <TabHost
         android:id="@+id/tabHost"
@@ -40,14 +34,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/white"
-                    android:orientation="vertical"></LinearLayout>
+                    android:orientation="vertical">
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/tab2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/white"
-                    android:orientation="vertical"></LinearLayout>
+                    android:orientation="vertical">
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/tab3"
@@ -55,6 +51,12 @@
                     android:layout_height="match_parent"
                     android:background="@color/white"
                     android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp">
 
 
                     <ImageView
@@ -66,56 +68,103 @@
                         android:src="@drawable/libros" />
 
                     <TextView
-                        android:id="@+id/textView1"
+                        android:id="@+id/tituloPerfil"
                         android:layout_width="match_parent"
                         android:layout_height="46dp"
                         android:layout_below="@+id/imageView1"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="18dp"
-                        android:text="@string/boton_crearCuenta"
+                        android:text="@string/titulo_Perfil"
                         android:textAlignment="center"
                         android:textColor="@color/teal_700"
                         android:textSize="20sp" />
 
-                    <EditText
-                        android:id="@+id/CI"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/textView1"
-                        android:layout_marginTop="-6dp"
-                        android:drawableLeft="@drawable/logo_usuario"
-                        android:hint="CI" />
-
-                    <EditText
-                        android:id="@+id/nombreApellido"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/CI"
-                        android:layout_marginTop="1dp"
-                        android:drawableLeft="@drawable/logo_usuario"
-                        android:hint="@string/mensaje_nombreCuenta" />
-
-                    <EditText
-                        android:id="@+id/email"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/nombreApellido"
-                        android:layout_marginTop="1dp"
-                        android:drawableLeft="@drawable/logo_email"
-                        android:hint="@string/mensaje_emailCuenta" />
-
-                    <Button
-                        android:id="@+id/button1"
-                        android:layout_width="146dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/contrasenhaConfirm"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="32dp"
-                        android:background="@color/celeste"
-                        android:onClick="lanzarVistaMenuMateriaPrincipal"
-                        android:text="@string/boton_aceptar" />
                 </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp">
+
+                <ImageView
+                    android:id="@+id/imagen_ci"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/logo_ci" />
+                <TextView
+                    android:id="@+id/id_ci"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:textSize="20sp"
+                    android:text="@string/mensaje_ciPerfil" />
+                <TextView
+                    android:id="@+id/id_numero_ci"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="20sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/imagen_usuario"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/logo_usuario" />
+                <TextView
+                    android:id="@+id/id_nombre_usuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:textSize="20sp"
+                    android:text="@string/mensaje_nombrePerfil" />
+                <TextView
+                    android:id="@+id/id_nombre_apellido_usuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="20sp"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/imagen_email"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/logo_email" />
+                <TextView
+                    android:id="@+id/id_email_usuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:textSize="20sp"
+                    android:text="@string/mensaje_emailPerfil" />
+                <TextView
+                    android:id="@+id/id_correo_usuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="20sp"
+                    />
+                     </LinearLayout>
+                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>
     </TabHost>
-</RelativeLayout>
+</ScrollView>

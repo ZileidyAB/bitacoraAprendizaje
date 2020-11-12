@@ -20,7 +20,7 @@ import py.com.misgruposv01.utils.LogUtils;
 
 public class CrearCuentaActivity extends AppCompatActivity {
     private String tag = "AppConoceme";
-
+    private boolean modoEdicion = false;
     EditText editTextCI;
     EditText editTextNombreApellido;
     EditText editTextEmail;
@@ -39,6 +39,19 @@ public class CrearCuentaActivity extends AppCompatActivity {
         editTextEmail = (EditText) findViewById(R.id.email);
         editTextContrasenha = (EditText) findViewById(R.id.contrasenha);
         editTextContrasenhaConfirm = (EditText) findViewById(R.id.contrasenhaConfirm);
+
+        Bundle extras = getIntent().getExtras();
+        if ( extras != null ) {
+            CI_usuario = extras.getInt( "idGrupo", -1 );
+            if ( CI_usuario != -1 ) {
+                modoEdicion = true;
+                editTextCI.setText( GestionBitacora.usuarios.get( CI_usuario ).getCI() );
+                editTextNombreApellido.setText( GestionBitacora.usuarios.get( CI_usuario  ).getNombreApellido() );
+                editTextEmail.setText( GestionBitacora.usuarios.get( CI_usuario  ).getMail() );
+
+                //boton.setText( "Editar Grupo" );
+            }
+        }
     }
 
     public void registrarUsuario(View boton) {
@@ -54,7 +67,7 @@ public class CrearCuentaActivity extends AppCompatActivity {
         Log.i(tag, "Contraseña: " + contrasenha);
         Log.i(tag, "Contraseña de confirmación: " + contrasenha);
 
-        if (CI.equals("") || nombreApellido.equals("") || email.equals("") || contrasenha.equals("")||contrasenhaConfirm.equals("")) {
+        if (CI.equals("") || nombreApellido.equals("") || email.equals("") || contrasenha.equals("") || contrasenhaConfirm.equals("")) {
             Log.i(tag, "Debe rellenar TODOS los campos");
             Toast.makeText(this, "Debe rellenar TODOS los campos", Toast.LENGTH_SHORT).show();
 //            new AlertDialog.Builder(this)
@@ -66,13 +79,25 @@ public class CrearCuentaActivity extends AppCompatActivity {
 //                        }
 //                    })
 //                    .show();
-        } else if  (!editTextContrasenha.getText().toString().equals(editTextContrasenhaConfirm.getText().toString())) {
+        } else if (!editTextContrasenha.getText().toString().equals(editTextContrasenhaConfirm.getText().toString())) {
 
             Toast.makeText(this, "Las contraseñas no conciden", Toast.LENGTH_SHORT).show();
+        } else
+            if (modoEdicion) {
+                Usuario unUsuario = GestionBitacora.usuarios.get(CI_usuario);
+                unUsuario.setCI(CI);
+                unUsuario.setNombreApellido(nombreApellido);
+                unUsuario.setNombreApellido(nombreApellido);
+                unUsuario.setMail(email);
 
-        } else {
-            Usuario usuario = new Usuario(CI, nombreApellido, email, contrasenha);
-            GestionBitacora.agregarUsuario(usuario);
+
+                Intent intent = new Intent();
+                intent.putExtra("resultado", 1);
+                setResult(RESULT_OK, intent);
+                finish();
+            } else {
+                Usuario usuario = new Usuario(CI, nombreApellido, email, contrasenha);
+                GestionBitacora.agregarUsuario(usuario);
 
 //            ArrayList<Usuario> listaUsuarios1 = Usuario.getUsuarios(); ANTERIOR
 //            ArrayList<Usuario> listaUsuarios = GestionBitacora.getUsuarios();
@@ -80,15 +105,16 @@ public class CrearCuentaActivity extends AppCompatActivity {
 //            Usuario usuario1 = new Usuario(CI, nombreApellido, email, contrasenha, contrasenhaConfirm);
 //            listaUsuarios.add(usuario1);
 
-            Toast.makeText(this, "Usuario creado", Toast.LENGTH_SHORT).show();
-            //finish();
+                Toast.makeText(this, "Usuario creado", Toast.LENGTH_SHORT).show();
+                //finish();
 //            Intent i = new Intent( this, MenuMateriaPrincipalActivity.class ) ;
 //            startActivity( i );
-            Intent intentMenuPricipal = new Intent(this, MenuMateriaPrincipalActivity.class);
-            intentMenuPricipal.putExtra("CI_usuario", Integer.parseInt(""+CI));
-            startActivity(intentMenuPricipal);
+                Intent intentMenuPricipal = new Intent(this, MenuMateriaPrincipalActivity.class);
+                intentMenuPricipal.putExtra("CI_usuario", Integer.parseInt("" + CI));
+                startActivity(intentMenuPricipal);
+            }
         }
-    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

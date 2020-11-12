@@ -30,10 +30,11 @@
     <string name="boton_registrar"> Registrarse </string>
 
     <!-- Layout Ver Perfil -->
-    <string name="mensaje_ciPerfil">N° de CI</string>
-    <string name="mensaje_nombrePerfil"> Nombre y apellido</string>
-    <string name="mensaje_emailPerfil">E-mail</string>
-    <string name="mensaje_contrasenhaPerfil">Contraseña</string>
+    <string name="titulo_Perfil">Datos Usuario</string>
+    <string name="mensaje_ciPerfil"> N° de CI: </string>
+    <string name="mensaje_nombrePerfil"> Nombre y apellido: </string>
+    <string name="mensaje_emailPerfil"> E-mail: </string>
+    <string name="mensaje_contrasenhaPerfil"> Contraseña: </string>
 
     <!-- Reestablecer contraseña -->
     <string name="titulo_restablecer">Restablecer Contraseña</string>
@@ -109,6 +110,13 @@
     <string name="tiempoDedicado_registrar_investigacion"> Tiempo dedicado </string>
     <string name="nivel_comprension"> Nivel de comprensión </string>
 
+    <!-- Menu -->
+    <string name="menu_editar"> Editar </string>
+    <string name="menu_eliminar"> Eliminar </string>
+    <string name="menu_compartir"> Compartir </string>
+    <string name="menu_guardar"> Guardar </string>
+    <string name="menu_limpiar"> Limpiar </string>
+    <string name="menu_siguiente"> Siguiente </string>
 
     <!--    <string name="mensaje_FechaTema"> Fecha</string>-->
 <!--    <string name="mensaje_notaTema"> Agregar una nota</string>-->
