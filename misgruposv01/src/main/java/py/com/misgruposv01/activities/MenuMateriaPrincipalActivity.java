@@ -60,9 +60,8 @@ public class MenuMateriaPrincipalActivity extends Activity {
     }
 
     public void lanzarVistaTemasPendientes(View view) {
-        //VER
         Intent i = new Intent(this, TemasPendientesActivity.class);
-        //i.putExtra("id", (long)0);
+        i.putExtra("CI_usuario", Integer.parseInt(""+CI_usuario));
         startActivity(i);
     }
 

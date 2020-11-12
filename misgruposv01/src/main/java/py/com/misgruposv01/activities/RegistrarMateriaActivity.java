@@ -70,11 +70,6 @@ public class RegistrarMateriaActivity extends Activity {
 //                Log.i(tag, "COMPROBAR" + unUsuario.getMaterias().size()); //NO FUNCIONA
                 Log.i(tag, "COMPROBAR" + unUsuario.materias.size()); //NO FUNCIONA
             }
-//            Intent i = new Intent( this, MenuMateriaPrincipalActivity.class ) ;
-//            startActivity( i );
-//            Intent intentMenuPricipal = new Intent(this, MenuMateriaPrincipalActivity.class);
-//            intentMenuPricipal.putExtra("CI_usuario", Integer.parseInt(""+CI));
-//            startActivity(intentMenuPricipal);
         }
     }
 }

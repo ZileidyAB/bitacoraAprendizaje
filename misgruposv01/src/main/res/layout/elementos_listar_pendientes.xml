@@ -14,59 +14,80 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/box_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="2dp"
+            android:layout_margin="5dp"
             android:background="@drawable/post_border_style"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/box_container1"
+                android:id="@+id/box_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
-                android:orientation="horizontal"
-                android:padding="5dp">
+                android:background="@drawable/post_border_style"
+                android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="7dp"
+                    android:id="@+id/single_post_circuito_linearbox"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.3"
-                    android:orientation="vertical">
+                    android:layout_margin="2dp"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
 
-                    <ImageView
-                        android:id="@+id/imagen_card"
-                        android:layout_width="76dp"
-                        android:layout_height="70dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/advertencia" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="107dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.7"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/nombre_tema_pendiente"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="3dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="#ff000000" />
+                        android:layout_weight="0.3"
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/materia_del_tema"
-                        android:layout_width="wrap_content"
+                        <ImageView
+                            android:id="@+id/imagen_single_post_circuito"
+                            android:layout_width="50dp"
+                            android:layout_height="70dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/advertencia" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="117dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textColor="#ff868686" />
+                        android:layout_weight="0.7"
+                        android:orientation="vertical">
 
+                        <TextView
+                            android:id="@+id/nombre_tema_pendiente"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#ff000000"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:id="@+id/fecha_tema_pendiente"
+                            android:layout_width="246dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textColor="#ff868686"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:id="@+id/materia_tema_pendiente"
+                            android:layout_width="246dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textColor="#ff868686"
+                            android:textStyle="italic" />
+
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+
+
     </LinearLayout>
 </LinearLayout>
