@@ -89,11 +89,9 @@ public class CrearCuentaActivity extends AppCompatActivity {
                 Usuario unUsuario = GestionBitacora.usuarios.get(CI_usuario);
                 unUsuario.setCI(CI);
                 unUsuario.setNombreApellido(nombreApellido);
-                unUsuario.setNombreApellido(nombreApellido);
                 unUsuario.setMail(email);
                 unUsuario.setContrasenha(contrasenha);
                 unUsuario.setContrasenhaConfirm(contrasenhaConfirm);
-
 
                 Intent intent = new Intent();
                 intent.putExtra("resultado", 1);

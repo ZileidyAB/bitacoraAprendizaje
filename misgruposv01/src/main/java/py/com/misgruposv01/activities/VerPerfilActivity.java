@@ -131,6 +131,7 @@ public class VerPerfilActivity extends AppCompatActivity {
         if( CI_usuario < GestionBitacora.usuarios.size()){
             unUsuario = GestionBitacora.usuarios.get( CI_usuario);
             actualizarVista();
+
         }else{
             Context contexto = getApplicationContext();
             NotificationsUtils.desplegarMensaje("Ya no existen usuarios en la lista", contexto);
