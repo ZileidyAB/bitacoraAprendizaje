@@ -42,12 +42,14 @@ public class CrearCuentaActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         if ( extras != null ) {
-            CI_usuario = extras.getInt( "idGrupo", -1 );
-            if ( CI_usuario != -1 ) {
+            CI_usuario = extras.getInt( "CI_usuario", -1 );
+            if ( CI_usuario != 0 ) {
                 modoEdicion = true;
                 editTextCI.setText( GestionBitacora.usuarios.get( CI_usuario ).getCI() );
                 editTextNombreApellido.setText( GestionBitacora.usuarios.get( CI_usuario  ).getNombreApellido() );
                 editTextEmail.setText( GestionBitacora.usuarios.get( CI_usuario  ).getMail() );
+                editTextContrasenha.setText( GestionBitacora.usuarios.get( CI_usuario  ).getContrasenha() );
+                editTextContrasenhaConfirm.setText( GestionBitacora.usuarios.get( CI_usuario  ).getContrasenhaConfirm() );
 
                 //boton.setText( "Editar Grupo" );
             }
@@ -87,9 +89,9 @@ public class CrearCuentaActivity extends AppCompatActivity {
                 Usuario unUsuario = GestionBitacora.usuarios.get(CI_usuario);
                 unUsuario.setCI(CI);
                 unUsuario.setNombreApellido(nombreApellido);
-                unUsuario.setNombreApellido(nombreApellido);
                 unUsuario.setMail(email);
-
+                unUsuario.setContrasenha(contrasenha);
+                unUsuario.setContrasenhaConfirm(contrasenhaConfirm);
 
                 Intent intent = new Intent();
                 intent.putExtra("resultado", 1);
