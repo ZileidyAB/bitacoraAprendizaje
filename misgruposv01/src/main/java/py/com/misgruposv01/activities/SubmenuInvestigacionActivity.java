@@ -5,14 +5,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import py.com.misgruposv01.R;
+import py.com.misgruposv01.datos.GestionBitacora;
+import py.com.misgruposv01.datos.Materia;
+import py.com.misgruposv01.datos.Tema;
+import py.com.misgruposv01.datos.Usuario;
 
 public class SubmenuInvestigacionActivity extends Activity {
     private String tag = "SubmenuInvestigacion";
     private int CI_usuario = -1;
     private int idTema = -1;
     private int idMateria = -1;
+    private Materia unaMateria;
+    private Tema unTema;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +47,20 @@ public class SubmenuInvestigacionActivity extends Activity {
             idTema = extrasTema.getInt("posicionSeleccionadaTema", -1);
             Log.i(tag, "Posicion de tema: " + idTema);
         }
+
+        //********************************ENVIAR TITULO DEL TEMA*****************************************
+        String CI_usuario_string = String.valueOf(CI_usuario); //Convertir int CI a String
+        Usuario unUsuario = GestionBitacora.buscarUsuario(CI_usuario_string); // Traer el usuario ya por su CI
+        Log.i(tag, "Usuario logueado: " + unUsuario.getNombreApellido()); //CONTROL
+
+        unaMateria = unUsuario.getMaterias().get(idMateria);   //obtener materias
+        Log.i(tag, "Materia seleccionada por id: " + unaMateria.getNombre()); //CONTROL
+
+        unTema = unaMateria.getTemas().get(idTema);   //obtener materias
+        Log.i(tag, "Materia seleccionada por id: " + unTema.getNombre()); //CONTROL
+
+        TextView tituloTema = (TextView) findViewById(R.id.titulo_subtema_investigacion);
+        tituloTema.setText ("Tema: "+ unTema.getNombre());
 
     }
 

@@ -37,22 +37,22 @@
         android:background="@android:color/darker_gray" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/titulo_subtema_investigacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/divider1"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="25dp"
-        android:text="@string/titulo_tema"
         android:textAlignment="center"
         android:textColor="@color/teal_700"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/button1"
         android:layout_width="147dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/titulo_subtema_investigacion"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:background="@color/celeste"

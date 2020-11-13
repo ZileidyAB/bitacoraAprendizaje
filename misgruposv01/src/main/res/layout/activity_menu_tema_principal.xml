@@ -18,19 +18,6 @@
         android:layout_marginTop="21dp"
         android:src="@drawable/leyendo" />
 
-    <!--    <EditText-->
-    <!--        android:id="@+id/text1"-->
-    <!--        android:layout_width="395dp"-->
-    <!--        android:layout_height="43dp"-->
-    <!--        android:layout_below="@+id/imageView1"-->
-    <!--        android:layout_alignParentEnd="true"-->
-    <!--        android:layout_marginEnd="0dp"-->
-    <!--        android:ems="10"-->
-    <!--        android:inputType="textPersonName" />-->
-
-
-    <!--Hace falta estirar el nombreTema?-->
-
     <View
         android:id="@+id/divider1"
         android:layout_width="match_parent"
@@ -40,7 +27,7 @@
         android:background="@android:color/darker_gray" />
 
     <TextView
-        android:id="@+id/titulo_tema"
+        android:id="@+id/titulo_submenu_tema"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/divider1"
@@ -49,14 +36,14 @@
         android:text="@string/titulo_tema"
         android:textAlignment="center"
         android:textColor="@color/teal_700"
-        android:textSize="20sp" />
-
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/button1"
         android:layout_width="147dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/titulo_tema"
+        android:layout_below="@+id/titulo_submenu_tema"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:background="@color/celeste"

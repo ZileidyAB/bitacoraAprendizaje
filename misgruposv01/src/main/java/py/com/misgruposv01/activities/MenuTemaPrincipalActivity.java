@@ -1,6 +1,5 @@
 package py.com.misgruposv01.activities;
 
-import android.content.Intent;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +8,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import py.com.misgruposv01.R;
+import py.com.misgruposv01.datos.GestionBitacora;
 import py.com.misgruposv01.datos.Materia;
+import py.com.misgruposv01.datos.Tema;
+import py.com.misgruposv01.datos.Usuario;
 
 public class MenuTemaPrincipalActivity extends Activity {
     private String tag = "AppConoceme";
@@ -17,7 +19,8 @@ public class MenuTemaPrincipalActivity extends Activity {
     private int CI_usuario = -1;
     private int idTema = -1;
     private int idMateria = -1;
-
+    private Materia unaMateria;
+    private Tema unTema;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,24 +49,20 @@ public class MenuTemaPrincipalActivity extends Activity {
             Log.i(tag, "Posicion de tema: " + idTema);
         }
 
-        //NO SALE
-//        this.nombreTema = (TextView) findViewById(R.id.nombre_tema);
-//
-//        Bundle parametros = this.getIntent().getExtras();
-//        if(parametros !=null){
-//            String datos = parametros.getString("datos");
-//            nombreTema.setText(datos);
-//        }
-//
-//        Log.i(tag, "Nombre:" + nombreTema); //Ver si trae el nombre
-//
-//        if (nombreTema.equals("")) {
-//            Log.i(tag, "No existe el nombre del tema");
-//        } else {
-//            TextView nombreElemento = (TextView) findViewById(R.id.titulo_tema);
-//            Log.i(tag, "Nombre:" + nombreElemento);
-//            nombreElemento.setText(nombreTema);
-//        }
+        //********************************ENVIAR TITULO DEL TEMA*****************************************
+        String CI_usuario_string = String.valueOf(CI_usuario); //Convertir int CI a String
+        Usuario unUsuario = GestionBitacora.buscarUsuario(CI_usuario_string); // Traer el usuario ya por su CI
+        Log.i(tag, "Usuario logueado: " + unUsuario.getNombreApellido()); //CONTROL
+
+        unaMateria = unUsuario.getMaterias().get(idMateria);   //obtener materias
+        Log.i(tag, "Materia seleccionada por id: " + unaMateria.getNombre()); //CONTROL
+
+        unTema = unaMateria.getTemas().get(idTema);   //obtener materias
+        Log.i(tag, "Materia seleccionada por id: " + unTema.getNombre()); //CONTROL
+
+        TextView tituloTema = (TextView) findViewById(R.id.titulo_submenu_tema);
+        tituloTema.setText("Tema: " + unTema.getNombre());
+
     }
 
     public void lanzarVistaSubmenuItem(View view) {
