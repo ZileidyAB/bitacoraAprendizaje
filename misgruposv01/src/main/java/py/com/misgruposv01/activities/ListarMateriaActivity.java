@@ -70,7 +70,12 @@ public class ListarMateriaActivity extends ListActivity {
             @Override
             public void onTabChanged(String tabId) {
                 Log.i("AndroidTabsDemo", "Pulsada pestaña: " + tabId);
-
+                //Deben traerse FrameLayout para rellenar los Tabs
+//                if (tabId.equals("Pestaña 2")) {
+//                    sendMessage1(pestanha);
+//                } else  if (tabId.equals("Pestaña 3"))  {
+//                    sendMessage2(pestanha);
+//                }
             }
         });
 
@@ -102,6 +107,18 @@ public class ListarMateriaActivity extends ListActivity {
         }
 //        setListAdapter(new MateriaAdapter(this, materias)); //llamar al adaptador de Materia
     }
+
+//    public void sendMessage1(View view) {
+//        Intent intent = new Intent(this, TemasPendientesActivity.class);
+//        intent.putExtra("CI_usuario", Integer.parseInt("" + CI_usuario));
+//        startActivity(intent);
+//    }
+//
+//    public void sendMessage2(View view) {
+//        Intent i = new Intent(this, VerPerfilActivity.class);
+//        i.putExtra("CI_usuario", Integer.parseInt("" + CI_usuario));
+//        startActivity(i);
+//    }
 
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
