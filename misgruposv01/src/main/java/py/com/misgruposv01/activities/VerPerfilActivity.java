@@ -1,13 +1,11 @@
 package py.com.misgruposv01.activities;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,7 +38,6 @@ public class VerPerfilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_perfil);
 
-
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             CI_usuario = extras.getInt("CI_usuario", -1);
@@ -48,8 +45,6 @@ public class VerPerfilActivity extends AppCompatActivity {
         }
 
         actualizarVista();
-
-
 
         //********************************TABHOST*****************************************
         //Propiedades del control
@@ -87,13 +82,19 @@ public class VerPerfilActivity extends AppCompatActivity {
     }
 
     public void actualizarVista(){
-        for (int i = 0; i < GestionBitacora.usuarios.size(); i++) { //recorrer lista de usuarios
-            unUsuario = GestionBitacora.getUsuarios().get(i); //obtener usuarios
-            Log.i(tag, "USUARIOS: " + GestionBitacora.usuarios);
-        }
+
+        String CI_usuario_string = String.valueOf(CI_usuario); //Convertir int CI a String
+        Usuario unUsuario = GestionBitacora.buscarUsuario(CI_usuario_string); // Traer el usuario ya por su CI
+        Log.i(tag, "Usuario logueado: " + unUsuario.getNombreApellido()); //CONTROL
+
+
+//        for (int i = 0; i < GestionBitacora.usuarios.size(); i++) { //recorrer lista de usuarios
+//            unUsuario = GestionBitacora.getUsuarios().get(i); //obtener usuarios
+//            Log.i(tag, "USUARIOS: " + GestionBitacora.usuarios);
+//        }
 
         CI = (TextView) findViewById(R.id.id_numero_ci);
-        CI.setText( unUsuario.getCI() );
+        CI.setText(unUsuario.getCI() );
         NombreApellido = (TextView) findViewById(R.id.id_nombre_apellido_usuario);
         NombreApellido.setText(unUsuario.getNombreApellido());
         Email = (TextView) findViewById(R.id.id_correo_usuario);

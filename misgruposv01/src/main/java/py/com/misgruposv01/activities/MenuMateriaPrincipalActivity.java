@@ -6,14 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
 
 import py.com.misgruposv01.R;
-import py.com.misgruposv01.datos.Materia;
-import py.com.misgruposv01.datos.Usuario;
 
 public class MenuMateriaPrincipalActivity extends Activity {
     private String tag = "AppConoceme";
@@ -68,7 +62,7 @@ public class MenuMateriaPrincipalActivity extends Activity {
     public void lanzarVistaVerPerfil(View view) {
         //VER
         Intent i = new Intent(this, VerPerfilActivity.class);
-        //i.putExtra("id", (long)0);
+        i.putExtra("CI_usuario", Integer.parseInt("" + CI_usuario));
         startActivity(i);
     }
 }
