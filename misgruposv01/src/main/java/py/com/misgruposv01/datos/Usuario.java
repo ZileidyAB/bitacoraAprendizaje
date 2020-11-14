@@ -53,6 +53,12 @@ public class Usuario {
         this.contrasenha = contrasenha;
         this.materias = materias;
     }
+    public Usuario(String CI, String nombreApellido, String mail) {
+        this.CI = CI;
+        this.nombreApellido = nombreApellido;
+        this.mail = mail;
+
+    }
 
 //    public static boolean comprobarCredenciales(String CI, String password) {
 //

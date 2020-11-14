@@ -85,7 +85,7 @@ public class VerPerfilActivity extends AppCompatActivity {
 
         String CI_usuario_string = String.valueOf(CI_usuario); //Convertir int CI a String
         Usuario unUsuario = GestionBitacora.buscarUsuario(CI_usuario_string); // Traer el usuario ya por su CI
-        Log.i(tag, "Usuario logueado: " + unUsuario.getNombreApellido()); //CONTROL
+
 
 
 //        for (int i = 0; i < GestionBitacora.usuarios.size(); i++) { //recorrer lista de usuarios

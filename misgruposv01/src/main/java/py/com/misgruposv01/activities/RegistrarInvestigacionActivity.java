@@ -1,13 +1,18 @@
 package py.com.misgruposv01.activities;
 
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Calendar;
 
 import py.com.misgruposv01.R;
 import py.com.misgruposv01.datos.GestionBitacora;
@@ -46,6 +51,26 @@ public class RegistrarInvestigacionActivity extends AppCompatActivity {
         editDudasInvestigacion = (EditText) findViewById(R.id.dudas_registrar_investigacion);
         editTiempoDedidadoInvestigacion = (EditText) findViewById(R.id.tiempoDedicado_registrar_investigacion);
         editNivelComprension = (EditText) findViewById(R.id.nivel_comprension);
+
+        // perform click event listener on edit text
+        editTiempoDedidadoInvestigacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar mcurrentTime = Calendar.getInstance();
+                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
+                int minute = mcurrentTime.get(Calendar.MINUTE);
+                TimePickerDialog mTimePicker;
+                mTimePicker = new TimePickerDialog(RegistrarInvestigacionActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                        editTiempoDedidadoInvestigacion.setText(selectedHour + ":" + selectedMinute);
+                    }
+                }, hour, minute, true);//Yes 24 hour time
+                mTimePicker.setTitle("Select Time");
+                mTimePicker.show();
+
+            }
+        });
 
         //********************************RECIBIR ID MATERIA*****************************************
         Bundle extras = this.getIntent().getExtras();
