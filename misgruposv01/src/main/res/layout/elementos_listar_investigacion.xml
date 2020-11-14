@@ -59,10 +59,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:drawableLeft="@drawable/logo_tiempo_dedicado"
                         android:textColor="#ff000000"
                         android:textSize="15dp"
-                        android:textStyle="italic"
-                        android:text="Investigacion"/>
+                        android:textStyle="italic"/>
 
                     <TextView
                         android:id="@+id/comentarios"

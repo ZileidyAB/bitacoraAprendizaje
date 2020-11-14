@@ -104,7 +104,7 @@
     <!-- Layout Registrar Investigacion -->
     <string name="titulo_registrar_investigacion"> Registrar nueva investigacion </string>
     <string name="mensaje_codigo_investigacion">Código</string>
-    <string name="tema_investigado"> Experiencia </string>
+    <string name="tema_investigado"> Tema investigado </string>
     <string name="comentario_registrar_investigacion"> Comentarios </string>
     <string name="duda_registrar_investigacion"> Dudas </string>
     <string name="tiempoDedicado_registrar_investigacion"> Tiempo dedicado </string>

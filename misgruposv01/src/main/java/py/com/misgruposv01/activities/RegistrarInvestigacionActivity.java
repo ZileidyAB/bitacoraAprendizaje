@@ -1,19 +1,15 @@
 package py.com.misgruposv01.activities;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import py.com.misgruposv01.R;
-import py.com.misgruposv01.datos.Ejercicio;
 import py.com.misgruposv01.datos.GestionBitacora;
 import py.com.misgruposv01.datos.Investigacion;
 import py.com.misgruposv01.datos.Materia;
@@ -85,16 +81,16 @@ public class RegistrarInvestigacionActivity extends AppCompatActivity {
         String temaInvestigacion = editTemaInvestigado.getText().toString();
         String comentariosInvestigacion = editComentariosInvestigacion.getText().toString();
         String dudasInvestigacion = editDudasInvestigacion.getText().toString();
-        double tiempoDedicadoInvestigacion = 0;
-        String text = editTiempoDedidadoInvestigacion.getText().toString();
+        String tiempoDedicadoInvestigacion = editTiempoDedidadoInvestigacion.getText().toString();
+
+        double nivelComprensionInvestigacion = 0;
+        String text = editNivelComprension.getText().toString();
         if (!text.isEmpty())
             try {
-                tiempoDedicadoInvestigacion = Double.parseDouble(text);
+                nivelComprensionInvestigacion = Double.parseDouble(text);
             } catch (Exception e1) {
                 e1.printStackTrace();
             }
-        //double tiempoDedicadoInvestigacion = editTiempoDedidadoInvestigacion.getText().toDouble();
-        String nivelComprensionInvestigacion = editNivelComprension.getText().toString();
 
         Log.i(tag, "Codigo Investigacion: " + codigoInvestigacion);
         Log.i(tag, "Tema Investigacion: " + temaInvestigacion);
@@ -103,7 +99,7 @@ public class RegistrarInvestigacionActivity extends AppCompatActivity {
         Log.i(tag, "Tiempo Dedicado Investigacion: " + tiempoDedicadoInvestigacion);
         Log.i(tag, "Nivel comprension Investigacion: " + nivelComprensionInvestigacion);
 
-        if (codigoInvestigacion.equals("") || temaInvestigacion.equals("") || comentariosInvestigacion.equals("") || dudasInvestigacion.equals("") || (tiempoDedicadoInvestigacion < 0) || nivelComprensionInvestigacion.equals("")) {
+        if (codigoInvestigacion.equals("") || temaInvestigacion.equals("") || comentariosInvestigacion.equals("") || dudasInvestigacion.equals("") || tiempoDedicadoInvestigacion.equals("") || (nivelComprensionInvestigacion < 0)) {
             Log.i(tag, "Debe rellenar TODOS los campos");
             Toast.makeText(this, "Debe rellenar TODOS los campos", Toast.LENGTH_SHORT).show();
         } else {
@@ -142,6 +138,7 @@ public class RegistrarInvestigacionActivity extends AppCompatActivity {
 
     public void limpiarCampos() {
         editCodigoInvestigacion.setText("");
+        editTemaInvestigado.setText("");
         editComentariosInvestigacion.setText("");
         editDudasInvestigacion.setText("");
         editTiempoDedidadoInvestigacion.setText("");

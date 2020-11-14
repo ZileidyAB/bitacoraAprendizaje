@@ -20,13 +20,13 @@ public class Investigacion {
 //        investigaciones.add(new Investigacion("inv3", "Investigación III", "04:00", "Faltan indicadores", 70, "Muchas dudas"));
 //    }
 
-    public Investigacion(String codigo, String tiempoDedicado, String temaInvestigado, String comentarios, double nivelComprension, String dudas) {
+    public Investigacion(String codigo, String temaInvestigado, String comentarios, String dudas, String tiempoDedicado, double nivelComprension) {
         this.codigo = codigo;
-        this.tiempoDedicado = tiempoDedicado;
         this.temaInvestigado = temaInvestigado;
         this.comentarios = comentarios;
-        this.nivelComprension = nivelComprension;
         this.dudas = dudas;
+        this.tiempoDedicado = tiempoDedicado;
+        this.nivelComprension = nivelComprension;
     }
 
     public int getId() {

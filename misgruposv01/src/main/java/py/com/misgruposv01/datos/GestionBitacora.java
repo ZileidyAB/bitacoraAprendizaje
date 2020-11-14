@@ -78,9 +78,9 @@ public class GestionBitacora {
         ejercicios2.add(ejercicio1);
 
         //Inicializar investigaciones
-        investigacion1 = new Investigacion("inv1", "Investigación I", "01:50", "Ninguna", 60, "Ninguna Duda");
-        investigacion2 = new Investigacion("inv2", "Investigación II", "02:30", "Especificar nombre", 40, "Concepto");
-        investigacion3 = new Investigacion("inv3", "Investigación III", "04:00", "Faltan indicadores", 70, "Muchas dudas");
+        investigacion1 = new Investigacion("inv1", "Investigación I", "Ninguna","Ninguna Duda", "01:50",  60.5);
+        investigacion2 = new Investigacion("inv2", "Investigación II", "Especificar nombre","Concepto", "02:30",  40);
+        investigacion3 = new Investigacion("inv3", "Investigación III", "Faltan indicadores", "Muchas dudas", "04:00", 70.5);
 
         investigaciones1.add(investigacion1);
         investigaciones2.add(investigacion2);
