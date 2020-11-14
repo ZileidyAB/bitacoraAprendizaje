@@ -23,14 +23,14 @@
     <string name="mensaje_contrasenhaConfirm">Confirmar contraseña</string>
 
     <!-- Layout Crear cuenta -->
-    <string name="mensaje_ciCuenta">N° de CI</string>
+    <string name="mensaje_ciCuenta"> N° de CI</string>
     <string name="mensaje_nombreCuenta"> Nombre y apellido</string>
-    <string name="mensaje_emailCuenta">E-mail</string>
-    <string name="mensaje_contrasenhaCuenta">Contraseña</string>
+    <string name="mensaje_emailCuenta"> E-mail</string>
+    <string name="mensaje_contrasenhaCuenta"> Contraseña</string>
     <string name="boton_registrar"> Registrarse </string>
 
     <!-- Layout Ver Perfil -->
-    <string name="titulo_Perfil">Datos Usuario</string>
+    <string name="titulo_Perfil">MI USUARIO</string>
     <string name="mensaje_ciPerfil"> N° de CI: </string>
     <string name="mensaje_nombrePerfil"> Nombre y apellido: </string>
     <string name="mensaje_emailPerfil"> E-mail: </string>

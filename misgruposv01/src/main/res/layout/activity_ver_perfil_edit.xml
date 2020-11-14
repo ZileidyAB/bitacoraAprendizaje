@@ -13,11 +13,11 @@
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="296dp"
-        android:layout_height="249dp"
+        android:layout_width="260dp"
+        android:layout_height="210dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="21dp"
-        android:src="@drawable/libros" />
+        android:src="@drawable/usuario_blue" />
 
     <TextView
         android:id="@+id/textView1"
@@ -25,18 +25,19 @@
         android:layout_height="46dp"
         android:layout_below="@+id/imageView1"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="18dp"
-        android:text="@string/boton_crearCuenta"
+        android:layout_marginTop="30dp"
+        android:text="@string/titulo_Perfil"
         android:textAlignment="center"
         android:textColor="@color/teal_700"
-        android:textSize="20sp" />
+        android:textStyle="bold"
+        android:textSize="25sp" />
 
     <EditText
         android:id="@+id/CI"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
-        android:layout_marginTop="-6dp"
+        android:layout_marginTop="21dp"
         android:drawableLeft="@drawable/logo_usuario"
         android:hint="CI" />
 
