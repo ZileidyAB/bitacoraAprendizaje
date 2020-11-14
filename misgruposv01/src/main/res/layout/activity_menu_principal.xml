@@ -40,25 +40,14 @@
         android:text="@string/texto_tituloSecundario"
         android:textAlignment="center"
         android:textColor="@color/teal_700"
-        android:textStyle="italic"
-        android:textSize="15sp" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="147dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:background="@color/celeste"
-        android:onClick="lanzarVistaAcercaDe"
-        android:text="@string/boton_acerca_de" />
+        android:textSize="15sp"
+        android:textStyle="italic" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="145dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
+        android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:background="@color/celeste"
@@ -76,4 +65,14 @@
         android:onClick="lanzarVistaIniciarSesion"
         android:text="@string/boton_iniciarSesion" />
 
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="147dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:background="@color/celeste"
+        android:onClick="lanzarVistaAcercaDe"
+        android:text="@string/boton_acerca_de" />
 </RelativeLayout>

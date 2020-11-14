@@ -1,6 +1,5 @@
 package py.com.misgruposv01.activities;
 
-import android.app.Activity;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -78,6 +77,8 @@ public class TemasPendientesActivity extends ListActivity {
         ArrayList<Tema> temas = new ArrayList<>();
         ArrayList<Tema> temasPendientes = new ArrayList<>();
         ArrayList<String> temasPendientesS = new ArrayList<String>();
+        ArrayList<Materia> materiasPendientes = new ArrayList<>();
+
 
         String CI_usuario_string = String.valueOf(CI_usuario); //Convertir int CI a String
         Usuario unUsuario = GestionBitacora.buscarUsuario(CI_usuario_string); // Traer el usuario ya por su CI
@@ -102,6 +103,7 @@ public class TemasPendientesActivity extends ListActivity {
                         Log.i(tag, "ENNTRA AL IF DEL ITEM"); //CONTROL
                         Log.i(tag, "OJO:" + unItem.isAprendido()); //CONTROL
                         temasPendientes.add(unTema);
+                        materiasPendientes.add(unaMateria);
 
 //                        String[] temasPendientesS = new String[];
 //                        String temaPendiente = unTema.getNombre();
@@ -116,7 +118,7 @@ public class TemasPendientesActivity extends ListActivity {
 
 
 //        Log.i(tag, "Cantidad de temas: " + temas.size()); //CONTROL
-        setListAdapter(new TemaPendienteAdapter(this, temasPendientes)); //llamar adpatador de Temas
+        setListAdapter(new TemaPendienteAdapter(this, temasPendientes, materiasPendientes)); //llamar adpatador de Temas
 
     }
 

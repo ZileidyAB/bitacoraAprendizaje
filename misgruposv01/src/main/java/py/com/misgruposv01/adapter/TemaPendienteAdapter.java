@@ -10,18 +10,20 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import py.com.misgruposv01.R;
-import py.com.misgruposv01.datos.Item;
+import py.com.misgruposv01.datos.Materia;
 import py.com.misgruposv01.datos.Tema;
 
 public class TemaPendienteAdapter extends BaseAdapter {
 
     private final Activity actividad;
     private final ArrayList<Tema> lista;
+    private final ArrayList<Materia> lista2;
 
-    public TemaPendienteAdapter(Activity actividad, ArrayList<Tema> lista) {
+    public TemaPendienteAdapter(Activity actividad, ArrayList<Tema> lista, ArrayList<Materia> lista2) {
         super();
         this.actividad = actividad;
         this.lista = lista;
+        this.lista2 = lista2;
     }
 
     @Override
@@ -37,7 +39,7 @@ public class TemaPendienteAdapter extends BaseAdapter {
         fechaTemaPendiente.setText("" + lista.get(posicion).getFecha());
 
         TextView MateriaTemaPendiente = (TextView) view.findViewById(R.id.materia_tema_pendiente);
-        MateriaTemaPendiente.setText("" + lista.get(posicion).getCodigo());
+        MateriaTemaPendiente.setText("Materia correspondiente: " + lista2.get(posicion).getNombre());
 
         return view;
     }

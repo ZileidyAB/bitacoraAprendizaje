@@ -18,16 +18,25 @@ public class GestionBitacora {
     public static Materia materia1;
     public static Materia materia2;
     public static Materia materia3;
+    public static Materia materia4;
+    public static Materia materia5;
 
     public static Tema tema1;
     public static Tema tema2;
     public static Tema tema3;
     public static Tema tema4;
     public static Tema tema5;
+    public static Tema tema6;
+    public static Tema tema7;
+    public static Tema tema8;
+    public static Tema tema9;
+
 
     public static ArrayList<Tema> temas1 = new ArrayList<>();
     public static ArrayList<Tema> temas2 = new ArrayList<>();
     public static ArrayList<Tema> temas3 = new ArrayList<>();
+    public static ArrayList<Tema> temas4 = new ArrayList<>();
+    public static ArrayList<Tema> temas5 = new ArrayList<>();
 
     public static Item item1;
     public static Item item2;
@@ -89,33 +98,44 @@ public class GestionBitacora {
         items2.add(item1);
 
         //Inicializar temas
-        tema1 = new Tema("poo", "Programación Orientada a Objetos", "15/06/2020", investigaciones1, items1, ejercicios1);
-        tema2 = new Tema("mercado", "El mercadeo", "20/08/2020", investigaciones2, items2, ejercicios2);
-        tema3 = new Tema("acentos", "Acentos", "15/03/2020", investigaciones1, items2, ejercicios1);
-        tema4 = new Tema("tm4", "Tema 4", "04/10/2020", investigaciones2, items1, ejercicios2);
-        tema5 = new Tema("tm5", "Tema 5", "25/12/2020", investigaciones1, items2, ejercicios2);
+        tema1 = new Tema("poo", "POO", "15/06/2020", investigaciones1, items1, ejercicios1);
+        tema2 = new Tema("listv", "ListView", "15/08/2020", investigaciones2, items2, ejercicios2);
+        tema3 = new Tema("navig", "NavigationView", "11/12/2020", investigaciones2, items2, ejercicios2);
+        tema4 = new Tema("mercado", "Mercados", "20/08/2020", investigaciones2, items2, ejercicios2);
+        tema5 = new Tema("mktmix", "Marketing MIx", "15/05/2020", investigaciones1, items2, ejercicios1);
+        tema6 = new Tema("acentos", "Acentos", "15/03/2020", investigaciones1, items2, ejercicios1);
+        tema7 = new Tema("ort", "Ortografía", "04/10/2020", investigaciones2, items1, ejercicios2);
+        tema8 = new Tema("suma", "Suma", "25/12/2020", investigaciones1, items2, ejercicios2);
+        tema9 = new Tema("atomos", "Atomos", "25/12/2020", investigaciones1, items2, ejercicios2);
 
         temas1.add(tema1);
         temas1.add(tema2);
         temas1.add(tema3);
         temas2.add(tema4);
-        temas3.add(tema5);
+        temas2.add(tema5);
+        temas3.add(tema6);
+        temas3.add(tema7);
+        temas4.add(tema8);
+        temas5.add(tema9);
 
         //Inicializar materias
         materia1 = new Materia("proyTIC", "Proyecto TIC", temas1);
         materia2 = new Materia("mkt1", "Marketing", temas2);
         materia3 = new Materia("lengua", "Lengua extranjera II", temas3);
+        materia4 = new Materia("mate", "Matemática", temas4);
+        materia5 = new Materia("quimi", "Química", temas5);
+
 
         listadoMaterias1.add(materia1);
         listadoMaterias2.add(materia2);
         listadoMaterias1.add(materia3);
+        listadoMaterias1.add(materia4);
+        listadoMaterias2.add(materia5);
 
         usuario1 = new Usuario("1234567", "Marina Acosta", "marina.com", "123", listadoMaterias1);
         usuario2 = new Usuario("1111111", "Carolina Barrios", "carola.com", "123", listadoMaterias2);
-//        usuario1 = new Usuario("1234567", "Marina Acosta", "marina.com", "123", listadoMaterias2);
 
         usuarios.add(usuario1);
-//        usuarios.add(usuario1);
         usuarios.add(usuario2);
 
         //Mensaje para saber el listado de materiasss

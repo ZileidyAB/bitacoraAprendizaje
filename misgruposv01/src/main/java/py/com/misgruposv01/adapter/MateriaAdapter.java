@@ -35,7 +35,7 @@ public class MateriaAdapter extends BaseAdapter {
         codigoMateria.setText(""+lista.get(posicion).getCodigo());
 
         TextView identificadorTemas = (TextView) view.findViewById(R.id.identificador_temas);
-        identificadorTemas.setText(""+lista.get(posicion).getTemas());
+        identificadorTemas.setText("Listado de temas: ");
 
         return view;
     }

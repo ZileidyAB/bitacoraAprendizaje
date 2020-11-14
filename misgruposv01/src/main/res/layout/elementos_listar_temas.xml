@@ -7,9 +7,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:layout_marginTop="150dp"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <ImageView
@@ -17,26 +16,33 @@
             android:layout_width="35dp"
             android:layout_height="25dp"
             android:layout_gravity="center_vertical"
-            android:layout_margin="15dp"
+            android:layout_margin="12dp"
             android:src="@drawable/logo_flechas" />
 
         <TextView
             android:id="@+id/nombre_tema"
-            android:layout_width="wrap_content"
+            android:layout_width="500dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_marginLeft="0dp"
             android:layout_weight="1"
+            android:gravity="left"
+            android:paddingLeft="0dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/black"
-            android:textSize="16dp" />
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/fecha"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
             android:layout_weight="1"
+            android:gravity="right"
+            android:padding="15dip"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/black"
             android:textSize="15dp"
-            android:textStyle="italic" />
+            android:textStyle="italic"/>
     </LinearLayout>
 </LinearLayout>
