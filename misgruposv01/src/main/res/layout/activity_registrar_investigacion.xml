@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tema_investigado"
         android:layout_marginTop="13dp"
-        android:drawableLeft="@drawable/logo_materia"
+        android:drawableLeft="@drawable/logo_escribir"
         android:hint="@string/comentario_registrar_investigacion" />
 
     <EditText
@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/comentarios_registrar_investigacion"
         android:layout_marginTop="13dp"
-        android:drawableLeft="@drawable/logo_materia"
+        android:drawableLeft="@drawable/logo_escribir"
         android:hint="@string/duda_registrar_investigacion" />
 
     <EditText
@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/dudas_registrar_investigacion"
         android:layout_marginTop="13dp"
-        android:drawableLeft="@drawable/logo_materia"
+        android:drawableLeft="@drawable/logo_reloj"
         android:hint="@string/tiempoDedicado_registrar_investigacion" />
 
     <EditText
@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tiempoDedicado_registrar_investigacion"
         android:layout_marginTop="13dp"
-        android:drawableLeft="@drawable/logo_materia"
+        android:drawableLeft="@drawable/logo_foco"
         android:hint="@string/nivel_comprension" />
 
 <!--    <Button-->

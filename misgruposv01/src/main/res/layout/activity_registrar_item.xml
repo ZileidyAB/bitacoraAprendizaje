@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/codigo_registrar_item"
         android:layout_marginTop="13dp"
-        android:drawableLeft="@drawable/logo_materia"
+        android:drawableLeft="@drawable/logo_escribir"
         android:hint="@string/experiencia_registrar_ejercicio" />
 
     <EditText
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/concepto_registrar_item"
         android:layout_marginTop="13dp"
-        android:drawableLeft="@drawable/logo_materia"
+        android:drawableLeft="@drawable/logo_escribir"
         android:hint="@string/descripcion_registrar_item" />
 
 <!--    <TextView-->
@@ -86,7 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/descripcion_registrar_item"
         android:layout_marginTop="13dp"
-        android:drawableLeft="@drawable/logo_materia"
+        android:drawableLeft="@drawable/logo_escribir"
         android:hint="@string/duda_registrar_item" />
 
     <!--    <TextView-->

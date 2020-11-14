@@ -15,6 +15,8 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.Calendar;
 
 import py.com.misgruposv01.R;
@@ -25,7 +27,7 @@ import py.com.misgruposv01.datos.Tema;
 import py.com.misgruposv01.datos.Usuario;
 import py.com.misgruposv01.utils.LogUtils;
 
-public class RegistrarEjercicioActivity extends Activity {
+public class RegistrarEjercicioActivity extends AppCompatActivity {
     private String tag = "RegistrarEjerciciosActivity";
     EditText editCodigoEjercicio;
     EditText editExperienciaEjercicio;
