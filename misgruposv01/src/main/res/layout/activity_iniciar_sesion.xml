@@ -10,6 +10,60 @@
     android:visibility="visible"
     tools:context=".activities.IniciarSesionActivity">
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="219dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="150dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/iniciar_sesion" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_below="@+id/imageView1"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="29dp"
+        android:text="@string/boton_iniciarSesion"
+        android:textAlignment="center"
+        android:textColor="@color/teal_700"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/CI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="34dp"
+        android:drawableLeft="@drawable/logo_usuario"
+        android:hint="CI" />
+
+    <EditText
+        android:id="@+id/contrasenha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CI"
+        android:layout_marginTop="18dp"
+        android:drawableLeft="@drawable/logo_contrasenha"
+        android:hint="@string/mensaje_contrasenha"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="146dp"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_below="@+id/contrasenha"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="60dp"
+        android:background="@color/celeste"
+        android:onClick="iniciarSesionClick"
+        android:text="@string/boton_iniciarSesion" />
 
     <TextView
         android:id="@+id/textView2"
@@ -23,57 +77,5 @@
         android:textAlignment="center"
         android:textColor="@color/teal_700"
         android:textSize="15sp" />
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="296dp"
-        android:layout_height="249dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="21dp"
-        android:src="@drawable/usuario" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_below="@+id/imageView1"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="18dp"
-        android:text="@string/boton_iniciarSesion"
-        android:textAlignment="center"
-        android:textColor="@color/teal_700"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/CI"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="15dp"
-        android:drawableLeft="@drawable/logo_usuario"
-        android:hint="CI" />
-
-    <EditText
-        android:id="@+id/contrasenha"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/campoTexto1"
-        android:layout_marginTop="410dp"
-        android:drawableLeft="@drawable/logo_contrasenha"
-        android:hint="@string/mensaje_contrasenha"
-        android:inputType="textPassword" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="146dp"
-        android:layout_height="wrap_content"
-        android:layout_alignWithParentIfMissing="true"
-        android:layout_below="@+id/campoTexto2"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="500dp"
-        android:background="@color/celeste"
-        android:onClick="iniciarSesionClick"
-        android:text="@string/boton_iniciarSesion" />
-
 
 </RelativeLayout>

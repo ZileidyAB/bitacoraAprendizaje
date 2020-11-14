@@ -10,14 +10,15 @@
     android:visibility="visible"
     tools:context=".activities.CrearCuentaActivity">
 
-
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="296dp"
-        android:layout_height="249dp"
+        android:layout_width="219dp"
+        android:layout_height="200dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="21dp"
-        android:src="@drawable/libros" />
+        android:layout_marginStart="150dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/crear_cuenta"/>
 
     <TextView
         android:id="@+id/textView1"
@@ -25,18 +26,19 @@
         android:layout_height="46dp"
         android:layout_below="@+id/imageView1"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="21dp"
         android:text="@string/boton_crearCuenta"
         android:textAlignment="center"
         android:textColor="@color/teal_700"
-        android:textSize="20sp" />
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/CI"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
-        android:layout_marginTop="-6dp"
+        android:layout_marginTop="11dp"
         android:drawableLeft="@drawable/logo_usuario"
         android:hint="CI" />
 
