@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/codigo_registrar_ejercicio"
         android:layout_marginTop="13dp"
-        android:drawableLeft="@drawable/logo_materia"
+        android:drawableLeft="@drawable/logo_escribir"
         android:hint="@string/experiencia_registrar_ejercicio" />
 
     <EditText
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/experiencia_registrar_ejercicio"
         android:layout_marginTop="13dp"
-        android:drawableLeft="@drawable/logo_materia"
+        android:drawableLeft="@drawable/logo_escribir"
         android:hint="@string/duda_registrar_ejercicio" />
 
 <!--    <TextView-->
@@ -102,7 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/seekBar"
         android:layout_marginTop="13dp"
-        android:drawableLeft="@drawable/logo_materia"
+        android:drawableLeft="@drawable/logo_reloj"
         android:hint="@string/tiempoDedicado_registrar_ejercicio" />
 
 <!--    <Button-->
