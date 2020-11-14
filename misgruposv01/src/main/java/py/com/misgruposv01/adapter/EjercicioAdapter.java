@@ -5,15 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.CheckBox;
 import android.widget.TextView;
-
-import py.com.misgruposv01.R;
 
 import java.util.ArrayList;
 
+import py.com.misgruposv01.R;
 import py.com.misgruposv01.datos.Ejercicio;
-import py.com.misgruposv01.datos.Item;
 
 public class EjercicioAdapter extends BaseAdapter {
     private final Activity actividad;
@@ -30,17 +27,20 @@ public class EjercicioAdapter extends BaseAdapter {
         LayoutInflater inflater = actividad.getLayoutInflater();
         View view = inflater.inflate(R.layout.elementos_listar_ejercicio, null, true);
 
+        TextView tituloEjercicio = (TextView) view.findViewById(R.id.titulo_ejercicio);
+        tituloEjercicio.setText("Ejercicio N° " + (posicion + 1));
+
         TextView porcentajeLogrado = (TextView) view.findViewById(R.id.porcentaje_logrado);
-        porcentajeLogrado.setText("" + lista.get(posicion).getPorcLogrado());
+        porcentajeLogrado.setText(lista.get(posicion).getPorcLogrado() + " %");
 
         TextView tiempoDedicado = (TextView) view.findViewById(R.id.tiempo_dedicado);
-        tiempoDedicado.setText(lista.get(posicion).getTiempoDedicado());
+        tiempoDedicado.setText(" "+ lista.get(posicion).getTiempoDedicado());
 
         TextView experiencia = (TextView) view.findViewById(R.id.experiencia);
-        experiencia.setText("" + lista.get(posicion).getExperiencia());
+        experiencia.setText("Experiencia: " + lista.get(posicion).getExperiencia());
 
         TextView duda = (TextView) view.findViewById(R.id.dudas);
-        duda.setText("" + lista.get(posicion).getDudas());
+        duda.setText("Dudas: " + lista.get(posicion).getDudas());
 
         return view;
     }

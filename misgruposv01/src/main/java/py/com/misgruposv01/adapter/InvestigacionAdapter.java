@@ -31,16 +31,16 @@ public class InvestigacionAdapter extends BaseAdapter {
         tituloInvestigacion.setText("Tema: " + lista.get(posicion).getTemaInvestigado());
 
         TextView porcentajeLogrado = (TextView) view.findViewById(R.id.nivel_comprension);
-        porcentajeLogrado.setText("Comprensión: " + lista.get(posicion).getNivelComprension() + " %");
+        porcentajeLogrado.setText("NC: " + lista.get(posicion).getNivelComprension() + " %");
 
         TextView tiempoDedicado = (TextView) view.findViewById(R.id.tiempo_dedicado);
-        tiempoDedicado.setText(lista.get(posicion).getTiempoDedicado());
+        tiempoDedicado.setText(" " + lista.get(posicion).getTiempoDedicado());
 
         TextView comentarios = (TextView) view.findViewById(R.id.comentarios);
-        comentarios.setText("" + lista.get(posicion).getComentarios());
+        comentarios.setText("Comentarios: " + lista.get(posicion).getComentarios());
 
         TextView duda = (TextView) view.findViewById(R.id.dudas);
-        duda.setText("" + lista.get(posicion).getDudas());
+        duda.setText("Dudas: " + lista.get(posicion).getDudas());
 
         return view;
     }
