@@ -78,7 +78,7 @@ public class PerfilEditActivity extends AppCompatActivity {
             editTextEmail.setText(unUsuario.getMail());
 //            editTextContrasenha.setText(unUsuario.getContrasenha());
 //            editTextContrasenhaConfirm.setText(unUsuario.getContrasenhaConfirm());
-            botton.setText( "Editar Usuario" );
+  //          botton.setText( "Editar Usuario" );
         }
     }
 
