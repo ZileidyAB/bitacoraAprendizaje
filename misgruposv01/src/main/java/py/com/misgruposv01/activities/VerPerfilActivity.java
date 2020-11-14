@@ -119,29 +119,26 @@ public class VerPerfilActivity extends AppCompatActivity {
                 desplegarMensajeEliminacionUsuario();
                 finish();
                 break;
-            }case R.id.accion_sigte_tar:{
-                Log.d(LogUtils.tag, "Item seleccionado: Siguiente");
-                opcionSiguiente();
             }
 
         }
         return true;
     }
-    public void opcionSiguiente(){
-        CI_usuario++;
-        if( CI_usuario < GestionBitacora.usuarios.size()){
-            unUsuario = GestionBitacora.usuarios.get( CI_usuario);
-            actualizarVista();
-
-        }else{
-            Context contexto = getApplicationContext();
-            NotificationsUtils.desplegarMensaje("Ya no existen usuarios en la lista", contexto);
-        }
-
-    }
+//    public void opcionSiguiente(){
+//        CI_usuario++;
+//        if( CI_usuario < GestionBitacora.usuarios.size()){
+//            unUsuario = GestionBitacora.usuarios.get( CI_usuario);
+//            actualizarVista();
+//
+//        }else{
+//            Context contexto = getApplicationContext();
+//            NotificationsUtils.desplegarMensaje("Ya no existen usuarios en la lista", contexto);
+//        }
+//
+//    }
 
     private void lanzarActividadEdicionUsuario() {
-        Intent i = new Intent( this, CrearCuentaActivity.class );
+        Intent i = new Intent( this, PerfilEditActivity.class );
         i.putExtra("CI_usuario", Integer.parseInt("" + CI_usuario));
         startActivityForResult( i, RequestCode.PETICION_EDITAR_USUARIO.getCodigo());
     }

@@ -4,10 +4,13 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import py.com.misgruposv01.R;
 import py.com.misgruposv01.datos.Ejercicio;
@@ -16,8 +19,9 @@ import py.com.misgruposv01.datos.Investigacion;
 import py.com.misgruposv01.datos.Materia;
 import py.com.misgruposv01.datos.Tema;
 import py.com.misgruposv01.datos.Usuario;
+import py.com.misgruposv01.utils.LogUtils;
 
-public class RegistrarInvestigacionActivity extends Activity {
+public class RegistrarInvestigacionActivity extends AppCompatActivity {
     private String tag = "RegistrarInvestigacionActivity";
     //NOMBRAR DATOS
 
@@ -70,11 +74,13 @@ public class RegistrarInvestigacionActivity extends Activity {
 
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return true;
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.registrar_menu, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
-    public void registrarInvestigacion(View boton) {
+    public void RegistrarInvestigacion() { //
+    //public void registrarInvestigacion(View boton) {
         String codigoInvestigacion = editCodigoInvestigacion.getText().toString();
         String temaInvestigacion = editTemaInvestigado.getText().toString();
         String comentariosInvestigacion = editComentariosInvestigacion.getText().toString();
@@ -117,6 +123,32 @@ public class RegistrarInvestigacionActivity extends Activity {
             finish();
 
         }
+    }
+    @Override
+    public boolean onOptionsItemSelected (MenuItem item){
+        switch (item.getItemId()) {
+            case R.id.item_guardar: {
+                Log.d(LogUtils.tag, "Item seleccionado: Guardar");
+                RegistrarInvestigacion();
+                break;
+            }
+            case R.id.item_limpiar: {
+                Log.d(LogUtils.tag, "Item seleccionado: Limpiar");
+                limpiarCampos();
+            }
+        }
+        return true;
+    }
+
+    public void limpiarCampos() {
+        editCodigoInvestigacion.setText("");
+        editComentariosInvestigacion.setText("");
+        editDudasInvestigacion.setText("");
+        editTiempoDedidadoInvestigacion.setText("");
+        editNivelComprension.setText("");
+
+        // editAprendido.setChecked(true);
+
     }
 }
 

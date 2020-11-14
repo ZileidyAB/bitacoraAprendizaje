@@ -84,15 +84,15 @@
         android:drawableLeft="@drawable/logo_materia"
         android:hint="@string/nivel_comprension" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="146dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/nivel_comprension"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="32dp"
-        android:background="@color/celeste"
-        android:onClick="registrarInvestigacion"
-        android:text="@string/boton_aceptar" />
+<!--    <Button-->
+<!--        android:id="@+id/button1"-->
+<!--        android:layout_width="146dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/nivel_comprension"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:background="@color/celeste"-->
+<!--        android:onClick="registrarInvestigacion"-->
+<!--        android:text="@string/boton_aceptar" />-->
 
 </RelativeLayout>

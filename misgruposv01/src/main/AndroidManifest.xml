@@ -41,6 +41,7 @@
         <activity android:name=".activities.SubmenuInvestigacionActivity"/>
         <activity android:name=".activities.ListarInvestigacionActivity"/>
         <activity android:name=".activities.RegistrarInvestigacionActivity"/>
+        <activity android:name=".activities.PerfilEditActivity"/>
 
         <activity android:name=".MainActivity" />
 

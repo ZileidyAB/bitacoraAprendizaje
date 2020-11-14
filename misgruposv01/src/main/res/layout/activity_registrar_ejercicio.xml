@@ -105,15 +105,15 @@
         android:drawableLeft="@drawable/logo_materia"
         android:hint="@string/tiempoDedicado_registrar_ejercicio" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="146dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tiempoDedicado_registrar_ejercicio"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="32dp"
-        android:background="@color/celeste"
-        android:onClick="registrarEjercicio"
-        android:text="@string/boton_aceptar" />
+<!--    <Button-->
+<!--        android:id="@+id/button1"-->
+<!--        android:layout_width="146dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/tiempoDedicado_registrar_ejercicio"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:background="@color/celeste"-->
+<!--        android:onClick="registrarEjercicio"-->
+<!--        android:text="@string/boton_aceptar" />-->
 
 </RelativeLayout>

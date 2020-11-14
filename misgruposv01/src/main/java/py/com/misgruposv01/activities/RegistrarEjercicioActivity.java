@@ -6,6 +6,7 @@ import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +23,7 @@ import py.com.misgruposv01.datos.GestionBitacora;
 import py.com.misgruposv01.datos.Materia;
 import py.com.misgruposv01.datos.Tema;
 import py.com.misgruposv01.datos.Usuario;
+import py.com.misgruposv01.utils.LogUtils;
 
 public class RegistrarEjercicioActivity extends Activity {
     private String tag = "RegistrarEjerciciosActivity";
@@ -93,11 +95,12 @@ public class RegistrarEjercicioActivity extends Activity {
 
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return true;
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.registrar_menu, menu);
+        return super.onCreateOptionsMenu(menu);
     }
-
-    public void registrarEjercicio(View boton) {
+    public void RegistrarEjercicio() { //
+    //public void registrarEjercicio(View boton) {
         String codigoEjercicio = editCodigoEjercicio.getText().toString();
         String experienciaEjercicio = editExperienciaEjercicio.getText().toString();
         String dudasEjercicio = editDudasEjercicio.getText().toString();
@@ -135,6 +138,31 @@ public class RegistrarEjercicioActivity extends Activity {
             finish();
 
         }
+    }
+    @Override
+    public boolean onOptionsItemSelected (MenuItem item){
+        switch (item.getItemId()) {
+            case R.id.item_guardar: {
+                Log.d(LogUtils.tag, "Item seleccionado: Guardar");
+                RegistrarEjercicio();
+                break;
+            }
+            case R.id.item_limpiar: {
+                Log.d(LogUtils.tag, "Item seleccionado: Limpiar");
+                limpiarCampos();
+            }
+        }
+        return true;
+    }
+
+    public void limpiarCampos() {
+        editCodigoEjercicio.setText("");
+        editExperienciaEjercicio.setText("");
+        editDudasEjercicio.setText("");
+        editTiempoDedidado.setText("");
+        editporcentajeLogrado.setText("");
+        // editAprendido.setChecked(true);
+
     }
 }
 

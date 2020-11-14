@@ -108,16 +108,17 @@
         android:layout_below="@+id/duda_registrar_item"
         android:layout_marginLeft="130dp"
         android:text="@string/aprendido_registrar_item" />
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="146dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Aprendido_registrar_item"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="32dp"
-        android:background="@color/celeste"
-        android:onClick="registrarItem"
-        android:text="@string/boton_aceptar" />
+
+<!--    <Button-->
+<!--        android:id="@+id/button1"-->
+<!--        android:layout_width="146dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/Aprendido_registrar_item"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:background="@color/celeste"-->
+<!--        android:onClick="registrarItem"-->
+<!--        android:text="@string/boton_aceptar" />-->
 
 
 
